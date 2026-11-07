@@ -43,16 +43,14 @@ a{color:inherit;text-decoration:none}
 .nav-toggle{display:none;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:0;border-radius:10px;background:transparent;color:var(--text-nav);cursor:pointer}
 .nav-toggle:focus-visible{outline:2px solid var(--blue-bright);outline-offset:2px}
 .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.doc-card>h2:first-child{margin-top:0 !important} /* the card padding already spaces the first heading */
-.doc-list{display:grid;gap:0 40px;grid-template-columns:repeat(auto-fill,minmax(min(380px,100%),1fr))}
-.doc{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-weight:600;line-height:1.4;color:var(--blue)}
-a.doc:hover{color:var(--blue-bright)}
-.doc-title{flex:1;min-width:0}
-.doc svg{flex:none;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.doc-soon{color:var(--text-muted);font-weight:500}
-.doc-soon>span:last-child{flex:none;font-size:14px}
-@media (max-width:960px){.navbar{gap:0 8px !important}.brandnav{display:contents !important}.navactions{gap:4px !important}.navactions>.lang{display:none}.navactions .btn{padding:9px 14px !important;font-size:14px !important}.nav-toggle{display:inline-flex}.nav{display:none !important;order:3;width:100%;flex-direction:column;gap:0 !important;margin-top:10px;border-top:1px solid var(--line);padding-top:4px;font-size:17px !important}[data-nav="open"] .nav{display:flex !important}.nav a{padding:12px 0}.nav-lang{display:inline-flex;align-self:flex-start;padding:12px 0;font-size:17px}.nav-lang:hover{background:transparent}[data-nav="open"] .nav-toggle .bars,.nav-toggle .close{display:none}[data-nav="open"] .nav-toggle .close{display:block}}
-@media (max-width:640px){.hero h1{font-size:34px !important}.doc-card{padding:28px 22px !important}}
+.doc-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:40px;align-items:start}
+.doc-jump{position:sticky;top:24px;display:flex;flex-direction:column;gap:2px;padding:20px;border-radius:20px;background:#fff}
+.doc-jump-h{margin:0 0 8px;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-bright)}
+.doc-jump a{display:flex;justify-content:space-between;gap:12px;padding:7px 10px;border-radius:10px;font-size:16px;font-weight:600;line-height:1.35;color:var(--navy)}
+.doc-jump a:hover{background:var(--page)}
+@media (max-width:960px){.doc-layout{grid-template-columns:minmax(0,1fr);gap:24px}.doc-jump{position:static;flex-direction:row;flex-wrap:wrap;gap:8px;padding:0;background:transparent}.doc-jump-h{width:100%;margin:0}.doc-jump a{padding:6px 14px;border-radius:999px;background:#fff;font-size:15px}}
+@media (max-width:1180px){.navbar{gap:0 8px !important}.brandnav{display:contents !important}.navactions{gap:4px !important}.navactions>.lang{display:none}.navactions .btn{padding:9px 14px !important;font-size:14px !important}.nav-toggle{display:inline-flex}.nav{display:none !important;order:3;width:100%;flex-direction:column;gap:0 !important;margin-top:10px;border-top:1px solid var(--line);padding-top:4px;font-size:17px !important}[data-nav="open"] .nav{display:flex !important}.nav a{padding:12px 0}.nav-lang{display:inline-flex;align-self:flex-start;padding:12px 0;font-size:17px}.nav-lang:hover{background:transparent}[data-nav="open"] .nav-toggle .bars,.nav-toggle .close{display:none}[data-nav="open"] .nav-toggle .close{display:block}}
+@media (max-width:640px){.hero h1{font-size:34px !important}}
 </style>
 </helmet>
 <div style="width:100%;font-family:var(--font-body);font-size:18px;color:var(--text);background:var(--page);line-height:1.6">
@@ -62,9 +60,9 @@ a.doc:hover{color:var(--blue-bright)}
 <div class="navbar" style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:10px 0">
 <div class="brandnav" style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
 <a href="index.html"><img src="./assets/logo.png" alt="Logo CTTTHNGĐ" style="width:48px;height:48px;border-radius:50%;display:block"></a>
-<nav class="nav" style="display:flex;gap:24px;font-size:15px;font-weight:500;color:var(--text-nav)"><a href="about.html">Tổ Chức</a><a href="liengia.html">Liên Gia</a><a href="https://drive.google.com/file/d/1dWXIV82S_81KgAuWQk5gfUOroWM7rsZ7/view" target="_blank" rel="noopener">Lịch Sinh Hoạt</a><a href="tailieu.html" style="color:var(--blue);font-weight:700">Tài Liệu</a><a href="lienlac.html">Liên Lạc</a><button class="lang nav-lang" type="button" aria-label="Đổi ngôn ngữ / Change language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4 6.5 4 10s-1 7-4 10c-3-3-4-6.5-4-10s1-7 4-10z"/></svg><span class="lang-vi">VI</span><span class="lang-en">EN</span></button></nav>
+<nav class="nav" style="display:flex;gap:24px;font-size:15px;font-weight:500;color:var(--text-nav)"><a href="index.html">Trang Chủ</a><a href="about.html">Tổ Chức</a><a href="lichsu.html">Lịch Sử</a><a href="liengia.html">Liên Gia</a><a href="tailieu.html" style="color:var(--blue);font-weight:700">Tài Liệu</a><a href="files/lich-sinh-hoat.pdf" target="_blank" rel="noopener">Lịch Sinh Hoạt</a><a href="lienlac.html">Liên Lạc</a><button class="lang nav-lang" type="button" aria-label="Đổi ngôn ngữ / Change language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4 6.5 4 10s-1 7-4 10c-3-3-4-6.5-4-10s1-7 4-10z"/></svg><span class="lang-vi">EN</span><span class="lang-en">VI</span></button></nav>
 </div>
-<div class="navactions" style="display:flex;align-items:center;gap:20px"><button class="lang" type="button" aria-label="Đổi ngôn ngữ / Change language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4 6.5 4 10s-1 7-4 10c-3-3-4-6.5-4-10s1-7 4-10z"/></svg><span class="lang-vi">VI</span><span class="lang-en">EN</span></button><a class="btn" href="https://drive.google.com/file/d/1qcrHM4UCxK2SnuKlOnj3KpXKvdFqaZvz/view" target="_blank" rel="noopener" style="background:var(--blue-bright);color:#fff;padding:11px 20px;border-radius:999px;font-weight:600;font-size:15px">Đăng ký khóa căn bản</a><button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="close" d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+<div class="navactions" style="display:flex;align-items:center;gap:20px"><button class="lang" type="button" aria-label="Đổi ngôn ngữ / Change language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4 6.5 4 10s-1 7-4 10c-3-3-4-6.5-4-10s1-7 4-10z"/></svg><span class="lang-vi">EN</span><span class="lang-en">VI</span></button><a class="btn" href="files/don-ghi-danh-khoa-can-ban.pdf" target="_blank" rel="noopener" style="background:var(--blue-bright);color:#fff;padding:11px 20px;border-radius:999px;font-weight:600;font-size:15px">Đăng ký khóa căn bản</a><button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="close" d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 </div>
 </div>
 <div id="home" style="background:linear-gradient(90deg,var(--blue),var(--blue-light));color:#fff;padding:72px 6vw">
@@ -75,16 +73,25 @@ a.doc:hover{color:var(--blue-bright)}
 </header>
 
 <section id="detai" style="max-width:1200px;margin:0 auto;padding:72px 6vw 24px">
-<div class="doc-card" style="background:#fff;border-radius:24px;padding:48px">
+<div class="doc-layout">
+<nav class="doc-jump" aria-label="Nhóm đề tài">
+<p class="doc-jump-h">Nhóm đề tài</p>
+<sc-for list="{{ groups }}" as="group"><a href="#{{ group.id }}">{{ group.title }}</a></sc-for>
+</nav>
+<div class="doc-card">
 <sc-for list="{{ groups }}" as="group">
-<h2 style="margin:36px 0 6px;font-size:21px">{{ group.title }}</h2>
-<div class="doc-list">
+<div class="doc-group" id="{{ group.id }}">
+<h2 class="doc-group-h">{{ group.title }}</h2>
+<div class="doc-table" role="list" aria-label="{{ group.title }}">
 <sc-for list="{{ group.docs }}" as="doc">
-<sc-if value="{{ doc.url }}"><a class="doc" href="{{ doc.url }}" target="_blank" rel="noopener"><span class="doc-title">{{ doc.title }}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></sc-if>
-<sc-if value="{{ doc.soon }}"><div class="doc doc-soon"><span class="doc-title">{{ doc.title }}</span><span>Sắp có</span></div></sc-if>
+<sc-if value="{{ doc.file }}"><div class="doc-row" role="listitem"><span><a class="doc-name" href="{{ doc.url }}" target="_blank" rel="noopener">{{ doc.title }}</a></span><span><a class="doc-dl" href="{{ doc.url }}" target="_blank" rel="noopener" download aria-label="Tải về {{ doc.title }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span class="doc-dl-text"><span class="lang-vi">Tải về</span><span class="lang-en">Download</span></span></a></span></div></sc-if>
+<sc-if value="{{ doc.link }}"><div class="doc-row" role="listitem"><span><a class="doc-name" href="{{ doc.url }}" target="{{ doc.target }}" rel="noopener">{{ doc.title }}</a></span><span><a class="doc-dl" href="{{ doc.url }}" target="{{ doc.target }}" rel="noopener" aria-label="Xem {{ doc.title }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span class="doc-dl-text"><span class="lang-vi">Xem</span><span class="lang-en">View</span></span></a></span></div></sc-if>
+<sc-if value="{{ doc.soon }}"><div class="doc-row" role="listitem"><span class="doc-name">{{ doc.title }}</span><span class="doc-soon">Sắp có</span></div></sc-if>
 </sc-for>
 </div>
+</div>
 </sc-for>
+</div>
 </div>
 </section>
 
@@ -94,7 +101,7 @@ a.doc:hover{color:var(--blue-bright)}
 <a href="index.html"><img src="./assets/logo.png" alt="Logo CTTTHNGĐ"></a>
 <div><div class="footer-name">Chương Trình Thăng Tiến Hôn Nhân Gia Đình</div><div class="footer-sub">Giáo Phận San Diego</div></div>
 </div>
-<nav class="footer-col" aria-label="Liên kết cuối trang"><div class="footer-h">Khám Phá</div><a href="about.html">Tổ Chức</a><a href="liengia.html">Liên Gia</a><a href="https://drive.google.com/file/d/1dWXIV82S_81KgAuWQk5gfUOroWM7rsZ7/view" target="_blank" rel="noopener">Lịch Sinh Hoạt</a><a href="tailieu.html">Tài Liệu</a><a href="lienlac.html">Liên Lạc</a></nav>
+<nav class="footer-col" aria-label="Liên kết cuối trang"><div class="footer-h">Khám Phá</div><a href="index.html">Trang Chủ</a><a href="about.html">Tổ Chức</a><a href="lichsu.html">Lịch Sử</a><a href="liengia.html">Liên Gia</a><a href="tailieu.html">Tài Liệu</a><a href="files/lich-sinh-hoat.pdf" target="_blank" rel="noopener">Lịch Sinh Hoạt</a><a href="lienlac.html">Liên Lạc</a></nav>
 <div class="footer-col"><div class="footer-h">Liên Lạc Ban Điều Hành</div><a class="footer-contact" href="mailto:khoacanbansd@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>khoacanbansd@gmail.com</a><a class="footer-contact" href="tel:+18582325276"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>858-232-5276</a></div>
 </div>
 <div class="footer-bottom">© 2026 Chương Trình Thăng Tiến Hôn Nhân Gia Đình – Giáo Phận San Diego</div>
@@ -103,51 +110,125 @@ a.doc:hover{color:var(--blue-bright)}
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1800}}'>
-// Add topics here. Paste the link into `url`; while it's empty the row shows "Sắp có".
+// Add topics here. Put the PDF in files/de-tai/ and its path in `url`. While `url`
+// is empty the row shows "Sắp có". To start a new group, copy a whole {title,id,docs}
+// block; `id` is the link the side menu jumps to. Order doesn't matter: the page
+// sorts groups and topics A–Z (see docRows below).
 const DOCS = [
-{title:'Hướng Dẫn',docs:[
-{title:'Tài Liệu Hướng Dẫn Họp Liên Gia',url:'https://drive.google.com/drive/folders/1c5ZPsHt1gY2XnAlDPNAhNPJzfNjzVYSD'},
+{title:'Hướng Dẫn',id:'huong-dan',docs:[
+{title:'Mục Đích Thành Lập và Họp Liên Gia',url:'files/huong-dan/muc-dich-thanh-lap.pdf'},
+{title:'Hướng Dẫn Họp Liên Gia (cho Liên Gia Trưởng)',url:'files/huong-dan/huong-dan-lg-truong.pdf'},
+{title:'Chương Trình Họp Liên Gia (chữ lớn)',url:'files/huong-dan/chuong-trinh-hop-big-font.pdf'},
+{title:'Mẫu Họp Liên Gia',url:'files/huong-dan/mau-hop-lien-gia.pdf'},
+{title:'Cách Chọn Đề Tài Họp Liên Gia',url:'files/huong-dan/chon-de-tai.pdf'},
+{title:'Checklist cho Người Host Họp Liên Gia',url:'files/huong-dan/checklist-host.pdf'},
+{title:'Nên Làm và Nên Tránh',url:'files/huong-dan/nen-lam-nen-tranh.pdf'},
+{title:'Những Câu Hát trong Giờ Chia Sẻ Cảm Nghiệm',url:'files/huong-dan/cau-hat-chia-se.pdf'},
+{title:'Trau Dồi Đoàn Sủng',url:'files/huong-dan/trau-doi-doan-sung.pdf'},
+{title:'Liên Gia Trưởng – Trách Nhiệm',url:'files/huong-dan/lien-gia-truong-trach-nhiem.pdf'},
+{title:'Trưởng Ban Liên Gia – Trách Nhiệm',url:'files/huong-dan/truong-ban-trach-nhiem.pdf'},
 ]},
-{title:'Cảm Thông II',docs:[
-{title:'Giữ Lửa Gia Đình',url:'https://drive.google.com/file/d/1jTs4bOzwz1doefSFPxRDufQYEyGW3SLD/view'},
-{title:'Lắng Nghe Trước Khi Vội Nói',url:''},
-{title:'Hiện Diện và Lắng Nghe Trong Bữa Cơm Gia Đình',url:'https://drive.google.com/file/d/1j1C7Vg2bVCX7qj5IHAFuzc-NtaoF96Vl/view'},
-{title:'Nghe Chúa và Lắng Nghe Nhau',url:'https://drive.google.com/file/d/1zLVHXM0PGl8Uu1cgi2fj92mF4YJskZd7/view'},
+{title:'Song Nguyền Cho Con',id:'song-nguyen-cho-con',docs:[
+{title:'Cha Mẹ Cầu Nguyện, Con Nhận Biết Chúa',url:'files/de-tai/005-song-nguyen-cho-con-cha-me-cau-nguyen-con-cai-nhan-biet-chua.pdf'},
+{title:'Dạy Con Biết Cảm Thông',url:'files/de-tai/008-song-nguyen-cho-con-day-con-biet-cam-thong.pdf'},
+{title:'Dạy Con Bước Theo Đường Công Chính',url:'files/de-tai/009-song-nguyen-cho-con-day-con-buoc-theo-duong-cong-chinh.pdf'},
+{title:'Gieo Hạt Giống Lời Chúa',url:'files/de-tai/018-song-nguyen-cho-con-gieo-hat-giong-loi-chua.pdf'},
+{title:'Cha Mẹ Làm Gương Yêu Thương',url:'files/de-tai/019-song-nguyen-cho-con-cha-me-lam-guong-yeu-thuong.pdf'},
+{title:'Đức Tin Giữa Thời Đại Công Nghệ',url:'files/de-tai/021-song-nguyen-cho-con-duc-tin-giua-thoi-dai-cong-nghe.pdf'},
+{title:'Cha Mẹ Sống Điều Mình Dạy',url:'files/de-tai/025-song-nguyen-cho-con-cha-me-song-dieu-minh-day.pdf'},
+{title:'Tìm Ý Chúa Trong Đường Đời',url:'files/de-tai/026-song-nguyen-cho-con-tim-y-chua-trong-duong-doi.pdf'},
+{title:'Đối Thoại Trong Yêu Thương',url:'files/de-tai/048-song-nguyen-cho-con-doi-thoai-trong-yeu-thuong.pdf'},
+{title:'Cha Mẹ Làm Gương Xây Dựng Hòa Bình',url:'files/de-tai/060-song-nguyen-cho-con-cha-me-lam-guong-xay-dung-hoa-binh.pdf'},
+{title:'Yêu Thương Chấp Nhận Nhau',url:'files/de-tai/071-song-nguyen-cho-con-yeu-thuong-chap-nhan-nhau.pdf'},
+{title:'Bữa Cơm Gia Đình',url:'files/de-tai/082-song-nguyen-cho-con-bua-com-gia-dinh.pdf'},
+{title:'Thảo Kính Cha Mẹ',url:'files/de-tai/189-song-nguyen-cho-con-thao-kinh-cha-me.pdf'},
+{title:'Khi Gia Đình Mang Thánh Giá',url:'files/de-tai/195-song-nguyen-cho-con-khi-gia-dinh-mang-thanh-gia.pdf'},
+{title:'Nhìn Thấy Chúa Nơi Cha Mẹ Già Yếu',url:'files/de-tai/197-song-nguyen-cho-con-nhin-thay-chua-noi-cha-me-gia-yeu.pdf'},
+{title:'Khi Con Cái Thất Bại',url:'files/de-tai/198-song-nguyen-cho-con-khi-con-cai-that-bai.pdf'},
+{title:'Biết Mình Để Giúp Con Sống Vui',url:'files/de-tai/209-song-nguyen-cho-con-biet-minh-de-giup-con-song-vui.pdf'},
 ]},
-{title:'Linh An',docs:[
-{title:'Gia Đình Cầu Nguyện Chung',url:'https://drive.google.com/file/d/1wQy788vRt5doAtbqKFaL24jaECLASTsz/view'},
-{title:'Lời Chúa Là Kim Chỉ Nam Cho Gia Đình',url:'https://drive.google.com/file/d/1ZiaEh2cxzjqMQWXHaBbsVZJ8sMLedyTT/view'},
-{title:'Lời Chúa Như Thư Của Người Yêu',url:'https://drive.google.com/file/d/1oJer4rre61bogxDmnrCLpNmec0U2aGDZ/view'},
+{title:'Giữa Lòng Đời',id:'giua-long-doi',docs:[
+{title:'Vợ Chồng Khác Biệt Làm Sao Hòa Hợp?',url:'files/de-tai/022-vo-chong-khac-biet-lam-sao-hoa-hop.pdf'},
+{title:'Bớt Sửa Người, Biết Sửa Mình',url:'files/de-tai/113-giua-long-doi-bot-sua-nguoi-biet-sua-minh.pdf'},
+{title:'Sự Sống Là Phép Lạ',url:'files/de-tai/185-ngua-thai-pha-thai-su-song-la-phep-la.pdf'},
+{title:'Đừng Quên Tạ Ơn',url:'files/de-tai/188-giua-long-doi-dung-quen-ta-on.pdf'},
+{title:'Sự Sống Là Quà Tặng Vô Giá',url:'files/de-tai/196-giua-long-doi-su-song-la-qua-tang-vo-gia.pdf'},
+{title:'Dùng Lời Nói Để Thêm Hòa Hợp',url:'files/de-tai/200-giua-long-doi-dung-loi-noi-de-them-hoa-hop.pdf'},
+{title:'Trao Ban Trọn Vẹn',url:'files/de-tai/211-giua-long-doi-trao-ban-tron-ven.pdf'},
+{title:'Nhà Không Phải Là Khách Sạn',url:'files/de-tai/215-giua-long-doi-nha-khong-phai-la-khach-san.pdf'},
 ]},
-{title:'Song Nguyền Cho Con',docs:[
-{title:'Cha Mẹ Cầu Nguyện, Con Cái Nhận Biết Chúa',url:'https://drive.google.com/file/d/1L-2K2CrFe21nhLgzWyCM6vKdoAERwV3H/view'},
-{title:'Dạy Con Biết Cảm Thông',url:'https://drive.google.com/file/d/1EHZPdlRdcScM6C3O-6gxecxmA35mGiCO/view'},
-{title:'Dạy Con Bước Theo Đường Công Chính',url:'https://drive.google.com/file/d/1kshy0aCu7nKMR57vnrwitAvYzjTCHbnL/view'},
-{title:'Gieo Hạt Giống Lời Chúa',url:'https://drive.google.com/file/d/1pKzS0vfbRLcj4X3O-_Q9Q0UDaqm1Kk4d/view'},
-{title:'Cha Mẹ Làm Gương Yêu Thương',url:'https://drive.google.com/file/d/1dJz4Qphs-ZdFrUah-D8FaNJ95_U5MW5z/view'},
-{title:'Đức Tin Giữa Thời Đại Công Nghệ',url:'https://drive.google.com/file/d/1H_pRtCRzrKBkFbU768-BGfSxqZTlyWgj/view'},
-{title:'Cha Mẹ Sống Điều Mình Dạy',url:'https://drive.google.com/file/d/1x5398x0HDWp9z-A0yytnk33LbzJi7f2e/view'},
+{title:'Cảm Thông',id:'cam-thong',docs:[
+{title:'Giữ Lửa Gia Đình',url:'files/de-tai/002-cam-thong-ii-giu-lua-gia-dinh.pdf'},
+{title:'Lắng Nghe Trước Khi Vội Nói',url:'files/de-tai/004-cam-thong-ii-lang-nghe-truoc-khi-voi-noi.pdf'},
+{title:'Hiện Diện và Lắng Nghe Trong Bữa Cơm Gia Đình',url:'files/de-tai/011-cam-thong-ii-hien-dien-va-lang-nghe-trong-bua-com-gia-dinh.pdf'},
+{title:'Nghe Chúa và Lắng Nghe Nhau',url:'files/de-tai/017-cam-thong-ii-nghe-chua-va-lang-nghe-nhau.pdf'},
+{title:'Bông Hồng Cảm Thông: Nâng Đỡ Bạn Đời',url:'files/de-tai/027-bong-hong-cam-thong-nang-do-ban-doi.pdf'},
+{title:'Lắng Nghe Để Giữ Tương Giao',url:'files/de-tai/040-cam-thong-lang-nghe-de-giu-tuong-giao.pdf'},
+{title:'Hạnh Phúc Trong Lời Nói Dịu Dàng',url:'files/de-tai/066-cam-thong-hanh-phuc-trong-loi-noi-diu-dang.pdf'},
+{title:'Sức Mạnh Của Lời Xin Lỗi',url:'files/de-tai/089-cam-thong-suc-manh-cua-loi-xin-loi.pdf'},
+{title:'Góp Ý Hợp Tình, Hợp Đức',url:'files/de-tai/367-nghe-thuat-cam-thong-nghe-thuat-gop-y-cho-nhau.pdf'},
 ]},
-{title:'Hòa Giải Và Tha Thứ',docs:[
-{title:'Đừng Giận Nhau Qua Đêm',url:'https://drive.google.com/file/d/1jwkv1md6UFOHiS5WUL4Zo7r8mrtY0PRb/view'},
-{title:'Tha Thứ Mỗi Ngày Để Giữ Tình Yêu',url:'https://drive.google.com/file/d/1F9Ie4rBz14rh8peEjM4T4DNsZmfwneF8/view'},
-{title:'Xin Lỗi Người Làm Tổn Thương Tôi',url:'https://drive.google.com/file/d/1iZuxsKPzapJ9XX2gvyLKAZetEvEgNxMB/view'},
+{title:'Linh An',id:'linh-an',docs:[
+{title:'Gia Đình Cầu Nguyện Chung',url:'files/de-tai/003-linh-an-gia-dinh-cau-nguyen-chung.pdf'},
+{title:'Lời Chúa Là Kim Chỉ Nam Cho Gia Đình',url:'files/de-tai/006-linh-an-loi-chua-la-kim-chi-nam-cho-gia-dinh.pdf'},
+{title:'Lời Chúa Như Thư Của Người Yêu',url:'files/de-tai/013-linh-an-loi-chua-nhu-thu-cua-nguoi-yeu.pdf'},
+{title:'Cầu Nguyện Bằng Kinh Thánh',url:'files/de-tai/029-linh-an-cau-nguyen-bang-kinh-thanh.pdf'},
+{title:'Gia Đình Sống Bình An Hiệp Nhất',url:'files/de-tai/030-linh-an-gia-dinh-song-binh-an-hiep-nhat.pdf'},
+{title:'Đến Gần Chúa Để Được Bình An',url:'files/de-tai/184-linh-an-den-gan-chua-de-duoc-binh-an.pdf'},
+{title:'Nhìn Vào Chúa Giữa Sóng Gió',url:'files/de-tai/366-linh-an-nhin-vao-chua-giua-song-gio.pdf'},
 ]},
-{title:'Hy Vọng Khi Thất Bại',docs:[
-{title:'Đừng Sợ Khi Gia Đình Gặp Sóng Gió',url:'https://drive.google.com/file/d/1il-xcZzWzd7nYFYDfV-2L1WR3KSLiNHu/view'},
-{title:'Đừng Sợ, Có Chúa Ở Cùng',url:'https://drive.google.com/file/d/1iq16dB73Xf2kswju49vw9TDzJp86Oc_h/view'},
-{title:'Để Lời Chúa Biến Đổi',url:'https://drive.google.com/file/d/1yf_MkEtVASmDDPiXiZrS7HTI_PEe5VYn/view'},
-{title:'Tin Chúa Vẫn Nhớ Đến Mình',url:'https://drive.google.com/file/d/19j_JqUFx3vLQs2wCZvABbQtt2Ho2xKB_/view'},
+{title:'Hòa Giải Và Tha Thứ',id:'hoa-giai-va-tha-thu',docs:[
+{title:'Đừng Giận Nhau Qua Đêm',url:'files/de-tai/007-hoa-giai-va-tha-thu-dung-gian-nhau-qua-dem.pdf'},
+{title:'Tha Thứ Mỗi Ngày Để Giữ Tình Yêu',url:'files/de-tai/010-hoa-giai-va-tha-thu-tha-thu-moi-ngay-de-giu-tinh-yeu.pdf'},
+{title:'Xin Lỗi Người Làm Tổn Thương Tôi',url:'files/de-tai/014-hoa-giai-va-tha-thu-xin-loi-nguoi-lam-ton-thuong-toi.pdf'},
+{title:'Thinh Lặng Để Tình Yêu Lên Tiếng',url:'files/de-tai/057-hoa-giai-tha-thu-thinh-lang-de-tinh-yeu-len-tieng.pdf'},
+{title:'Xin Lỗi, Đừng Kết Án',url:'files/de-tai/199-hoa-giai-tha-thu-xin-loi-dung-ket-an.pdf'},
 ]},
-{title:'Đề Tài Khác',docs:[
-{title:'Cái Hay Ban Đầu - Trở Về Với Lời Nói Dịu Dàng',url:'https://drive.google.com/file/d/1nOjUQJT45ejhcay9NFI09CgYESpkdN-O/view'},
-{title:'Vợ Chồng Khác Biệt Làm Sao Hòa Hợp',url:'https://drive.google.com/file/d/1Rtc-dxI15XuYqoBBu1lzWDSFRjUnIgWy/view'},
+{title:'Hy Vọng Khi Thất Bại',id:'hy-vong-khi-that-bai',docs:[
+{title:'Đừng Sợ Khi Gia Đình Gặp Sóng Gió',url:'files/de-tai/015-hy-vong-khi-that-bai-dung-so-khi-gia-dinh-gap-song-gio.pdf'},
+{title:'Đừng Sợ, Có Chúa Ở Cùng',url:'files/de-tai/016-hy-vong-khi-that-bai-dung-so-co-chua-o-cung.pdf'},
+{title:'Để Lời Chúa Biến Đổi',url:'files/de-tai/020-hy-vong-khi-that-bai-de-loi-chua-bien-doi.pdf'},
+{title:'Tin Chúa Vẫn Nhớ Đến Mình',url:'files/de-tai/023-hy-vong-khi-that-bai-tin-chua-van-nho-den-minh.pdf'},
+]},
+{title:'Duy Trì Ơn Thánh',id:'duy-tri-on-thanh',docs:[
+{title:'Chọn Chúa Là Kho Tàng Của Gia Đình',url:'files/de-tai/028-duy-tri-va-phat-trien-on-thanh-chon-chua-la-kho-tang-cua-gia-dinh.pdf'},
+{title:'Hiệp Thông Trong Liên Gia',url:'files/de-tai/181-duy-tri-on-thanh-hiep-thong-trong-lien-gia.pdf'},
+{title:'Được Ơn Để Trao Ban',url:'files/de-tai/218-duy-tri-on-thanh-duoc-on-de-trao-ban.pdf'},
+]},
+{title:'Tông Đồ Song Đôi',id:'tong-do-song-doi',docs:[
+{title:'Hiện Diện Trong Thử Thách',url:'files/de-tai/098-tong-do-song-doi-hien-dien-trong-thu-thach.pdf'},
+{title:'Đồng Hành Cùng Linh Mục',url:'files/de-tai/106-tong-do-song-doi-dong-hanh-cung-linh-muc.pdf'},
+{title:'Gặp Chúa, Gặp Cuộc Đời',url:'files/de-tai/217-hon-tong-do-song-doi-gap-chua-gap-cuoc-doi.pdf'},
+]},
+{title:'Cái Hay Ban Đầu',id:'cai-hay-ban-dau',docs:[
+{title:'Trở Về Với Lời Nói Dịu Dàng',url:'files/de-tai/001-cai-hay-ban-dau-tro-ve-voi-loi-noi-diu-dang.pdf'},
+{title:'Tôi Là Một Món Quà',url:'files/de-tai/182-cai-hay-ban-dau-toi-la-mot-mon-qua.pdf'},
+]},
+{title:'Đoàn Sủng',id:'doan-sung',docs:[
+{title:'Yêu Thương Gần Gũi Bằng Sự Dịu Dàng',url:'files/de-tai/201-yeu-thuong-gan-gui-bang-su-diu-dang.pdf'},
+{title:'Yêu Thương Gần Gũi Bằng Việc Làm – Hiện Diện',url:'files/de-tai/214-yeu-thuong-gan-gui-bang-viec-lam-hien-dien.pdf'},
+]},
+{title:'Đề Tài Khác',id:'de-tai-khac',docs:[
+{title:'Thệ Hôn Một Đời: Giữ Trọn Một Đời Thệ Hôn',url:'files/de-tai/031-the-hon-mot-doi-giu-tron-mot-doi-the-hon.pdf'},
+{title:'Huy Hiệu Tình Yêu – Bình An Nhân Loại',url:'files/de-tai/081-huy-hieu-tinh-yeu-binh-an-nhan-loai.pdf'},
 ]},
 ];
+// Turns DOCS into what the tables show: a download button for files, a view button
+// for pages, and "Sắp có" while `url` is empty. Groups and their rows are sorted A–Z,
+// except that a Hướng Dẫn group comes first and Đề Tài Khác last.
+function docRows(groups){
+const az=new Intl.Collator('vi').compare;
+const rank=g=>g.id==='huong-dan'?0:g.id==='de-tai-khac'?2:1;
+return groups.map(group=>({...group,docs:group.docs.map(doc=>{
+const url=doc.url||'';
+const external=/^https?:/.test(url);
+const file=/\.(pdf|docx?)$/i.test(url);
+return {...doc,file,link:!!url&&!file,soon:!url,target:external?'_blank':'_self'};
+}).sort((a,b)=>az(a.title,b.title))})).sort((a,b)=>rank(a)-rank(b)||az(a.title,b.title));
+}
 class Component extends DCLogic {
 renderVals() {
-const groups=DOCS.map(group=>({...group,docs:group.docs.map(doc=>({...doc,soon:!doc.url}))}));
-return {groups};
+return {groups:docRows(DOCS)};
 }
 }
 </script>
