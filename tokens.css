@@ -21,6 +21,7 @@
 h2,h3,h4{color:var(--navy)} /* h1 sits on dark heroes and stays white */
 h1,h2,h3,.stat-num,.stat-big{font-family:var(--font-display);font-weight:600}
 .quote{font-family:var(--font-quote);font-weight:500;font-style:italic}
+.quote-cite{margin:24px 0 0;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85} /* scripture reference under a .quote */
 
 /* Footer, shared by every page */
 .footer{margin-top:96px;background:var(--blue);color:#fff;padding:56px 6vw 28px}
