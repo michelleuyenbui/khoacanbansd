@@ -28,7 +28,7 @@
 <body>
 <x-dc>
 <helmet>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&amp;family=Source+Sans+3:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Lora:ital,wght@1,500&amp;display=swap">
 <style>
 body{margin:0}
 a{color:inherit;text-decoration:none}
@@ -45,6 +45,7 @@ a{color:inherit;text-decoration:none}
 .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .lg-photo{display:block;background:linear-gradient(160deg,var(--page),var(--blue-tint));border-radius:16px;overflow:hidden}
 .lg-img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover} /* same 4:3 frame as the home page strip */
+.lg-detail:first-child{margin-top:0}
 .lg-detail{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:start;margin-top:32px;background:#fff;border-radius:24px;padding:40px;scroll-margin-top:24px}
 .lg-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0}
 .lg-facts dt{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-bright)}
@@ -80,7 +81,7 @@ a{color:inherit;text-decoration:none}
 </div>
 </header>
 
-<section id="chitiet" style="max-width:1200px;margin:0 auto;padding:40px 6vw 24px">
+<section class="section" id="chitiet" style="max-width:1200px;margin:0 auto">
 <article id="thanh-giuse" class="lg-detail">
 <div class="lg-photo"><img class="lg-img" src="./assets/liengia/thanh-giuse.jpg" alt="Ảnh Liên Gia Thánh Giuse" loading="lazy"></div>
 <div>

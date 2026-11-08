@@ -14,15 +14,20 @@
   --line:#E3E8F4;        /* borders and dividers */
   --line-strong:#7C86A8; /* form field borders */
   --text-placeholder:#6B7390; /* hint text inside form fields */
-  --font-display:'Lora',Georgia,serif;              /* headings, big numbers, scripture quote */
-  --font-body:'Source Sans 3',system-ui,sans-serif;  /* everything else */
+  --font-display:'Be Vietnam Pro',system-ui,sans-serif; /* headings and big numbers */
+  --font-body:'Be Vietnam Pro',system-ui,sans-serif;    /* everything else */
+  --font-quote:'Lora',Georgia,serif;                    /* scripture quote only, always italic */
+  --section-space:72px;  /* space above and below every section's content */
 }
 h2,h3,h4{color:var(--navy)} /* h1 sits on dark heroes and stays white */
-h1,h2,h3,.stat-num,.stat-big,.quote{font-family:var(--font-display);font-weight:600}
-.quote{font-style:italic}
+h1,h2,h3,.stat-num,.stat-big{font-family:var(--font-display);font-weight:600}
+/* Every page section: same space above and below, sections stack with no gaps */
+.section{padding:var(--section-space) 6vw}
+.quote{font-family:var(--font-quote);font-weight:500;font-style:italic}
+.quote-cite{margin:24px 0 0;font-size:14px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.85} /* scripture reference under a .quote */
 
 /* Footer, shared by every page */
-.footer{margin-top:96px;background:var(--blue);color:#fff;padding:56px 6vw 28px}
+.footer{background:var(--blue);color:#fff;padding:56px 6vw 28px}
 .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,max-content);justify-content:space-between;gap:40px 64px}
 .footer-brand{display:flex;gap:18px;align-items:flex-start}
 .footer-brand img{flex:none;width:72px;height:72px;border-radius:50%;background:#fff;display:block}
