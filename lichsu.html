@@ -43,6 +43,65 @@ a{color:inherit;text-decoration:none}
 .nav-toggle{display:none;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:0;border-radius:10px;background:transparent;color:var(--text-nav);cursor:pointer}
 .nav-toggle:focus-visible{outline:2px solid var(--blue-bright);outline-offset:2px}
 .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.doc-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:40px;align-items:start}
+.doc-jump{position:sticky;top:24px;display:flex;flex-direction:column;gap:2px;padding:20px;border-radius:20px;background:#fff}
+.doc-jump-h{margin:0 0 8px;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue-bright)}
+.doc-jump a{display:flex;justify-content:space-between;gap:12px;padding:7px 10px;border-radius:10px;font-size:16px;font-weight:600;line-height:1.35;color:var(--navy)}
+.doc-jump a:hover{background:var(--page)}
+.doc-group+.doc-group{margin-top:64px}
+.lead{margin:0 0 24px;font-size:18px;line-height:1.7;color:var(--text-body)}
+.sub-h{margin:0 0 16px;font-size:20px}
+.tl{position:relative;list-style:none;margin:0;padding:0}
+.tl::before{content:'';position:absolute;left:141px;top:12px;bottom:12px;width:2px;background:var(--line)}
+.tl li{position:relative;display:grid;grid-template-columns:120px minmax(0,1fr);gap:0 44px;padding-bottom:28px}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:'';position:absolute;left:135px;top:9px;width:10px;height:10px;border:2px solid #fff;border-radius:50%;background:var(--blue-bright)}
+.tl-when{text-align:right}
+.tl-year{display:block;font-family:var(--font-display);font-size:24px;font-weight:600;line-height:1.15;color:var(--blue)}
+.tl-day{display:block;margin-top:2px;font-size:14px;font-weight:600;line-height:1.3;color:var(--blue-bright)}
+.tl-what{display:block;padding-top:2px;font-size:17px;line-height:1.6;color:var(--text-body)}
+.tl-what b{color:var(--navy)}
+.tl-what a{color:var(--blue-bright);font-weight:600;text-decoration:underline}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{padding:22px 24px;border-radius:16px;background:var(--page)}
+.card-head{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.card .card-head h3{margin:0;font-size:18px}
+.card-icon{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--blue-tint)}
+.card-icon svg{width:24px;height:24px;fill:var(--blue-bright)}
+.card h3{margin:10px 0 6px;font-size:20px;line-height:1.3}
+.card p{margin:0;font-size:16px;line-height:1.6;color:var(--text-body)}
+.card-when{margin-top:10px !important;font-weight:700;color:var(--blue-bright) !important}
+.bio{display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;align-items:start}
+.bio-card{overflow:hidden;border-radius:18px;background:var(--page)}
+.bio-card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 25%}
+.facts{display:grid;gap:12px;margin:0;padding:18px 20px 20px}
+.facts dt{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-bright)}
+.facts dd{margin:2px 0 0;font-weight:600;line-height:1.35;color:var(--navy)}
+.crest-card{display:grid;place-items:center;border:1px solid var(--line);background:#fff}
+.crest-card img{display:block;width:min(200px,70%);height:auto}
+.card-num{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--blue-bright)}
+.note{margin:20px 0 0;font-size:16px;line-height:1.6;color:var(--text-muted)}
+.note a{color:var(--blue-bright);font-weight:600;text-decoration:underline}
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 36px}
+.num{padding:20px 22px;border-radius:16px;background:var(--page)}
+.num b{display:block;font-family:var(--font-display);font-size:44px;font-weight:600;line-height:1;color:var(--blue)}
+.num span{display:block;margin-top:8px;font-size:15px;font-weight:600;line-height:1.4;color:var(--text-body)}
+.term{overflow:hidden;border:1px solid var(--line);border-radius:14px}
+.term+.term{margin-top:10px}
+.term summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;list-style:none;cursor:pointer;font-size:18px;font-weight:700;color:var(--navy)}
+.term summary::-webkit-details-marker{display:none}
+.term summary:hover,.term[open] summary{background:var(--page)}
+.term summary:focus-visible{outline:2px solid var(--blue-bright);outline-offset:-2px}
+.term summary svg{flex:none;width:20px;height:20px;fill:none;stroke:var(--blue-bright);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .15s}
+.term[open] summary svg{transform:rotate(180deg)}
+.roster{margin:0;padding:4px 20px 12px}
+.roster div{display:grid;grid-template-columns:230px minmax(0,1fr);gap:12px;padding:9px 0;border-top:1px solid var(--line)}
+.roster div:first-child{border-top:0}
+.roster dt{font-size:15px;font-weight:600;color:var(--text-muted)}
+.roster dd{margin:0;font-weight:600;color:var(--navy)}
+@media (max-width:960px){.doc-layout{grid-template-columns:minmax(0,1fr);gap:24px}.doc-jump{position:static;flex-direction:row;flex-wrap:wrap;gap:8px;padding:0;background:transparent}.doc-jump-h{width:100%;margin:0}.doc-jump a{padding:6px 14px;border-radius:999px;background:#fff;font-size:15px}}
+@media (max-width:760px){.cards{grid-template-columns:minmax(0,1fr)}.bio{grid-template-columns:minmax(0,1fr);gap:24px}.bio-card{max-width:280px}.crest-card img{width:160px}.roster div{grid-template-columns:minmax(0,1fr);gap:0}}
+@media (max-width:640px){.doc-group+.doc-group{margin-top:48px}.nums{grid-template-columns:minmax(0,1fr);gap:10px}.num{display:flex;align-items:baseline;gap:14px}.num b{flex:none;font-size:34px}.num span{margin:0}.tl::before{left:6px}.tl li{display:block;padding:0 0 22px 30px}.tl li::before{left:0;top:7px}.tl-when{display:flex;align-items:baseline;gap:8px;text-align:left}.tl-year{font-size:20px}.tl-day{margin:0}.tl-what{font-size:16px}}
 @media (max-width:1180px){.navbar{gap:0 8px !important}.brandnav{display:contents !important}.navactions{gap:4px !important}.navactions>.lang{display:none}.navactions .btn{padding:9px 14px !important;font-size:14px !important}.nav-toggle{display:inline-flex}.nav{display:none !important;order:3;width:100%;flex-direction:column;gap:0 !important;margin-top:10px;border-top:1px solid var(--line);padding-top:4px;font-size:17px !important}[data-nav="open"] .nav{display:flex !important}.nav a{padding:12px 0}.nav-lang{display:inline-flex;align-self:flex-start;padding:12px 0;font-size:17px}.nav-lang:hover{background:transparent}[data-nav="open"] .nav-toggle .bars,.nav-toggle .close{display:none}[data-nav="open"] .nav-toggle .close{display:block}}
 @media (max-width:640px){.hero h1{font-size:34px !important}}
 </style>
@@ -66,20 +125,177 @@ a{color:inherit;text-decoration:none}
 </div>
 </header>
 
-<section id="lichsu" style="max-width:1200px;margin:0 auto;padding:72px 6vw 24px">
+<section class="section" id="lichsu" style="max-width:1200px;margin:0 auto">
+<div class="doc-layout">
+<nav class="doc-jump" aria-label="Mục lục">
+<p class="doc-jump-h">Mục lục</p>
+<a href="#khoi-nguon">Khởi Nguồn</a>
+<a href="#muc-dich">Bốn Mục Đích</a>
+<a href="#cha-sang-lap">Cha Sáng Lập</a>
+<a href="#huy-hieu">Ý Nghĩa Huy Hiệu</a>
+<a href="#san-diego">Tại San Diego</a>
+<a href="#sinh-hoat">Sinh Hoạt</a>
+<a href="#ban-thuong-vu">Ban Thường Vụ</a>
+</nav>
 <div class="doc-card">
-<sc-for list="{{ groups }}" as="group">
-<div class="doc-group" id="{{ group.id }}">
-<h2 class="doc-group-h">{{ group.title }}</h2>
-<div class="doc-table" role="list" aria-label="{{ group.title }}">
-<sc-for list="{{ group.docs }}" as="doc">
-<sc-if value="{{ doc.file }}"><div class="doc-row" role="listitem"><span><a class="doc-name" href="{{ doc.url }}" target="_blank" rel="noopener">{{ doc.title }}</a></span><span><a class="doc-dl" href="{{ doc.url }}" target="_blank" rel="noopener" download aria-label="Tải về {{ doc.title }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span class="doc-dl-text"><span class="lang-vi">Tải về</span><span class="lang-en">Download</span></span></a></span></div></sc-if>
-<sc-if value="{{ doc.link }}"><div class="doc-row" role="listitem"><span><a class="doc-name" href="{{ doc.url }}" target="{{ doc.target }}" rel="noopener">{{ doc.title }}</a></span><span><a class="doc-dl" href="{{ doc.url }}" target="{{ doc.target }}" rel="noopener" aria-label="Xem {{ doc.title }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span class="doc-dl-text"><span class="lang-vi">Xem</span><span class="lang-en">View</span></span></a></span></div></sc-if>
-<sc-if value="{{ doc.soon }}"><div class="doc-row" role="listitem"><span class="doc-name">{{ doc.title }}</span><span class="doc-soon">Sắp có</span></div></sc-if>
-</sc-for>
+
+<div class="doc-group" id="khoi-nguon">
+<h2 class="doc-group-h">Khởi Nguồn</h2>
+<p class="lead">Lịch sử gia đình là lịch sử tình thương. Khi tạo dựng con người, Thiên Chúa đã lập nên gia đình đầu tiên, và Chúa Kitô đã chọn sinh ra trong một gia đình để khởi đầu công cuộc cứu thế. Trước nguy cơ đổ vỡ của các gia đình trong trào lưu xã hội mới, Cha Phêrô Chu Minh Quang cùng với Giáo Hội thấy rằng xây dựng lại nền tảng gia đình là nhu cầu cấp thiết của thời đại.</p>
+<ol class="tl">
+<li><span class="tl-when"><span class="tl-year">1986</span><span class="tl-day">Tháng 9</span></span><span class="tl-what">Cha Phêrô Chu Minh Quang <b>sáng lập Chương Trình</b> tại Wichita, tiểu bang Kansas, áp dụng phương pháp cảm nghiệm vào lãnh vực tâm lý đạo đức gia đình.</span></li>
+<li><span class="tl-when"><span class="tl-year">1987</span><span class="tl-day">Ngày 13 tháng 6</span></span><span class="tl-what"><b>Khóa Căn Bản I</b> được mở tại đồi Marywood, Orange County, cùng với văn phòng Đạo Binh Hồn Nhỏ. Cha Giám Đốc Đỗ Thanh Hà công nhận đây là một sinh hoạt chính thức của Cộng Đồng.</span></li>
+<li><span class="tl-when"><span class="tl-year">1991</span><span class="tl-day">Tháng 12</span></span><span class="tl-what">Khóa 15, khóa đầu tiên tại Bắc California.</span></li>
+<li><span class="tl-when"><span class="tl-year">1994</span><span class="tl-day">Ngày 28 tháng 10</span></span><span class="tl-what">Đức Thánh Cha Gioan Phaolô II <b>ban phép lành và ký vào huy hiệu</b> của Chương Trình.</span></li>
+<li><span class="tl-when"><span class="tl-year">Nay</span></span><span class="tl-what">Chương Trình đã phát triển trên nhiều tiểu bang tại Hoa Kỳ và nhiều quốc gia trên khắp thế giới.</span></li>
+</ol>
+</div>
+
+<div class="doc-group" id="muc-dich">
+<h2 class="doc-group-h">Bốn Mục Đích</h2>
+<div class="cards">
+<div class="card"><div class="card-head"><div class="card-icon"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M80-160v-188q0-24 13-43.5t35-29.5l112-50v-80q0-23 12-41.5t32-29.5l156-78v-60h-40q-17 0-28.5-11.5T360-800q0-17 11.5-28.5T400-840h40v-40q0-17 11.5-28.5T480-920q17 0 28.5 11.5T520-880v40h40q17 0 28.5 11.5T600-800q0 17-11.5 28.5T560-760h-40v60l156 78q20 11 32 29.5t12 41.5v80l112 50q22 10 35 29.5t13 43.5v188q0 33-23.5 56.5T800-80H560q-17 0-28.5-11.5T520-120v-120q0-17-11.5-28.5T480-280q-17 0-28.5 11.5T440-240v120q0 17-11.5 28.5T400-80H160q-33 0-56.5-23.5T80-160Zm80 0h200v-82q0-51 35-86.5t85-35.5q50 0 85 35.5t35 86.5v82h200v-192l-160-72v-134l-160-82-160 82v134l-160 72v192Zm320-260q25 0 42.5-17.5T540-480q0-25-17.5-42.5T480-540q-25 0-42.5 17.5T420-480q0 25 17.5 42.5T480-420Zm0 20Z"/></svg></div><h3>Tăng thêm đạo đức bản thân</h3></div><p>Liên hệ giữa mình với Chúa: cảm nghiệm sâu xa sự hiện hữu của Chúa như Vua, như Cha và như Bạn trong đời sống.</p></div>
+<div class="card"><div class="card-head"><div class="card-icon"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M480-147q-14 0-28.5-5T426-168l-69-63q-106-97-191.5-192.5T80-634q0-94 63-157t157-63q53 0 100 22.5t80 61.5q33-39 80-61.5T660-854q94 0 157 63t63 157q0 115-85 211T602-230l-68 62q-11 11-25.5 16t-28.5 5Zm-38-543q-29-41-62-62.5T300-774q-60 0-100 40t-40 100q0 52 37 110.5T285.5-410q51.5 55 106 103t88.5 79q34-31 88.5-79t106-103Q726-465 763-523.5T800-634q0-60-40-100t-100-40q-47 0-80 21.5T518-690q-7 10-17 15t-21 5q-11 0-21-5t-17-15Zm38 189Z"/></svg></div><h3>Tăng thêm thông cảm vợ chồng</h3></div><p>Biết thực hành những điều cụ thể để vợ chồng dễ thông cảm, nhờ đó thương yêu và gần gũi nhau hơn.</p></div>
+<div class="card"><div class="card-head"><div class="card-icon"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="M720-720q-33 0-56.5-23.5T640-800q0-33 23.5-56.5T720-880q33 0 56.5 23.5T800-800q0 33-23.5 56.5T720-720Zm-40 600v-280q0-40-20.5-72T607-522l35-103q8-25 29.5-40t48.5-15q27 0 48.5 15t29.5 40l84 252q7 20-5.5 36.5T844-320h-44v200q0 17-11.5 28.5T760-80h-40q-17 0-28.5-11.5T680-120ZM500-500q-25 0-42.5-17.5T440-560q0-25 17.5-42.5T500-620q25 0 42.5 17.5T560-560q0 25-17.5 42.5T500-500ZM220-720q-33 0-56.5-23.5T140-800q0-33 23.5-56.5T220-880q33 0 56.5 23.5T300-800q0 33-23.5 56.5T220-720Zm-80 600v-240h-20q-17 0-28.5-11.5T80-400v-200q0-33 23.5-56.5T160-680h120q33 0 56.5 23.5T360-600v200q0 17-11.5 28.5T320-360h-20v240q0 17-11.5 28.5T260-80h-80q-17 0-28.5-11.5T140-120Zm300 0v-120q-17 0-28.5-11.5T400-280v-120q0-25 17.5-42.5T460-460h80q25 0 42.5 17.5T600-400v120q0 17-11.5 28.5T560-240v120q0 17-11.5 28.5T520-80h-40q-17 0-28.5-11.5T440-120Z"/></svg></div><h3>Tăng thêm phương pháp giáo dục con cái</h3></div><p>Liên hệ giữa cha mẹ và con cái: khi cha mẹ thay đổi với trái tim mới, con cái được gần gũi, cảm thông trong tình thương.</p></div>
+<div class="card"><div class="card-head"><div class="card-icon"><svg viewBox="0 -960 960 960" aria-hidden="true"><path d="m558-144 238-74q-5-9-14.5-15.5T760-240H558q-27 0-43-2t-33-8l-57-19q-16-5-23-20t-2-31q5-16 19.5-23.5T450-346l42 14q17 5 38.5 8t58.5 4h11q0-11-6.5-21T578-354l-234-86h-64v220l278 76Zm-21 78-257-72q-8 26-31.5 42T200-80h-80q-33 0-56.5-23.5T40-160v-280q0-33 23.5-56.5T120-520h224q7 0 14 1.5t13 3.5l235 87q33 12 53.5 42t20.5 66h80q50 0 85 33t35 87q0 22-11.5 34.5T833-145L583-67q-11 4-23 4t-23-3Zm-417-94h80v-280h-80v280Zm520-312q-15 0-29.5-5.5T584-494L474-602q-31-30-52.5-66.5T400-748q0-55 38.5-93.5T532-880q32 0 60 13.5t48 36.5q20-23 48-36.5t60-13.5q55 0 93.5 38.5T880-748q0 43-21 79.5T807-602L696-494q-12 11-26.5 16.5T640-472Zm0-80 109-107q19-19 35-40.5t16-48.5q0-22-15-37t-37-15q-14 0-26.5 5.5T700-778l-29 35q-12 14-31 14t-31-14l-29-35q-9-11-21.5-16.5T532-800q-22 0-37 15t-15 37q0 27 16 48.5t35 40.5l109 107Zm0-154Z"/></svg></div><h3>Tăng thêm hồn tông đồ song đôi</h3></div><p>Liên hệ với tha nhân: vợ chồng cùng một tấm lòng “thương yêu gần gũi bằng việc làm” để phục vụ bất cứ ai mình gặp.</p></div>
 </div>
 </div>
-</sc-for>
+
+<div class="doc-group" id="cha-sang-lap">
+<h2 class="doc-group-h">Cha Sáng Lập</h2>
+<div class="bio">
+<div class="bio-card">
+<img src="./assets/cha-sang-lap.jpg" alt="Cha Phêrô Chu Minh Quang, Dòng Tên">
+<dl class="facts">
+<div><dt>Linh mục</dt><dd>Phêrô Chu Minh Quang, Dòng Tên</dd></div>
+<div><dt>Sinh năm</dt><dd>1938, làng Thọ Ninh, Bắc Ninh</dd></div>
+<div><dt>Thụ phong</dt><dd>Năm 1968</dd></div>
+<div><dt>Chuyên môn</dt><dd>Tiến sĩ tâm lý hướng dẫn</dd></div>
+</dl>
+</div>
+<ol class="tl">
+<li><span class="tl-when"><span class="tl-year">1938</span></span><span class="tl-what">Chào đời tại làng Thọ Ninh, Bắc Ninh, là con út trong bốn người con trai của ông Phêrô Chu Quang Đại và bà Maria Nguyễn Thị Dự.</span></li>
+<li><span class="tl-when"><span class="tl-year">1949–1962</span></span><span class="tl-what">Đậu vào Chủng Viện An Tôn, Ninh Đạo Ngạn. Di cư vào Nam năm 1954 và tiếp tục học tại các chủng viện Bắc Ninh (Thủ Đức), Phanxicô Bùi Chu, Thánh Phaolô Phát Diệm, Xuân Bích và Đại Chủng Viện Lê Bảo Tịnh.</span></li>
+<li><span class="tl-when"><span class="tl-year">1962–1964</span></span><span class="tl-what">Bị động viên vào quân trường Thủ Đức, khóa 14, làm sĩ quan tâm lý chiến. Giải ngũ, thầy về Đại Chủng Viện Thánh Giuse, Sài Gòn, sinh hoạt với Đạo Binh Đức Mẹ, Thiếu Nhi Thánh Thể và Thanh Sinh Công.</span></li>
+<li><span class="tl-when"><span class="tl-year">1968</span></span><span class="tl-what"><b>Thụ phong linh mục.</b> Làm giáo sư chủng viện Thánh Quý, Cần Thơ, rồi hiệu trưởng trung học Phụng Sự, Phụng Hiệp.</span></li>
+<li><span class="tl-when"><span class="tl-year">1972</span><span class="tl-day">trở đi</span></span><span class="tl-what">Dạy tâm lý cho nhiều lớp 12 tại Thủ Đức và Gò Vấp, làm hiệu trưởng trung học Thánh Minh, Biên Hòa.</span></li>
+<li><span class="tl-when"><span class="tl-year">1975</span></span><span class="tl-what">Sang Hoa Kỳ. Cùng cha Đỗ Quang Biên và cha Nguyễn An Ninh tổ chức các trại Thanh Niên tại Nam và Bắc California.</span></li>
+<li><span class="tl-when"><span class="tl-year">1980</span><span class="tl-day">Ngày 15 tháng 8</span></span><span class="tl-what">Hoàn tất tiến sĩ tâm lý hướng dẫn, đúng ngày lễ Đức Mẹ Lên Trời.</span></li>
+<li><span class="tl-when"><span class="tl-year">1981</span></span><span class="tl-what">Vào Dòng Tên, giảng Linh Thao. Từ năm 1977 đến năm 1990 cha viết khoảng 150 bài báo, sau in thành 6 cuốn sách tâm lý.</span></li>
+<li><span class="tl-when"><span class="tl-year">1986–1987</span></span><span class="tl-what">Chuyên về tâm lý gia đình, <b>sáng lập Chương Trình Thăng Tiến Hôn Nhân Gia Đình</b> và mở Khóa Căn Bản I.</span></li>
+<li><span class="tl-when"><span class="tl-year">1991</span><span class="tl-day">trở đi</span></span><span class="tl-what">Tuyên úy sáng lập Hội Bảo Trợ Ơn Gọi Nữ Tu Việt Nam.</span></li>
+</ol>
+</div>
+</div>
+
+<div class="doc-group" id="huy-hieu">
+<h2 class="doc-group-h">Ý Nghĩa Huy Hiệu</h2>
+<div class="cards">
+<div class="card crest-card"><img src="./assets/logo.png" alt="Huy hiệu Chương Trình Thăng Tiến Hôn Nhân Gia Đình"></div>
+<div class="card"><div class="card-head"><span class="card-icon card-num">1</span><h3>Tình Yêu</h3></div><p>Tình yêu tuyệt đỉnh là Thiên Chúa Ba Ngôi. Ý nghĩa “Một mà Ba” hiện ra qua nhiều con số ba: ba cạnh, ba góc, ba vòng tròn, ba hình như những cánh tay vươn lên.</p></div>
+<div class="card"><div class="card-head"><span class="card-icon card-num">2</span><h3>Khiêm Nhường</h3></div><p>Năm phần đối xứng tượng trưng cho mười cánh tay chắp lại, phủ phục van nài, vì nhận mình là “tro bụi và trở về tro bụi” (St 3:19).</p></div>
+<div class="card"><div class="card-head"><span class="card-icon card-num">3</span><h3>Quây Quần Hợp Nhất</h3></div><p>Năm phần luân chuyển ba màu vàng, đỏ, trắng, như những cánh tay khác màu da, phong tục, nhưng khắng khít bên nhau, cùng hướng về Thánh Giá Tình Yêu. Đó là bầu khí tin cậy, cởi mở.</p></div>
+<div class="card"><div class="card-head"><span class="card-icon card-num">4</span><h3>Thông Cảm</h3></div><p>Ba vòng tròn thông nhau, “không có đường chỉ ngăn cách” (Ga 19:23). Hai vòng giữa bằng nhau để nói sự tương kính; vòng thứ ba bị lem nhưng nằm ở trên, nhắc “chớ khinh dể một người nào” (Mt 18:10).</p></div>
+<div class="card"><div class="card-head"><span class="card-icon card-num">5</span><h3>Đau Khổ Tiến Tới Vinh Quang</h3></div><p>Thánh Giá ngự giữa huy hiệu: Chúa đã chịu chết nhưng sống lại trong vinh quang, nhắc mỗi người vững lòng tin khi gặp thử thách.</p></div>
+<div class="card"><div class="card-head"><span class="card-icon card-num">6</span><h3>Bình An Nhân Loại</h3></div><p>Ba chữ dưới huy hiệu: <b>Song An</b> là bình an giữa thể xác và tâm hồn, nhất là với Thiên Chúa; <b>Song Hòa</b> là hòa với tha nhân; <b>Peace</b> ở giữa nói lên tình liên đới nhân loại.</p></div>
+<div class="card"><div class="card-head"><span class="card-icon card-num">7</span><h3>Tông Đồ Song Đôi</h3></div><p>Mười ngôi sao làm nền: Mười Điều Răn tóm lại trong Kính Chúa, Yêu Người, và Sáu Điều Răn Hội Thánh (hai cặp ba ngôi sao). Các ngôi sao xếp thành từng cặp, từng đôi.</p></div>
+</div>
+</div>
+
+<div class="doc-group" id="san-diego">
+<h2 class="doc-group-h">Tại Giáo Phận San Diego</h2>
+<p class="lead">Chương Trình tại San Diego hình thành cùng lúc với các giáo phận miền Nam California như Los Angeles, San Bernardino và Orange, khi Cha Sáng Lập ra mắt Chương Trình qua những khóa căn bản đầu tiên.</p>
+<div class="nums">
+<div class="num"><b>17</b><span>cặp dự khóa căn bản đầu tiên năm 1987, có cả San Diego</span></div>
+<div class="num"><b>51</b><span>cặp dự khóa #435 tại San Diego năm 2009, nhiều cặp trẻ</span></div>
+<div class="num"><b>~318</b><span>cặp song nguyền của Giáo Phận San Diego đến nay</span></div>
+</div>
+<ol class="tl">
+<li><span class="tl-when"><span class="tl-year">1987</span><span class="tl-day">Ngày 13 tháng 6</span></span><span class="tl-what">Các cặp từ San Diego dự <b>Khóa Căn Bản đầu tiên</b> tại đồi Marywood, Orange County.</span></li>
+<li><span class="tl-when"><span class="tl-year">1989</span><span class="tl-day">Ngày 1 tháng 6</span></span><span class="tl-what">Thành lập <b>Ban Điều Hành đầu tiên</b> của Giáo Phận San Diego.</span></li>
+<li><span class="tl-when"><span class="tl-year">1998</span><span class="tl-day">Tháng 1</span></span><span class="tl-what">Ban Điều Hành Trung Ương có hai thành viên từ San Diego: Cha Giuse Lại Văn Đoàn (Phó Tổng Linh Nguyền) và SN Bảo – Phước (Phó Chủ Nguyền Trung Ương). Song nguyền San Diego đi trợ nguyền các khóa căn bản khắp Hoa Kỳ, Âu Châu, Úc Châu và Canada.</span></li>
+<li><span class="tl-when"><span class="tl-year">2000</span><span class="tl-day">Tháng 10</span></span><span class="tl-what">Đã có 4 linh mục và hơn 200 cặp song nguyền tham dự khóa căn bản, cùng nhiều khóa tu nguyền do Cha Sáng Lập hướng dẫn.</span></li>
+<li><span class="tl-when"><span class="tl-year">2002</span></span><span class="tl-what">Khóa XXIV với 24 cặp (tháng 4) và khóa căn bản #210 (tháng 7). Mỗi cộng đoàn có 5 hay 6 liên gia, khoảng 25 liên gia trong toàn Chương Trình. Vài năm sau, số liên gia giảm dần rồi gần như ngưng hoạt động.</span></li>
+<li><span class="tl-when"><span class="tl-year">2009</span><span class="tl-day">Ngày 1 tháng 8</span></span><span class="tl-what">Bầu lại Ban Điều Hành sau 20 năm.</span></li>
+<li><span class="tl-when"><span class="tl-year">2009</span><span class="tl-day">Ngày 4–6 tháng 12</span></span><span class="tl-what"><b>Khóa căn bản #435</b> tại cộng đoàn Chúa Thánh Linh với 51 cặp, nhiều cặp thuộc giới trẻ.</span></li>
+<li><span class="tl-when"><span class="tl-year">2010</span><span class="tl-day">Tháng 3</span></span><span class="tl-what"><b>Các liên gia được thành lập lại</b>, khởi đầu với Liên Gia Thánh Giuse. <a href="liengia.html">Xem các Liên Gia</a></span></li>
+<li><span class="tl-when"><span class="tl-year">2015</span><span class="tl-day">Ngày 21–23 tháng 8</span></span><span class="tl-what">San Diego gửi 8 cặp dự khóa căn bản #634 do Giáo Phận Orange tổ chức.</span></li>
+<li><span class="tl-when"><span class="tl-year">2015</span><span class="tl-day">Ngày 10 tháng 10</span></span><span class="tl-what">Hội thảo gia đình “Trái Tim Yêu Thương Trong Gia Đình” tại hội trường cộng đoàn Chúa Thánh Linh, mở cho cả người trong và ngoài Chương Trình.</span></li>
+<li><span class="tl-when"><span class="tl-year">2017</span><span class="tl-day">Ngày 10 tháng 2</span></span><span class="tl-what">Cha Giuse Đỗ Quang Minh được Cha Sáng Lập và Cha Linh Nguyền bổ nhiệm làm Phó Linh Nguyền.</span></li>
+</ol>
+</div>
+
+<div class="doc-group" id="sinh-hoat">
+<h2 class="doc-group-h">Sinh Hoạt</h2>
+<div class="cards">
+<div class="card"><h3>Họp Ban Điều Hành</h3><p>Ban Điều Hành là cái đầu, là con tim của Chương Trình, họp định kỳ luân phiên tại tư gia các thành viên.</p><p class="card-when">Mỗi tháng một lần</p></div>
+<div class="card"><h3>Họp Song Nguyền</h3><p>Các song nguyền gặp nhau chia sẻ Lời Chúa và cầu nguyện, cảm nghiệm mình được nâng đỡ và cũng nâng đỡ nhiều người.</p><p class="card-when">Chúa Nhật cuối tháng</p></div>
+<div class="card"><h3>Họp Liên Gia</h3><p>Liên gia là đơn vị cốt yếu, là gia đình thứ hai, nơi mỗi người được sống trong tin cậy, cởi mở như ruột thịt.</p><p class="card-when">Hằng tháng</p></div>
+<div class="card"><h3>Sinh Hoạt Hằng Năm</h3><p>Dịp để mọi song nguyền trở về với Chương Trình: Lễ Bổn Mạng Thánh Gia Thất, Tiệc Tất Niên – Tân Niên và Picnic hè.</p><p class="card-when">Picnic cuối tháng 8</p></div>
+</div>
+</div>
+
+<div class="doc-group" id="ban-thuong-vu">
+<h2 class="doc-group-h">Ban Thường Vụ Qua Các Nhiệm Kỳ</h2>
+<details class="term" open><summary>Nhiệm kỳ 2023–2026<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><dl class="roster">
+<div><dt>Cha Linh Nguyền</dt><dd>Giuse Đỗ Quang Minh</dd></div>
+<div><dt>Chủ Nguyền</dt><dd>SN Dương – Mai</dd></div>
+<div><dt>Phó Nguyền Nội Vụ</dt><dd>SN Chính – Lan</dd></div>
+<div><dt>Phó Nguyền Ngoại Vụ</dt><dd>SN Hoàng – Sương</dd></div>
+<div><dt>Phụ Tá Giám Nguyền Nội Dung</dt><dd>SN Hiền – Cúc</dd></div>
+<div><dt>Trưởng Ban Song Nguyền</dt><dd>SN Vượng – Thủy</dd></div>
+<div><dt>Trưởng Ban Liên Gia</dt><dd>SN Hòa – Trang</dd></div>
+<div><dt>Trưởng Ban Tài Chánh</dt><dd>SN Tuấn – Sương</dd></div>
+<div><dt>Ký Nguyền</dt><dd>SN Hà – Định</dd></div>
+<div><dt>Quỹ Nguyền</dt><dd>SN Thăng – Kim</dd></div>
+</dl></details>
+<details class="term"><summary>Nhiệm kỳ 2019–2022<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><dl class="roster">
+<div><dt>Cha Linh Nguyền</dt><dd>Giuse Đỗ Quang Minh</dd></div>
+<div><dt>Chủ Nguyền</dt><dd>SN Chính – Lan</dd></div>
+<div><dt>Phó Nguyền Nội Vụ</dt><dd>SN Dương – Mai</dd></div>
+<div><dt>Phó Nguyền Ngoại Vụ</dt><dd>SN Hoàng – Sương</dd></div>
+<div><dt>Phụ Tá Giám Nguyền Nội Dung</dt><dd>SN Hiền – Cúc</dd></div>
+<div><dt>Trưởng Ban Song Nguyền</dt><dd>SN Sâm – Huyền</dd></div>
+<div><dt>Trưởng Ban Liên Gia</dt><dd>SN Hòa – Trang / SN Thăng – Kim</dd></div>
+<div><dt>Trưởng Ban Tài Chánh</dt><dd>SN Bảo – Hoa</dd></div>
+<div><dt>Ký Nguyền</dt><dd>SN Hà – Định</dd></div>
+<div><dt>Quỹ Nguyền</dt><dd>SN Tùng – Mai</dd></div>
+</dl></details>
+<details class="term"><summary>Nhiệm kỳ 2016–2019<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><dl class="roster">
+<div><dt>Cha Linh Nguyền</dt><dd>Giuse Lại Văn Đoàn / Giuse Đỗ Quang Minh</dd></div>
+<div><dt>Chủ Nguyền</dt><dd>SN Vượng – Thủy</dd></div>
+<div><dt>Phó Nguyền Nội Vụ</dt><dd>SN Dương – Mai</dd></div>
+<div><dt>Phó Nguyền Ngoại Vụ</dt><dd>SN Sâm – Huyền</dd></div>
+<div><dt>Phụ Tá Giám Nguyền Nội Dung</dt><dd>SN Hiền – Cúc</dd></div>
+<div><dt>Trưởng Ban Song Nguyền</dt><dd>SN Chính – Lan</dd></div>
+<div><dt>Trưởng Ban Liên Gia</dt><dd>SN Hòa – Trang</dd></div>
+<div><dt>Ký Nguyền</dt><dd>SN Hoàng – Sương</dd></div>
+<div><dt>Quỹ Nguyền</dt><dd>SN Thăng – Kim</dd></div>
+</dl></details>
+<details class="term"><summary>Nhiệm kỳ 2006–2016<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><dl class="roster">
+<div><dt>Cha Linh Nguyền</dt><dd>Giuse Lại Văn Đoàn</dd></div>
+<div><dt>Chủ Nguyền</dt><dd>SN Đoàn – Châu</dd></div>
+<div><dt>Phó Nguyền Nội Vụ</dt><dd>SN Bảo – Phước</dd></div>
+<div><dt>Phó Nguyền Ngoại Vụ</dt><dd>SN Ninh – Hữu</dd></div>
+<div><dt>Trưởng Ban Song Nguyền</dt><dd>SN Định – Chi</dd></div>
+<div><dt>Trưởng Ban Liên Gia</dt><dd>SN Tốn – Oanh</dd></div>
+<div><dt>Ký Nguyền</dt><dd>SN Quang – Hương / SN Ngân – Thoa</dd></div>
+<div><dt>Quỹ Nguyền</dt><dd>SN Thảo – Nhung / SN Hổ – Liên / SN Phương – Mai / SN Nghĩa – Lan</dd></div>
+</dl></details>
+<details class="term"><summary>Tiên khởi, năm 1989<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><dl class="roster">
+<div><dt>Cha Linh Nguyền</dt><dd>Giuse Đỗ Quang Biên</dd></div>
+<div><dt>Chủ Nguyền</dt><dd>SN Bảo – Phước</dd></div>
+<div><dt>Phó Nguyền Nội Vụ</dt><dd>SN Đoàn – Châu</dd></div>
+<div><dt>Phó Nguyền Ngoại Vụ</dt><dd>SN Nhiễm – Bổn</dd></div>
+<div><dt>Trưởng Ban Song Nguyền</dt><dd>SN Định – Chi</dd></div>
+<div><dt>Trưởng Ban Liên Gia</dt><dd>SN Tốn – Oanh</dd></div>
+<div><dt>Ký Nguyền</dt><dd>SN Hổ – Liên</dd></div>
+<div><dt>Quỹ Nguyền</dt><dd>SN Sơn – Loan</dd></div>
+</dl></details>
+<p class="note">Ban Điều Hành nhiệm kỳ 2026–2028 hiện nay: <a href="about.html#bandieuhanh">xem trang Tổ Chức</a>.</p>
+</div>
+
+</div>
 </div>
 </section>
 
@@ -98,34 +314,8 @@ a{color:inherit;text-decoration:none}
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1800}}'>
-// Add documents here. Put the file in files/ and its path in `url`, e.g.
-// 'files/lich-su/tieu-su-cha-sang-lap.pdf'. While `url` is empty the row shows "Sắp có".
-const DOCS = [
-{title:'Lịch Sử & Cha Sáng Lập',id:'lich-su',docs:[
-{title:'Lịch Sử và Mục Đích Của Chương Trình Thăng Tiến Hôn Nhân Gia Đình',url:'files/lich-su/lich-su-va-muc-dich.pdf'},
-{title:'Lịch Sử Của Chương Trình Thăng Tiến Hôn Nhân Gia Đình tại GP San Diego',url:'files/lich-su/lich-su-gp-san-diego.pdf'},
-{title:'Tiểu Sử Cha Sáng Lập',url:'files/lich-su/tieu-su-cha-sang-lap.pdf'},
-{title:'Ý Nghĩa Huy Hiệu của Chương Trình',url:'files/lich-su/y-nghia-huy-hieu.pdf'},
-{title:'Ban Thường Vụ (1989–2023)',url:'files/lich-su/ban-thuong-vu-1989-2023.pdf'},
-]},
-];
-// Turns DOCS into what the tables show: a download button for files, a view button
-// for pages, and "Sắp có" while `url` is empty. Groups and their rows are sorted A–Z,
-// except that a Hướng Dẫn group comes first and Đề Tài Khác last.
-function docRows(groups){
-const az=new Intl.Collator('vi').compare;
-const rank=g=>g.id==='huong-dan'?0:g.id==='de-tai-khac'?2:1;
-return groups.map(group=>({...group,docs:group.docs.map(doc=>{
-const url=doc.url||'';
-const external=/^https?:/.test(url);
-const file=/\.(pdf|docx?)$/i.test(url);
-return {...doc,file,link:!!url&&!file,soon:!url,target:external?'_blank':'_self'};
-}).sort((a,b)=>az(a.title,b.title))})).sort((a,b)=>rank(a)-rank(b)||az(a.title,b.title));
-}
 class Component extends DCLogic {
-renderVals() {
-return {groups:docRows(DOCS)};
-}
+renderVals() { return {}; }
 }
 </script>
 <script>
