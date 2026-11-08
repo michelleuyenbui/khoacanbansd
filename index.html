@@ -93,15 +93,14 @@
 			.faq-a ol{margin-top:8px;padding-left:22px}
 			@media (max-width:1180px){.navbar{gap:0 8px !important}.brandnav{display:contents !important}.navactions{gap:4px !important}.navactions>.lang{display:none}.navactions .btn{padding:9px 14px !important;font-size:14px !important}.nav-toggle{display:inline-flex}.nav{display:none !important;order:3;width:100%;flex-direction:column;gap:0 !important;margin-top:10px;border-top:1px solid var(--line);padding-top:4px;font-size:17px !important}[data-nav="open"] .nav{display:flex !important}.nav a{padding:12px 0}.nav-lang{display:inline-flex;align-self:flex-start;padding:12px 0;font-size:17px}.nav-lang:hover{background:transparent}[data-nav="open"] .nav-toggle .bars,.nav-toggle .close{display:none}[data-nav="open"] .nav-toggle .close{display:block}}
 			@media (max-width:640px){.quote{font-size:23px !important}.stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:28px 16px !important}.stat-num{font-size:34px !important}}
-			
-			/* ===== COPY FROM HERE: photo strip styles (put inside your <style>) ===== */
+			/* Liên Gia photo strip */
 		  .lg-strip {
 		    --lg-speed: 45s;            /* bigger number = slower scroll */
 		    --lg-card-w: 300px;
 		    --lg-gap: 20px;
 		    position: relative;
 		    overflow: hidden;
-		    padding: 32px 0 48px;
+		    padding: 12px 0 24px; /* room for the hover lift and card shadow */
 		    /* soft fade on the left and right edges */
 		    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 		            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
@@ -110,6 +109,7 @@
 		    display: flex;
 		    gap: var(--lg-gap);
 		    width: max-content;
+		    align-items: flex-start;
 		    animation: lg-scroll var(--lg-speed) linear infinite;
 		  }
 		  .lg-strip:hover .lg-track,
@@ -128,11 +128,9 @@
 		    background: var(--navy, #1b2a4e);
 		    color: #fff;
 		    text-decoration: none;
-		    box-shadow: 0 10px 28px rgba(27, 42, 78, .14);
+		    box-shadow: 0 6px 16px rgba(27, 42, 78, .14);
 		    transition: transform .35s ease, box-shadow .35s ease;
 		  }
-		  /* every other card sits a little lower, for a gentle wave */
-		  .lg-card:nth-child(even) { margin-top: 28px; }
 		  .lg-card img {
 		    position: absolute; inset: 0;
 		    width: 100%; height: 100%;
@@ -143,17 +141,18 @@
 		    content: ""; position: absolute; inset: 0;
 		    background: linear-gradient(to top, rgba(10, 20, 45, .8) 0%, rgba(10, 20, 45, .2) 45%, transparent 70%);
 		  }
-		  .lg-card span {
+		  .lg-card > span {
 		    position: absolute; left: 18px; right: 18px; bottom: 16px; z-index: 1;
 		    font-size: 18px; font-weight: 700; line-height: 1.3;
+		    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 		  }
-		  .lg-card:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(27, 42, 78, .22); }
+		  .lg-card:hover { transform: translateY(-6px); box-shadow: 0 12px 20px rgba(27, 42, 78, .2); }
 		  .lg-card:hover img { transform: scale(1.06); }
 		  .lg-card:focus-visible { outline: 3px solid var(--blue-bright, #2a63c4); outline-offset: 3px; }
 		
 		  @media (max-width: 640px) {
 		    .lg-strip { --lg-card-w: 220px; --lg-gap: 14px; --lg-speed: 35s; }
-		    .lg-card span { font-size: 15px; left: 14px; bottom: 12px; }
+		    .lg-card > span { font-size: 14px; left: 14px; right: 14px; bottom: 12px; }
 		  }
 		  /* visitors who turn off motion get a strip they can swipe instead */
 		  @media (prefers-reduced-motion: reduce) {
@@ -161,7 +160,6 @@
 		    .lg-track { animation: none; }
 		    .lg-track [aria-hidden="true"] { display: none; }
 		  }
-		  /* ===== END photo strip styles ===== */
 		</style>
 	</helmet>
 	<div style="width:100%;font-family:var(--font-body);font-size:18px;color:var(--text);background:var(--page);line-height:1.6">
@@ -297,35 +295,26 @@
 			</div>
 	</section>
 
-	<!-- ===== COPY FROM HERE: photo strip HTML (put right under your "Bảy Liên Gia, một gia đình" heading) ===== -->
-<section id="dangky" style="background:linear-gradient(90deg,var(--white),var(--white-light));padding:72px 6vw">
+	<section id="liengia" style="margin-top:72px;background:#fff;padding:72px 6vw 48px">
 	<div style="max-width:1200px;margin:0 auto">
-	<p style="margin:0 0 8px;color:var(--blue);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase">Liên Gia San Diego </p>
-	<h2 style="margin:0 0 32px;font-size:36px;line-height:1.2;color: var(--navy)">Bảy Liên Gia, một gia đình</h2>
-	
+	<p style="margin:0 0 8px;color:var(--blue-bright);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase">Liên Gia San Diego</p>
+	<h2 style="margin:0 0 20px;font-size:36px;line-height:1.2;color:var(--navy)">Bảy Liên Gia, một gia đình</h2>
 	</div>
 
-<section class="lg-strip" aria-label="Hình ảnh các Liên Gia">
+<div class="lg-strip" role="region" aria-label="Hình ảnh các Liên Gia">
   <div class="lg-track">
-    <a class="lg-card" href="https://photos.app.goo.gl/gJ67iJKoEyLvdUiU8" target="_blank" rel="noopener">
-      <img src="assets/liengia/thanh-giuse.jpg" alt="Liên Gia Thánh Giuse"><span>Liên Gia Thánh Giuse</span></a>
-    <a class="lg-card" href="https://photos.app.goo.gl/QEoz9844meetfo896" target="_blank" rel="noopener">
-      <img src="assets/liengia/duc-me-la-vang.jpg" alt="Liên Gia Đức Mẹ La Vang"><span>Liên Gia Đức Mẹ La Vang</span></a>
-    <a class="lg-card" href="https://photos.app.goo.gl/CMs5yneNQ9wQntN46" target="_blank" rel="noopener">
-      <img src="assets/liengia/thanh-gh-gioan-phaolo.jpg" alt="Liên Gia Thánh GH Gioan Phaolô II"><span>Liên Gia Thánh GH Gioan Phaolô II</span></a>
-    <a class="lg-card" href="https://photos.app.goo.gl/iaeKRgSQgkrQsRHx6" target="_blank" rel="noopener">
-      <img src="assets/liengia/thanh-teresa.jpg" alt="Liên Gia Thánh Têrêsa"><span>Liên Gia Thánh Têrêsa</span></a>
-    <a class="lg-card" href="https://photos.app.goo.gl/V4zjV2Cy93pNqT1R7" target="_blank" rel="noopener">
-      <img src="assets/liengia/thanh-tam-giuse.jpg" alt="Liên Gia Thánh Tâm Giuse"><span>Liên Gia Thánh Tâm Giuse</span></a>
-    <a class="lg-card" href="https://photos.app.goo.gl/Z2zh9PKu4GkVgB7o8" target="_blank" rel="noopener">
-      <img src="assets/liengia/duc-me-hang-cuu-giup.jpg" alt="Liên Gia Đức Mẹ Hằng Cứu Giúp"><span>Liên Gia Đức Mẹ Hằng Cứu Giúp</span></a>
-    <a class="lg-card" href="https://photos.app.goo.gl/bbarMvqCnkgETSrr6" target="_blank" rel="noopener">
-      <img src="assets/liengia/duc-me-fatima.jpg" alt="Liên Gia Đức Mẹ Fatima"><span>Liên Gia Đức Mẹ Fatima</span></a>
+    <sc-for list="{{ lienGia }}" as="lg">
+      <a class="lg-card" href="{{ lg.link }}" target="_blank" rel="noopener"><img src="{{ lg.photo }}" alt="{{ lg.alt }}"><span>{{ lg.name }}</span></a>
+    </sc-for>
+    <!-- Second copy so the strip loops from the last card straight back to the first -->
+    <sc-for list="{{ lienGia }}" as="lg">
+      <a class="lg-card" href="{{ lg.link }}" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="{{ lg.photo }}" alt=""><span>{{ lg.name }}</span></a>
+    </sc-for>
   </div>
-</section>
-<!-- ===== END photo strip HTML ===== -->
+</div>
+	</section>
 
-	<footer id="lienlac" class="footer">
+	<footer id="lienlac" class="footer" style="margin-top:0">
 	<div class="footer-inner">
 	<div class="footer-brand">
 	<a href="#home"><img src="./assets/logo.png" alt="Logo CTTTHNGĐ"></a>
@@ -353,6 +342,16 @@
 	];
 	// The next Khóa Căn Bản. `date` is the first day, `end` the last; after `end` the
 	// section says the next date is coming soon until this is updated.
+	// The seven Liên Gia in the photo strip. `link` is the family's Google Photos album.
+	const LIEN_GIA = [
+	{name:'Thánh Giuse',photo:'assets/liengia/thanh-giuse.jpg',link:'https://photos.app.goo.gl/gJ67iJKoEyLvdUiU8'},
+	{name:'Đức Mẹ La Vang',photo:'assets/liengia/duc-me-la-vang.jpg',link:'https://photos.app.goo.gl/QEoz9844meetfo896'},
+	{name:'Thánh GH Gioan Phaolô II',photo:'assets/liengia/thanh-gh-gioan-phaolo.jpg',link:'https://photos.app.goo.gl/CMs5yneNQ9wQntN46'},
+	{name:'Thánh Têrêsa',photo:'assets/liengia/thanh-teresa.jpg',link:'https://photos.app.goo.gl/iaeKRgSQgkrQsRHx6'},
+	{name:'Thánh Tâm Giuse',photo:'assets/liengia/thanh-tam-giuse.jpg',link:'https://photos.app.goo.gl/V4zjV2Cy93pNqT1R7'},
+	{name:'Đức Mẹ Hằng Cứu Giúp',photo:'assets/liengia/duc-me-hang-cuu-giup.jpg',link:'https://photos.app.goo.gl/Z2zh9PKu4GkVgB7o8'},
+	{name:'Đức Mẹ Fatima',photo:'assets/liengia/duc-me-fatima.jpg',link:'https://photos.app.goo.gl/bbarMvqCnkgETSrr6'},
+	];
 	const NEXT_CLASS = {date:'2027-10-29',end:'2027-10-31',dates:'Thứ Sáu ngày 29 – Chúa Nhật ngày 31 tháng 10 năm 2027',when:'5:00 PM Thứ Sáu – 5:00 PM Chúa Nhật',place:'Mission San Luis Rey Retreat Center',address:'4050 Mission Ave., Oceanside, CA 92057',map:'https://www.google.com/maps/search/?api=1&query=4050+Mission+Ave+Oceanside+CA+92057'};
 	class Component extends DCLogic {
 	renderVals() {
@@ -370,7 +369,7 @@
 	const faqDates=nextClass
 	? 'Khóa sẽ bắt đầu từ chiều thứ Sáu ngày '+Number(cd)+(cm===em?'':' tháng '+Number(cm))+' đến Chúa Nhật ngày '+Number(ed)+' tháng '+Number(em)+' năm '+ey+'.'
 	: 'Ngày khóa kế tiếp sẽ được cập nhật sớm.';
-	return {upcoming,past,noUpcoming:upcoming.length===0,nextClass,noNextClass:!nextClass,faqDates,faqPlace:NEXT_CLASS};
+	return {lienGia:LIEN_GIA.map(lg=>({...lg,alt:'Liên Gia '+lg.name})),upcoming,past,noUpcoming:upcoming.length===0,nextClass,noNextClass:!nextClass,faqDates,faqPlace:NEXT_CLASS};
 	}
 	}
 	</script>
@@ -385,20 +384,5 @@
 	},50);
 	});
 	</script>
-<!-- ===== COPY FROM HERE: photo strip script (put just before </body>) ===== -->
-<script>
-/* Copies the photos once so the strip loops forever with no gap. */
-document.querySelectorAll(".lg-track").forEach(function (track) {
-  Array.from(track.children).forEach(function (card) {
-    var copy = card.cloneNode(true);
-    copy.setAttribute("aria-hidden", "true");
-    copy.setAttribute("tabindex", "-1");
-    track.appendChild(copy);
-  });
-});
-</script>
-<!-- ===== END photo strip script ===== -->
- 
-	
 </body>
 </html>
