@@ -1,284 +1,388 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CTTTHNGĐ San Diego</title>
-<meta name="description" content="Chương Trình Thăng Tiến Hôn Nhân Gia Đình, Giáo Phận San Diego: Khóa Căn Bản cuối tuần giúp các đôi vợ chồng xây dựng hôn nhân vững bền và gia đình hạnh phúc.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="CTTTHNGĐ San Diego">
-<meta property="og:locale" content="vi_VN">
-<meta property="og:title" content="CTTTHNGĐ San Diego">
-<meta property="og:description" content="Chương Trình Thăng Tiến Hôn Nhân Gia Đình, Giáo Phận San Diego: Khóa Căn Bản cuối tuần giúp các đôi vợ chồng xây dựng hôn nhân vững bền và gia đình hạnh phúc.">
-<meta property="og:url" content="https://khoacanbansd.org/">
-<meta property="og:image" content="https://khoacanbansd.org/assets/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Chương Trình Thăng Tiến Hôn Nhân Gia Đình – Giáo Phận San Diego">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="./tokens.css">
-<link rel="icon" type="image/png" href="./assets/logo.png">
-<script src="./vendor/react.js"></script>
-<script src="./vendor/react-dom.js"></script>
-<script src="./support.js"></script>
-<script src="./lang-toggle.js"></script>
-<script src="./nav-toggle.js"></script>
-<script src="./email-copy.js"></script>
-<script src="./hero-sky.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>CTTTHNGĐ San Diego</title>
+	<meta name="description" content="Chương Trình Thăng Tiến Hôn Nhân Gia Đình, Giáo Phận San Diego: Khóa Căn Bản cuối tuần giúp các đôi vợ chồng xây dựng hôn nhân vững bền và gia đình hạnh phúc.">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="CTTTHNGĐ San Diego">
+	<meta property="og:locale" content="vi_VN">
+	<meta property="og:title" content="CTTTHNGĐ San Diego">
+	<meta property="og:description" content="Chương Trình Thăng Tiến Hôn Nhân Gia Đình, Giáo Phận San Diego: Khóa Căn Bản cuối tuần giúp các đôi vợ chồng xây dựng hôn nhân vững bền và gia đình hạnh phúc.">
+	<meta property="og:url" content="https://khoacanbansd.org/">
+	<meta property="og:image" content="https://khoacanbansd.org/assets/og-image.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="Chương Trình Thăng Tiến Hôn Nhân Gia Đình – Giáo Phận San Diego">
+	<meta name="twitter:card" content="summary_large_image">
+	<link rel="stylesheet" href="./tokens.css">
+	<link rel="icon" type="image/png" href="./assets/logo.png">
+	<script src="./vendor/react.js"></script>
+	<script src="./vendor/react-dom.js"></script>
+	<script src="./support.js"></script>
+	<script src="./lang-toggle.js"></script>
+	<script src="./nav-toggle.js"></script>
+	<script src="./email-copy.js"></script>
+	<script src="./hero-sky.js"></script>
 </head>
 <body>
-<x-dc>
-<helmet>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&amp;family=Source+Sans+3:wght@400;500;600;700;800&amp;display=swap">
-<style>
-body{margin:0}
-a{color:inherit;text-decoration:none}
-.nav a:hover{color:var(--blue-bright)}
-.btn:hover{filter:brightness(1.08)}
-.lang{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:0;border-radius:999px;background:transparent;color:var(--text-nav);font:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:background .15s}
-.lang:hover{background:var(--line)}
-.lang:focus-visible{outline:2px solid var(--blue-bright);outline-offset:2px}
-.lang-en,[data-lang="en"] .lang-vi{display:none}
-[data-lang="en"] .lang-en{display:inline}
-.nav-lang{display:none}
-.nav-toggle{display:none;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:0;border-radius:10px;background:transparent;color:var(--text-nav);cursor:pointer}
-.nav-toggle:focus-visible{outline:2px solid var(--blue-bright);outline-offset:2px}
-/* Shades only behind the title so the rest of the sky stays light */
-.hero-shade{background:linear-gradient(90deg,rgba(10,30,70,.5) 0%,rgba(10,30,70,.3) 45%,rgba(10,30,70,0) 80%)}
-.hero-inner{position:relative;max-width:1200px;margin:0 auto;}
-.hero-inner h1,.hero-sub{text-shadow:0 1px 14px rgba(10,30,70,.35)}
-.hero-sub{margin:16px 0 0;font-size:22px;font-weight:600}
-@media (max-width:640px){.hero-sub{font-size:18px;margin-top:10px}}
-.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.intro-card{overflow:hidden;border-radius:14px;background:#fff;box-shadow:0 1px 3px rgba(27,42,78,.06),0 10px 28px rgba(27,42,78,.08)}
-.intro-media{position:relative;aspect-ratio:16/10;background:var(--page-deep)}
-.intro-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%}
-.intro-media::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,45,.4) 0%,rgba(10,20,45,.12) 30%,rgba(10,20,45,0) 55%)}
-.intro-body{padding:20px 22px 24px}
-.intro-body h3{margin:0 0 6px;font-size:21px;line-height:1.3;font-weight:700;color:var(--blue-bright)}
-.intro-body p{margin:0;font-size:18px;color:var(--text-body)}
-.ev-ic{flex:none;width:18px;height:18px;margin-top:3px;fill:none;stroke:var(--blue-bright);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.ev-ic-sm{width:14px;height:14px;margin-top:0;stroke:var(--text-muted)}
-.past-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr))}
-.past-card{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;border-radius:14px;background:linear-gradient(160deg,var(--blue-bright),var(--navy));color:#fff}
-.past-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.past-card::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(10,20,45,.85) 0%,rgba(10,20,45,.35) 38%,rgba(10,20,45,0) 60%)}
-.past-card::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(27,42,78,.82);opacity:0;transition:opacity .3s}
-.past-body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px}
-.past-title{margin:0;font-size:19px;font-weight:700;line-height:1.3;color:#fff}
-.past-cta{--cta-h:36px;display:inline-flex;align-items:center;gap:6px;box-sizing:border-box;height:var(--cta-h);margin:14px 0 calc(-14px - var(--cta-h));padding:0 16px;border-radius:999px;background:#fff;color:var(--navy);font-size:15px;font-weight:600;opacity:0;transition:opacity .3s,margin .3s}
-.past-cta svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.past-card:not([href]) .past-cta{display:none}
-a.past-card[href]:hover::after,a.past-card[href]:focus-visible::after{opacity:1}
-a.past-card[href]:hover img,a.past-card[href]:focus-visible img{transform:scale(1.04)}
-a.past-card[href]:hover .past-cta,a.past-card[href]:focus-visible .past-cta{opacity:1;margin-bottom:0}
-a.past-card:focus-visible{outline:3px solid var(--blue-bright);outline-offset:3px}
-@media (hover:none){.past-card[href] .past-cta{opacity:1;margin-bottom:0}}
-@media (max-width:640px){.past-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.past-body{padding:14px}.past-title{font-size:16px}.past-cta{--cta-h:32px;padding:0 12px;font-size:14px}}
-@media (prefers-reduced-motion:reduce){.past-card *,.past-card::after{transition:none !important}}
-.faq{background:var(--page);border-radius:18px;transition:background .2s}
-.faq[open]{background:var(--page-deep)}
-@media (hover:hover){.faq:hover{background:var(--page-deep)}}
-.faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px;font-size:18px;font-weight:700;color:var(--navy);cursor:pointer;list-style:none}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary:focus-visible{outline:2px solid var(--blue-bright);outline-offset:2px;border-radius:18px}
-.faq summary svg{flex:none;width:20px;height:20px;fill:none;stroke:var(--blue-bright);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
-.faq[open] summary svg{transform:rotate(180deg)}
-.faq-a{padding:0 22px 22px;font-size:18px;line-height:1.65;color:var(--text-body)}
-.faq-a p,.faq-a ol{margin:0}
-.faq-a ol{margin-top:8px;padding-left:22px}
-@media (max-width:1180px){.navbar{gap:0 8px !important}.brandnav{display:contents !important}.navactions{gap:4px !important}.navactions>.lang{display:none}.navactions .btn{padding:9px 14px !important;font-size:14px !important}.nav-toggle{display:inline-flex}.nav{display:none !important;order:3;width:100%;flex-direction:column;gap:0 !important;margin-top:10px;border-top:1px solid var(--line);padding-top:4px;font-size:17px !important}[data-nav="open"] .nav{display:flex !important}.nav a{padding:12px 0}.nav-lang{display:inline-flex;align-self:flex-start;padding:12px 0;font-size:17px}.nav-lang:hover{background:transparent}[data-nav="open"] .nav-toggle .bars,.nav-toggle .close{display:none}[data-nav="open"] .nav-toggle .close{display:block}}
-@media (max-width:640px){.quote{font-size:23px !important}.stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:28px 16px !important}.stat-num{font-size:34px !important}}
-</style>
-</helmet>
-<div style="width:100%;font-family:var(--font-body);font-size:18px;color:var(--text);background:var(--page);line-height:1.6">
+	<x-dc>
+	<helmet>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Lora:ital,wght@1,500&amp;display=swap">
+		<style>
+			body{margin:0}
+			:root{--font-body:"Be Vietnam Pro",sans-serif}
+			h1,h2,h3,h4,button,.btn,.footer-name{font-family:"Be Vietnam Pro",sans-serif}
+			.hero-inner h1{font-weight:700;letter-spacing:-0.01em;line-height:1.2}
+			.quote{font-family:"Lora",serif;font-style:italic}
+			a{color:inherit;text-decoration:none}
+			.nav a:hover{color:var(--blue-bright)}
+			.btn:hover{filter:brightness(1.08)}
+			.lang{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:0;border-radius:999px;background:transparent;color:var(--text-nav);font:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:background .15s}
+			.lang:hover{background:var(--line)}
+			.lang:focus-visible{outline:2px solid var(--blue-bright);outline-offset:2px}
+			.lang-en,[data-lang="en"] .lang-vi{display:none}
+			[data-lang="en"] .lang-en{display:inline}
+			.nav-lang{display:none}
+			.nav-toggle{display:none;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:0;border-radius:10px;background:transparent;color:var(--text-nav);cursor:pointer}
+			.nav-toggle:focus-visible{outline:2px solid var(--blue-bright);outline-offset:2px}
+			/* Shades only behind the title so the rest of the sky stays light */
+			.hero-shade{background:linear-gradient(90deg,rgba(10,30,70,.5) 0%,rgba(10,30,70,.3) 45%,rgba(10,30,70,0) 80%)}
+			.hero-inner{position:relative;max-width:1200px;margin:0 auto;}
+			.hero-inner h1,.hero-sub{text-shadow:0 1px 14px rgba(10,30,70,.35)}
+			.hero-sub{margin:16px 0 0;font-size:22px;font-weight:600}
+			@media (max-width:640px){.hero-sub{font-size:18px;margin-top:10px}}
+			.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+			.intro-card{overflow:hidden;border-radius:14px;background:#fff;box-shadow:0 1px 3px rgba(27,42,78,.06),0 10px 28px rgba(27,42,78,.08)}
+			.intro-media{position:relative;aspect-ratio:16/10;background:var(--page-deep)}
+			.intro-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%}
+			.intro-media::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,45,.4) 0%,rgba(10,20,45,.12) 30%,rgba(10,20,45,0) 55%)}
+			.intro-body{padding:20px 22px 24px}
+			.intro-body h3{margin:0 0 6px;font-size:21px;line-height:1.3;font-weight:700;color:var(--blue-bright)}
+			.intro-body p{margin:0;font-size:18px;color:var(--text-body)}
+			.ev-ic{flex:none;width:18px;height:18px;margin-top:3px;fill:none;stroke:var(--blue-bright);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+			.ev-ic-sm{width:14px;height:14px;margin-top:0;stroke:var(--text-muted)}
+			.past-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr))}
+			.past-card{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;border-radius:14px;background:linear-gradient(160deg,var(--blue-bright),var(--navy));color:#fff}
+			.past-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s}
+			.past-card::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(10,20,45,.85) 0%,rgba(10,20,45,.35) 38%,rgba(10,20,45,0) 60%)}
+			.past-card::after{content:"";position:absolute;inset:0;z-index:1;background:rgba(27,42,78,.82);opacity:0;transition:opacity .3s}
+			.past-body{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px}
+			.past-title{margin:0;font-size:19px;font-weight:700;line-height:1.3;color:#fff}
+			.past-cta{--cta-h:36px;display:inline-flex;align-items:center;gap:6px;box-sizing:border-box;height:var(--cta-h);margin:14px 0 calc(-14px - var(--cta-h));padding:0 16px;border-radius:999px;background:#fff;color:var(--navy);font-size:15px;font-weight:600;opacity:0;transition:opacity .3s,margin .3s}
+			.past-cta svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+			.past-card:not([href]) .past-cta{display:none}
+			a.past-card[href]:hover::after,a.past-card[href]:focus-visible::after{opacity:1}
+			a.past-card[href]:hover img,a.past-card[href]:focus-visible img{transform:scale(1.04)}
+			a.past-card[href]:hover .past-cta,a.past-card[href]:focus-visible .past-cta{opacity:1;margin-bottom:0}
+			a.past-card:focus-visible{outline:3px solid var(--blue-bright);outline-offset:3px}
+			@media (hover:none){.past-card[href] .past-cta{opacity:1;margin-bottom:0}}
+			@media (max-width:640px){.past-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.past-body{padding:14px}.past-title{font-size:16px}.past-cta{--cta-h:32px;padding:0 12px;font-size:14px}}
+			@media (prefers-reduced-motion:reduce){.past-card *,.past-card::after{transition:none !important}}
+			.faq{background:var(--page);border-radius:18px;transition:background .2s}
+			.faq[open]{background:var(--page-deep)}
+			@media (hover:hover){.faq:hover{background:var(--page-deep)}}
+			.faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px;font-size:18px;font-weight:700;color:var(--navy);cursor:pointer;list-style:none}
+			.faq summary::-webkit-details-marker{display:none}
+			.faq summary:focus-visible{outline:2px solid var(--blue-bright);outline-offset:2px;border-radius:18px}
+			.faq summary svg{flex:none;width:20px;height:20px;fill:none;stroke:var(--blue-bright);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+			.faq[open] summary svg{transform:rotate(180deg)}
+			.faq-a{padding:0 22px 22px;font-size:18px;line-height:1.65;color:var(--text-body)}
+			.faq-a p,.faq-a ol{margin:0}
+			.faq-a ol{margin-top:8px;padding-left:22px}
+			@media (max-width:1180px){.navbar{gap:0 8px !important}.brandnav{display:contents !important}.navactions{gap:4px !important}.navactions>.lang{display:none}.navactions .btn{padding:9px 14px !important;font-size:14px !important}.nav-toggle{display:inline-flex}.nav{display:none !important;order:3;width:100%;flex-direction:column;gap:0 !important;margin-top:10px;border-top:1px solid var(--line);padding-top:4px;font-size:17px !important}[data-nav="open"] .nav{display:flex !important}.nav a{padding:12px 0}.nav-lang{display:inline-flex;align-self:flex-start;padding:12px 0;font-size:17px}.nav-lang:hover{background:transparent}[data-nav="open"] .nav-toggle .bars,.nav-toggle .close{display:none}[data-nav="open"] .nav-toggle .close{display:block}}
+			@media (max-width:640px){.quote{font-size:23px !important}.stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:28px 16px !important}.stat-num{font-size:34px !important}}
+			/* Liên Gia photo strip */
+		  .lg-strip {
+		    --lg-speed: 45s;            /* bigger number = slower scroll */
+		    --lg-card-w: 300px;
+		    --lg-gap: 20px;
+		    position: relative;
+		    overflow: hidden;
+		    padding: 12px 0 24px; /* room for the hover lift and card shadow */
+		    /* soft fade on the left and right edges */
+		    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+		            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+		  }
+		  .lg-track {
+		    display: flex;
+		    gap: var(--lg-gap);
+		    width: max-content;
+		    align-items: flex-start;
+		    animation: lg-scroll var(--lg-speed) linear infinite;
+		  }
+		  .lg-strip:hover .lg-track,
+		  .lg-strip:focus-within .lg-track { animation-play-state: paused; }
+		  @keyframes lg-scroll {
+		    to { transform: translateX(calc(-50% - var(--lg-gap) / 2)); }
+		  }
+		
+		  .lg-card {
+		    position: relative;
+		    flex: none;
+		    width: var(--lg-card-w);
+		    aspect-ratio: 4 / 3;
+		    border-radius: 16px;
+		    overflow: hidden;
+		    background: var(--navy, #1b2a4e);
+		    color: #fff;
+		    text-decoration: none;
+		    box-shadow: 0 6px 16px rgba(27, 42, 78, .14);
+		    transition: transform .35s ease, box-shadow .35s ease;
+		  }
+		  .lg-card img {
+		    position: absolute; inset: 0;
+		    width: 100%; height: 100%;
+		    object-fit: cover;
+		    transition: transform .6s ease;
+		  }
+		  .lg-card::after {
+		    content: ""; position: absolute; inset: 0;
+		    background: linear-gradient(to top, rgba(10, 20, 45, .8) 0%, rgba(10, 20, 45, .2) 45%, transparent 70%);
+		  }
+		  .lg-card > span {
+		    position: absolute; left: 18px; right: 18px; bottom: 16px; z-index: 1;
+		    font-size: 18px; font-weight: 700; line-height: 1.3;
+		    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+		  }
+		  .lg-card:hover { transform: translateY(-6px); box-shadow: 0 12px 20px rgba(27, 42, 78, .2); }
+		  .lg-card:hover img { transform: scale(1.06); }
+		  .lg-card:focus-visible { outline: 3px solid var(--blue-bright, #2a63c4); outline-offset: 3px; }
+		
+		  @media (max-width: 640px) {
+		    .lg-strip { --lg-card-w: 220px; --lg-gap: 14px; --lg-speed: 35s; }
+		    .lg-card > span { font-size: 14px; left: 14px; right: 14px; bottom: 12px; }
+		  }
+		  /* visitors who turn off motion get a strip they can swipe instead */
+		  @media (prefers-reduced-motion: reduce) {
+		    .lg-strip { overflow-x: auto; -webkit-mask-image: none; mask-image: none; padding-inline: 6vw; }
+		    .lg-track { animation: none; }
+		    .lg-track [aria-hidden="true"] { display: none; }
+		  }
+		</style>
+	</helmet>
+	<div style="width:100%;font-family:var(--font-body);font-size:18px;color:var(--text);background:var(--page);line-height:1.6">
+	
+	<header class="hero" style="background:#fff">
+	<div style="background:#fff;border-bottom:1px solid var(--line);padding:0 6vw">
+	<div class="navbar" style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:10px 0">
+	<div class="brandnav" style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+	<a href="#home"><img src="./assets/logo.png" alt="Logo CTTTHNGĐ" style="width:48px;height:48px;border-radius:50%;display:block"></a>
+	<nav class="nav" style="display:flex;gap:24px;font-size:15px;font-weight:500;color:var(--text-nav)"><a href="index.html" style="color:var(--blue);font-weight:700">Trang Chủ</a><a href="about.html">Tổ Chức</a><a href="lichsu.html">Lịch Sử</a><a href="liengia.html">Liên Gia</a><a href="detaihopliengia.html">Họp Liên Gia</a><a href="tailieu.html">Tài Liệu</a><a href="files/lich-sinh-hoat.pdf" target="_blank" rel="noopener">Lịch Sinh Hoạt</a><a href="lienlac.html">Liên Lạc</a><button class="lang nav-lang" type="button" aria-label="Đổi ngôn ngữ / Change language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4 6.5 4 10s-1 7-4 10c-3-3-4-6.5-4-10s1-7 4-10z"/></svg><span class="lang-vi">EN</span><span class="lang-en">VI</span></button></nav>
+	</div>
+	<div class="navactions" style="display:flex;align-items:center;gap:20px"><button class="lang" type="button" aria-label="Đổi ngôn ngữ / Change language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4 6.5 4 10s-1 7-4 10c-3-3-4-6.5-4-10s1-7 4-10z"/></svg><span class="lang-vi">EN</span><span class="lang-en">VI</span></button><a class="btn" href="files/don-ghi-danh-khoa-can-ban.pdf" target="_blank" rel="noopener" style="background:var(--blue-bright);color:#fff;padding:11px 20px;border-radius:999px;font-weight:600;font-size:15px">Đăng ký khóa căn bản</a><button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="close" d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+	</div>
+	</div>
+	<div id="home" style="position:relative;overflow:hidden;background:linear-gradient(180deg,#2161C2 0%,#5499E6 55%,#BDDEF7 100%);color:#fff;padding:120px 6vw">
+	<canvas id="hero-sky" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+	<div class="hero-shade" style="position:absolute;inset:0"></div>
+	<div class="hero-inner">
+	<div>
+	<h1 style="margin:0;font-size:min(52px,7.4vw);line-height:1.12;font-weight:600">Chương Trình Thăng Tiến<br>Hôn Nhân Gia Đình</h1>
+	<p class="hero-sub">Giáo Phận San Diego</p>
+	</div>
+	</div>
+	</div>
+	</header>
+	
+	<section id="gioithieu" style="max-width:1200px;margin:0 auto;padding:96px 6vw 24px">
+	<p style="margin:0 0 8px;color:var(--blue-bright);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase">Giới Thiệu</p>
+	<h2 style="margin:0 0 32px;font-size:36px;line-height:1.2">Hôn nhân vững bền, gia đình hạnh phúc</h2>
+	<div class="grid" style="gap:32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+	<article class="intro-card">
+	<div class="intro-media"><img src="./assets/gioithieu/hon-nhan.jpg" alt="Các cặp vợ chồng khiêu vũ trong buổi tiệc mừng" loading="lazy"></div>
+	<div class="intro-body"><h3>Hôn nhân bền vững</h3><p>Giúp các đôi vợ chồng hiểu nhau hơn, xây dựng mối liên hệ yêu thương và trưởng thành trong đời sống gia đình theo tinh thần Công Giáo.</p></div>
+	</article>
+	<article class="intro-card">
+	<div class="intro-media"><img src="./assets/gioithieu/gia-dinh.jpg" alt="Một gia đình nhiều thế hệ chụp hình bên bánh mừng Lễ Bổn Mạng" loading="lazy"></div>
+	<div class="intro-body"><h3>Gia đình hài hòa</h3><p>Hướng dẫn cách nuôi dạy và sự gắn kết giữa cha mẹ với con cái, đồng thời mở rộng mối quan hệ với gia đình, bạn hữu, và cộng đồng.</p></div>
+	</article>
+	<article class="intro-card">
+	<div class="intro-media"><img src="./assets/gioithieu/duc-tin.jpg" alt="Cha chủ tế trao khung bằng cho một đôi vợ chồng trong Thánh Lễ" loading="lazy"></div>
+	<div class="intro-body"><h3>Sống và phục vụ Đức Tin</h3><p>Khơi dậy tinh thần “Hồn Tông Đồ Song Đôi”, giúp các gia đình sống đức tin và phục vụ trong Cộng Đồng Dân Chúa một cách tích cực.</p></div>
+	</article>
+	</div>
+	</section>
+	
+	<section id="thanhqua" style="margin-top:72px;background:#fff;padding:56px 6vw">
+	<div class="stats" style="max-width:1200px;margin:0 auto;display:grid;gap:24px;grid-template-columns:repeat(4,minmax(0,1fr));text-align:center">
+	<div><div class="stat-num" style="font-size:44px;font-weight:600;line-height:1.15;color:var(--blue)">1987</div><div style="margin-top:4px;font-size:15px;color:var(--text-muted)">Năm khởi đầu</div></div>
+	<div><div class="stat-num" style="font-size:44px;font-weight:600;line-height:1.15;color:var(--blue)">~1.000</div><div style="margin-top:4px;font-size:15px;color:var(--text-muted)">Khóa Song Nguyền Căn Bản</div></div>
+	<div><div class="stat-num" style="font-size:44px;font-weight:600;line-height:1.15;color:var(--blue)">50.000+</div><div style="margin-top:4px;font-size:15px;color:var(--text-muted)">Người tham gia toàn thế giới</div></div>
+	<div><div class="stat-num" style="font-size:44px;font-weight:600;line-height:1.15;color:var(--blue)">7</div><div style="margin-top:4px;font-size:15px;color:var(--text-muted)">Liên Gia tại San Diego</div></div>
+	</div>
+	</section>
+	
+	<section style="background:linear-gradient(90deg,var(--blue),var(--blue-light));color:#fff;padding:80px 6vw;text-align:center">
+	<div class="quote" style="max-width:1040px;margin:0 auto;font-weight:500;font-size:32px;line-height:1.4">“Sự gì Thiên Chúa đã phối hợp, loài người không được phân ly.”</div>
+	<p style="margin:20px 0 0;font-size:16px;font-weight:500">Mát-thêu 19,6</p>
+	</section>
+	
+	<section id="hoidap" style="background:#fff;padding:96px 6vw">
+	<div style="max-width:1200px;margin:0 auto">
+	<p style="margin:0 0 8px;color:var(--blue-bright);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase">Hỏi đáp</p>
+	<h2 style="margin:0 0 32px;font-size:36px;line-height:1.2">Những câu hỏi thường gặp</h2>
+	<div style="display:flex;flex-direction:column;gap:12px">
+	<details class="faq"><summary>Khóa căn bản là gì?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a"><p>Khóa căn bản là khóa Tĩnh Tâm cuối tuần mà quý anh chị có thể tham dự để có dịp:</p><ol><li>Học hỏi khám phá những bí quyết làm tăng thêm hạnh phúc gia đình.</li><li>Tìm hiểu những phương thức giáo dục để cải tiến mối quan hệ giữa cha mẹ và con cái.</li><li>Gặp gỡ kết bạn để củng cố đức tin và nâng đỡ nhau vượt qua những khó khăn trong cuộc sống.</li></ol></div></details>
+	<details class="faq"><summary>Khóa căn bản bắt đầu ngày nào?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a"><p>{{ faqDates }}</p></div></details>
+	<details class="faq"><summary>Khóa căn bản sẽ tổ chức ở đâu?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a"><p>Tại {{ faqPlace.place }}, <a href="{{ faqPlace.map }}" target="_blank" rel="noopener" style="text-decoration:underline">{{ faqPlace.address }}</a></p></div></details>
+	<details class="faq"><summary>Ai sẽ được tham dự khóa?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a"><p>Tất cả những cặp vợ chồng mong muốn hôn nhân và gia đình mình tốt đẹp hơn, yêu thương nhau thêm trong tình yêu Chúa.</p></div></details>
+	<details class="faq"><summary>Lệ phí của khóa là bao nhiêu?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a"><p>Lệ phí mỗi cặp là $500, bao gồm chỗ ngủ lại đêm, những bữa ăn và tài liệu dùng trong khóa.</p></div></details>
+	<details class="faq"><summary>Tôi dự khóa một mình được không?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a"><p>Hoàn cảnh của mỗi người khác nhau nên cần sự đồng ý của cha Linh Nguyền.</p></div></details>
+	</div>
+	</div>
+	</section>
+	
+	<section id="dangky" style="background:linear-gradient(90deg,var(--blue),var(--blue-light));padding:72px 6vw">
+	<div style="max-width:1200px;margin:0 auto">
+	<p style="margin:0 0 8px;color:var(--blue-tint);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase">Khóa kế tiếp</p>
+	<h2 style="margin:0 0 32px;font-size:36px;line-height:1.2;color:#fff">Mời hai bạn tham dự khóa căn bản</h2>
+	<div style="display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#fff;border-radius:20px;padding:32px">
+	<sc-if value="{{ nextClass }}">
+	<div style="display:flex;gap:20px;min-width:0">
+	<div style="flex:none;width:76px;height:84px;border-radius:14px;background:var(--blue);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:14px;color:var(--blue-tint);font-weight:700">{{ nextClass.month }}</span><span style="font-size:32px;font-weight:800;line-height:1.1">{{ nextClass.day }}</span></div>
+	<div style="display:flex;flex-direction:column;gap:10px;font-size:18px;color:var(--text-body)">
+	<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">{{ nextClass.dates }}</span>{{ nextClass.when }}</span></div>
+	<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5a7 7 0 1 0-14 0C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">{{ nextClass.place }}</span><a href="{{ nextClass.map }}" target="_blank" rel="noopener" style="text-decoration:underline">{{ nextClass.address }}</a></span></div>
+	</div>
+	</div>
+	</sc-if>
+	<sc-if value="{{ noNextClass }}">
+	<p style="margin:0;color:var(--text-body)">Ngày khóa kế tiếp sẽ được cập nhật sớm.</p>
+	</sc-if>
+	<a class="btn" href="files/don-ghi-danh-khoa-can-ban.pdf" target="_blank" rel="noopener" style="flex:none;background:var(--blue-bright);color:#fff;padding:12px 26px;border-radius:999px;font-weight:600">Đăng ký khóa căn bản</a>
+	</div>
+	</div>
+	</section>
+	
+	<section id="sukien" style="max-width:1200px;margin:0 auto;padding:72px 6vw 24px">
+		<p style="margin:0 0 8px;color:var(--blue-bright);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase">Sắp tới</p>
+		<h2 style="margin:0 0 32px;font-size:36px">Lịch trình sinh hoạt</h2>
+		<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))">
+		<sc-for list="{{ upcoming }}" as="ev">
+			<div style="display:flex;gap:20px;background:#fff;border-radius:20px;padding:28px">
+			<div style="flex:none;width:76px;height:84px;border-radius:14px;background:var(--blue);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:14px;color:var(--blue-tint);font-weight:700">{{ ev.month }}</span><span style="font-size:32px;font-weight:800;line-height:1.1">{{ ev.day }}</span></div>
+			<div style="min-width:0"><h3 style="margin:0 0 12px;font-size:19px;line-height:1.3">{{ ev.title }}</h3>
+			<div style="display:flex;flex-wrap:wrap;gap:10px 40px;font-size:18px;color:var(--text-body)">
+			<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>{{ ev.when }}</span></div>
+			<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5a7 7 0 1 0-14 0C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">{{ ev.place }}</span>{{ ev.address }}</span></div>
+			<sc-if value="{{ ev.contact }}">
+				<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">Liên lạc {{ ev.contact.name }}</span><a href="sms:{{ ev.contact.phone }}" style="text-decoration:underline">{{ ev.contact.phone }}</a><br><a href="mailto:{{ ev.contact.email }}" style="text-decoration:underline">{{ ev.contact.email }}</a></span></div>
+			</sc-if>
+			</div></div>
+			</div>
+		</sc-for>
+		</div>
+		<sc-if value="{{ noUpcoming }}">
+			<p style="margin:0;color:var(--text-body)">Lịch sinh hoạt mới sẽ được cập nhật sớm.</p>
+		</sc-if>
+		<h3 style="margin:48px 0 16px;font-size:20px">Sinh hoạt vừa qua</h3>
+			<div class="past-grid">
+				<sc-for list="{{ past }}" as="ev">
+					<a class="past-card" href="{{ ev.link }}" target="_blank" rel="noopener">
+					<sc-if value="{{ ev.photo }}"><img src="{{ ev.photo }}" alt="" loading="lazy"></sc-if>
+						<div class="past-body">
+							<h4 class="past-title">{{ ev.title }}</h4>
+							<span class="past-cta">
+								<span class="lang-vi">Xem thêm</span>
+								<span class="lang-en">See more</span>
+								<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+							</span>
+						</div>
+					</a>
+				</sc-for>
+			</div>
+	</section>
 
-<header class="hero" style="background:#fff">
-<div style="background:#fff;border-bottom:1px solid var(--line);padding:0 6vw">
-<div class="navbar" style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:10px 0">
-<div class="brandnav" style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
-<a href="#home"><img src="./assets/logo.png" alt="Logo CTTTHNGĐ" style="width:48px;height:48px;border-radius:50%;display:block"></a>
-<nav class="nav" style="display:flex;gap:24px;font-size:15px;font-weight:500;color:var(--text-nav)"><a href="index.html" style="color:var(--blue);font-weight:700">Trang Chủ</a><a href="about.html">Tổ Chức</a><a href="lichsu.html">Lịch Sử</a><a href="liengia.html">Liên Gia</a><a href="detaihopliengia.html">Họp Liên Gia</a><a href="tailieu.html">Tài Liệu</a><a href="files/lich-sinh-hoat.pdf" target="_blank" rel="noopener">Lịch Sinh Hoạt</a><a href="lienlac.html">Liên Lạc</a><button class="lang nav-lang" type="button" aria-label="Đổi ngôn ngữ / Change language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4 6.5 4 10s-1 7-4 10c-3-3-4-6.5-4-10s1-7 4-10z"/></svg><span class="lang-vi">EN</span><span class="lang-en">VI</span></button></nav>
-</div>
-<div class="navactions" style="display:flex;align-items:center;gap:20px"><button class="lang" type="button" aria-label="Đổi ngôn ngữ / Change language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4 6.5 4 10s-1 7-4 10c-3-3-4-6.5-4-10s1-7 4-10z"/></svg><span class="lang-vi">EN</span><span class="lang-en">VI</span></button><a class="btn" href="files/don-ghi-danh-khoa-can-ban.pdf" target="_blank" rel="noopener" style="background:var(--blue-bright);color:#fff;padding:11px 20px;border-radius:999px;font-weight:600;font-size:15px">Đăng ký khóa căn bản</a><button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="close" d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-</div>
-</div>
-<div id="home" style="position:relative;overflow:hidden;background:linear-gradient(180deg,#2161C2 0%,#5499E6 55%,#BDDEF7 100%);color:#fff;padding:120px 6vw">
-<canvas id="hero-sky" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
-<div class="hero-shade" style="position:absolute;inset:0"></div>
-<div class="hero-inner">
-<div>
-<h1 style="margin:0;font-size:min(52px,7.4vw);line-height:1.12;font-weight:600">Chương Trình Thăng Tiến<br>Hôn Nhân Gia Đình</h1>
-<p class="hero-sub">Giáo Phận San Diego</p>
-</div>
-</div>
-</div>
-</header>
+	<section id="liengia" style="margin-top:72px;background:#fff;padding:72px 6vw 48px">
+	<div style="max-width:1200px;margin:0 auto">
+	<p style="margin:0 0 8px;color:var(--blue-bright);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase">Liên Gia San Diego</p>
+	<h2 style="margin:0 0 20px;font-size:36px;line-height:1.2;color:var(--navy)">Bảy Liên Gia, một gia đình</h2>
+	</div>
 
-<section id="gioithieu" style="max-width:1200px;margin:0 auto;padding:96px 6vw 24px">
-<p style="margin:0 0 8px;color:var(--blue-bright);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase">Giới Thiệu</p>
-<h2 style="margin:0 0 32px;font-size:36px;line-height:1.2">Hôn nhân vững bền, gia đình hạnh phúc</h2>
-<div class="grid" style="gap:32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
-<article class="intro-card">
-<div class="intro-media"><img src="./assets/gioithieu/hon-nhan.jpg" alt="Các cặp vợ chồng khiêu vũ trong buổi tiệc mừng" loading="lazy"></div>
-<div class="intro-body"><h3>Hôn nhân bền vững</h3><p>Giúp các đôi vợ chồng hiểu nhau hơn, xây dựng mối liên hệ yêu thương và trưởng thành trong đời sống gia đình theo tinh thần Công Giáo.</p></div>
-</article>
-<article class="intro-card">
-<div class="intro-media"><img src="./assets/gioithieu/gia-dinh.jpg" alt="Một gia đình nhiều thế hệ chụp hình bên bánh mừng Lễ Bổn Mạng" loading="lazy"></div>
-<div class="intro-body"><h3>Gia đình hài hòa</h3><p>Hướng dẫn cách nuôi dạy và sự gắn kết giữa cha mẹ với con cái, đồng thời mở rộng mối quan hệ với gia đình, bạn hữu, và cộng đồng.</p></div>
-</article>
-<article class="intro-card">
-<div class="intro-media"><img src="./assets/gioithieu/duc-tin.jpg" alt="Cha chủ tế trao khung bằng cho một đôi vợ chồng trong Thánh Lễ" loading="lazy"></div>
-<div class="intro-body"><h3>Sống và phục vụ Đức Tin</h3><p>Khơi dậy tinh thần “Hồn Tông Đồ Song Đôi”, giúp các gia đình sống đức tin và phục vụ trong Cộng Đồng Dân Chúa một cách tích cực.</p></div>
-</article>
+<div class="lg-strip" role="region" aria-label="Hình ảnh các Liên Gia">
+  <div class="lg-track">
+    <sc-for list="{{ lienGia }}" as="lg">
+      <a class="lg-card" href="{{ lg.link }}" target="_blank" rel="noopener"><img src="{{ lg.photo }}" alt="{{ lg.alt }}"><span>{{ lg.name }}</span></a>
+    </sc-for>
+    <!-- Second copy so the strip loops from the last card straight back to the first -->
+    <sc-for list="{{ lienGia }}" as="lg">
+      <a class="lg-card" href="{{ lg.link }}" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="{{ lg.photo }}" alt=""><span>{{ lg.name }}</span></a>
+    </sc-for>
+  </div>
 </div>
-</section>
+	</section>
 
-<section id="thanhqua" style="margin-top:72px;background:#fff;padding:56px 6vw">
-<div class="stats" style="max-width:1200px;margin:0 auto;display:grid;gap:24px;grid-template-columns:repeat(4,minmax(0,1fr));text-align:center">
-<div><div class="stat-num" style="font-size:44px;font-weight:600;line-height:1.15;color:var(--blue)">1987</div><div style="margin-top:4px;font-size:15px;color:var(--text-muted)">Năm khởi đầu</div></div>
-<div><div class="stat-num" style="font-size:44px;font-weight:600;line-height:1.15;color:var(--blue)">~1.000</div><div style="margin-top:4px;font-size:15px;color:var(--text-muted)">Khóa Song Nguyền Căn Bản</div></div>
-<div><div class="stat-num" style="font-size:44px;font-weight:600;line-height:1.15;color:var(--blue)">50.000+</div><div style="margin-top:4px;font-size:15px;color:var(--text-muted)">Người tham gia toàn thế giới</div></div>
-<div><div class="stat-num" style="font-size:44px;font-weight:600;line-height:1.15;color:var(--blue)">7</div><div style="margin-top:4px;font-size:15px;color:var(--text-muted)">Liên Gia tại San Diego</div></div>
-</div>
-</section>
-
-<section style="background:linear-gradient(90deg,var(--blue),var(--blue-light));color:#fff;padding:80px 6vw;text-align:center">
-<div class="quote" style="max-width:1040px;margin:0 auto;font-weight:500;font-size:32px;line-height:1.4">“Sự gì Thiên Chúa đã phối hợp, loài người không được phân ly.”</div>
-<p style="margin:20px 0 0;font-size:16px;font-weight:500">Mát-thêu 19,6</p>
-</section>
-
-<section id="hoidap" style="background:#fff;padding:96px 6vw">
-<div style="max-width:1200px;margin:0 auto">
-<p style="margin:0 0 8px;color:var(--blue-bright);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase">Hỏi đáp</p>
-<h2 style="margin:0 0 32px;font-size:36px;line-height:1.2">Những câu hỏi thường gặp</h2>
-<div style="display:flex;flex-direction:column;gap:12px">
-<details class="faq"><summary>Khóa căn bản là gì?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a"><p>Khóa căn bản là khóa Tĩnh Tâm cuối tuần mà quý anh chị có thể tham dự để có dịp:</p><ol><li>Học hỏi khám phá những bí quyết làm tăng thêm hạnh phúc gia đình.</li><li>Tìm hiểu những phương thức giáo dục để cải tiến mối quan hệ giữa cha mẹ và con cái.</li><li>Gặp gỡ kết bạn để củng cố đức tin và nâng đỡ nhau vượt qua những khó khăn trong cuộc sống.</li></ol></div></details>
-<details class="faq"><summary>Khóa căn bản bắt đầu ngày nào?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a"><p>{{ faqDates }}</p></div></details>
-<details class="faq"><summary>Khóa căn bản sẽ tổ chức ở đâu?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a"><p>Tại {{ faqPlace.place }}, <a href="{{ faqPlace.map }}" target="_blank" rel="noopener" style="text-decoration:underline">{{ faqPlace.address }}</a></p></div></details>
-<details class="faq"><summary>Ai sẽ được tham dự khóa?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a"><p>Tất cả những cặp vợ chồng mong muốn hôn nhân và gia đình mình tốt đẹp hơn, yêu thương nhau thêm trong tình yêu Chúa.</p></div></details>
-<details class="faq"><summary>Lệ phí của khóa là bao nhiêu?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a"><p>Lệ phí mỗi cặp là $500, bao gồm chỗ ngủ lại đêm, những bữa ăn và tài liệu dùng trong khóa.</p></div></details>
-<details class="faq"><summary>Tôi dự khóa một mình được không?<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a"><p>Hoàn cảnh của mỗi người khác nhau nên cần sự đồng ý của cha Linh Nguyền.</p></div></details>
-</div>
-</div>
-</section>
-
-<section id="dangky" style="background:linear-gradient(90deg,var(--blue),var(--blue-light));padding:72px 6vw">
-<div style="max-width:1200px;margin:0 auto">
-<p style="margin:0 0 8px;color:var(--blue-tint);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase">Khóa kế tiếp</p>
-<h2 style="margin:0 0 32px;font-size:36px;line-height:1.2;color:#fff">Mời hai bạn tham dự khóa căn bản</h2>
-<div style="display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#fff;border-radius:20px;padding:32px">
-<sc-if value="{{ nextClass }}">
-<div style="display:flex;gap:20px;min-width:0">
-<div style="flex:none;width:76px;height:84px;border-radius:14px;background:var(--blue);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:14px;color:var(--blue-tint);font-weight:700">{{ nextClass.month }}</span><span style="font-size:32px;font-weight:800;line-height:1.1">{{ nextClass.day }}</span></div>
-<div style="display:flex;flex-direction:column;gap:10px;font-size:18px;color:var(--text-body)">
-<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">{{ nextClass.dates }}</span>{{ nextClass.when }}</span></div>
-<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5a7 7 0 1 0-14 0C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">{{ nextClass.place }}</span><a href="{{ nextClass.map }}" target="_blank" rel="noopener" style="text-decoration:underline">{{ nextClass.address }}</a></span></div>
-</div>
-</div>
-</sc-if>
-<sc-if value="{{ noNextClass }}">
-<p style="margin:0;color:var(--text-body)">Ngày khóa kế tiếp sẽ được cập nhật sớm.</p>
-</sc-if>
-<a class="btn" href="files/don-ghi-danh-khoa-can-ban.pdf" target="_blank" rel="noopener" style="flex:none;background:var(--blue-bright);color:#fff;padding:12px 26px;border-radius:999px;font-weight:600">Đăng ký khóa căn bản</a>
-</div>
-</div>
-</section>
-
-<section id="sukien" style="max-width:1200px;margin:0 auto;padding:72px 6vw 24px">
-<p style="margin:0 0 8px;color:var(--blue-bright);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase">Sắp tới</p>
-<h2 style="margin:0 0 32px;font-size:36px">Lịch trình sinh hoạt</h2>
-<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))">
-<sc-for list="{{ upcoming }}" as="ev">
-<div style="display:flex;gap:20px;background:#fff;border-radius:20px;padding:28px">
-<div style="flex:none;width:76px;height:84px;border-radius:14px;background:var(--blue);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:14px;color:var(--blue-tint);font-weight:700">{{ ev.month }}</span><span style="font-size:32px;font-weight:800;line-height:1.1">{{ ev.day }}</span></div>
-<div style="min-width:0"><h3 style="margin:0 0 12px;font-size:19px;line-height:1.3">{{ ev.title }}</h3>
-<div style="display:flex;flex-wrap:wrap;gap:10px 40px;font-size:18px;color:var(--text-body)">
-<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>{{ ev.when }}</span></div>
-<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5a7 7 0 1 0-14 0C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">{{ ev.place }}</span>{{ ev.address }}</span></div>
-<sc-if value="{{ ev.contact }}">
-<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">Liên lạc {{ ev.contact.name }}</span><a href="sms:{{ ev.contact.phone }}" style="text-decoration:underline">{{ ev.contact.phone }}</a><br><a href="mailto:{{ ev.contact.email }}" style="text-decoration:underline">{{ ev.contact.email }}</a></span></div>
-</sc-if>
-</div></div>
-</div>
-</sc-for>
-</div>
-<sc-if value="{{ noUpcoming }}">
-<p style="margin:0;color:var(--text-body)">Lịch sinh hoạt mới sẽ được cập nhật sớm.</p>
-</sc-if>
-<h3 style="margin:48px 0 16px;font-size:20px">Sinh hoạt vừa qua</h3>
-<div class="past-grid">
-<sc-for list="{{ past }}" as="ev">
-<a class="past-card" href="{{ ev.link }}" target="_blank" rel="noopener">
-<sc-if value="{{ ev.photo }}"><img src="{{ ev.photo }}" alt="" loading="lazy"></sc-if>
-<div class="past-body">
-<h4 class="past-title">{{ ev.title }}</h4>
-<span class="past-cta"><span class="lang-vi">Xem thêm</span><span class="lang-en">See more</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-</div>
-</a>
-</sc-for>
-</div>
-</section>
-
-<footer id="lienlac" class="footer">
-<div class="footer-inner">
-<div class="footer-brand">
-<a href="#home"><img src="./assets/logo.png" alt="Logo CTTTHNGĐ"></a>
-<div><div class="footer-name">Chương Trình Thăng Tiến Hôn Nhân Gia Đình</div><div class="footer-sub">Giáo Phận San Diego</div></div>
-</div>
-<nav class="footer-col" aria-label="Liên kết cuối trang"><div class="footer-h">Khám Phá</div><a href="index.html">Trang Chủ</a><a href="about.html">Tổ Chức</a><a href="lichsu.html">Lịch Sử</a><a href="liengia.html">Liên Gia</a><a href="detaihopliengia.html">Họp Liên Gia</a><a href="tailieu.html">Tài Liệu</a><a href="files/lich-sinh-hoat.pdf" target="_blank" rel="noopener">Lịch Sinh Hoạt</a><a href="lienlac.html">Liên Lạc</a></nav>
-<div class="footer-col"><div class="footer-h">Liên Lạc Ban Điều Hành</div><a class="footer-contact" href="mailto:khoacanbansd@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>khoacanbansd@gmail.com</a><a class="footer-contact" href="tel:+18582325276"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>858-232-5276</a></div>
-</div>
-<div class="footer-bottom">© 2026 Chương Trình Thăng Tiến Hôn Nhân Gia Đình – Giáo Phận San Diego</div>
-</footer>
-
-</div>
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":2700}}'>
-// Add new events here. `date` is the event's last day (YYYY-MM-DD); from the next
-// day in San Diego it moves to "Sinh hoạt vừa qua" on its own. `contact` is optional
-// and adds a phone row to the event's card. Once an event is past, `photo` (e.g.
-// './assets/sinhhoat/picnic-2026.jpg') sets its cover picture and `link` (a Google
-// Photos album, Drive folder or YouTube video) makes the card open it.
-const EVENTS = [
-{date:'2026-12-27',title:'Thánh Lễ Mừng Bổn Mạng Chương Trình',when:'Chúa Nhật, 2:30 – 9:00 PM',place:'Giáo xứ San Rafael (Rancho Bernardo)',address:'17252 Bernardo Center Drive, San Diego, CA 92128',contact:{name:'Bảo-Phước',phone:'619-337-4338',email:'baophuocsd@gmail.com'}},
-{date:'2026-09-25',title:'Tất Cả Vì Yêu 10',photo:'./assets/sinhhoat/tat-ca-vi-yeu.jpg',link:'https://photos.google.com/share/AF1QipM5z7bOtNAGKjUTWh7aob2gQIPalsDOi9irBCEPqYgcFNlvQL9YIMIxVV7PZ4FEZA?key=b2dLeGdvc25VeWpOcjVESGl0S0hjUDU5c0VONTl3'},
-{date:'2026-05-30',title:'Camp Oliver Clean-Up',photo:'./assets/sinhhoat/camp-oliver.jpg',link:'https://photos.google.com/share/AF1QipMV0fQNDwsFHO14Y6CDiEKWnZ27bKfYp2oymAmq7oGqNhGWSlB5a-JjKtjt3DIkhw?key=TnpWeDI0V2p3N2RHc2hhcVFBM3BFcDBlc2t0ak53'},
-{date:'2025-12-28',title:'Thánh Lễ Bổn Mạng',photo:'./assets/sinhhoat/bon-mang-2025.jpg',link:'https://photos.google.com/share/AF1QipNNlO9xW1RvXysomCcMA-k6gXrpVSyQ3uKLii9vc2VRoUMtcf_yBbZ885McSfzm4g?key=WjBRSnN0cHdsbTRJU1hKUi1yUWx1a2dlZ1NCanpB'},
-];
-// The next Khóa Căn Bản. `date` is the first day, `end` the last; after `end` the
-// section says the next date is coming soon until this is updated.
-const NEXT_CLASS = {date:'2027-10-29',end:'2027-10-31',dates:'Thứ Sáu ngày 29 – Chúa Nhật ngày 31 tháng 10 năm 2027',when:'5:00 PM Thứ Sáu – 5:00 PM Chúa Nhật',place:'Mission San Luis Rey Retreat Center',address:'4050 Mission Ave., Oceanside, CA 92057',map:'https://www.google.com/maps/search/?api=1&query=4050+Mission+Ave+Oceanside+CA+92057'};
-class Component extends DCLogic {
-renderVals() {
-const today=new Date().toLocaleDateString('en-CA',{timeZone:'America/Los_Angeles'});
-const events=EVENTS.map(ev=>{
-const [y,m,d]=ev.date.split('-');
-return {...ev,month:'THG '+Number(m),day:Number(d),dateText:ev.dateText||'Ngày '+Number(d)+' tháng '+Number(m)+' năm '+y};
-});
-const upcoming=events.filter(ev=>ev.date>=today).sort((a,b)=>a.date.localeCompare(b.date));
-const past=events.filter(ev=>ev.date<today).sort((a,b)=>b.date.localeCompare(a.date));
-const [,cm,cd]=NEXT_CLASS.date.split('-');
-const nextClass=NEXT_CLASS.end>=today?{...NEXT_CLASS,month:'THG '+Number(cm),day:Number(cd)}:null;
-// The FAQ answers come from NEXT_CLASS too, so updating it updates them.
-const [ey,em,ed]=NEXT_CLASS.end.split('-');
-const faqDates=nextClass
-? 'Khóa sẽ bắt đầu từ chiều thứ Sáu ngày '+Number(cd)+(cm===em?'':' tháng '+Number(cm))+' đến Chúa Nhật ngày '+Number(ed)+' tháng '+Number(em)+' năm '+ey+'.'
-: 'Ngày khóa kế tiếp sẽ được cập nhật sớm.';
-return {upcoming,past,noUpcoming:upcoming.length===0,nextClass,noNextClass:!nextClass,faqDates,faqPlace:NEXT_CLASS};
-}
-}
-</script>
-<script>
-addEventListener('load',function(){
-var id=location.hash.slice(1),tries=0;
-if(!id)return;
-var t=setInterval(function(){
-var el=document.getElementById(id);
-if(el||++tries>40)clearInterval(t);
-if(el)el.scrollIntoView();
-},50);
-});
-</script>
+	<footer id="lienlac" class="footer" style="margin-top:0">
+	<div class="footer-inner">
+	<div class="footer-brand">
+	<a href="#home"><img src="./assets/logo.png" alt="Logo CTTTHNGĐ"></a>
+	<div><div class="footer-name">Chương Trình Thăng Tiến Hôn Nhân Gia Đình</div><div class="footer-sub">Giáo Phận San Diego</div></div>
+	</div>
+	<nav class="footer-col" aria-label="Liên kết cuối trang"><div class="footer-h">Khám Phá</div><a href="index.html">Trang Chủ</a><a href="about.html">Tổ Chức</a><a href="lichsu.html">Lịch Sử</a><a href="liengia.html">Liên Gia</a><a href="detaihopliengia.html">Họp Liên Gia</a><a href="tailieu.html">Tài Liệu</a><a href="files/lich-sinh-hoat.pdf" target="_blank" rel="noopener">Lịch Sinh Hoạt</a><a href="lienlac.html">Liên Lạc</a></nav>
+	<div class="footer-col"><div class="footer-h">Liên Lạc Ban Điều Hành</div><a class="footer-contact" href="mailto:khoacanbansd@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>khoacanbansd@gmail.com</a><a class="footer-contact" href="tel:+18582325276"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>858-232-5276</a></div>
+	</div>
+	<div class="footer-bottom">© 2026 Chương Trình Thăng Tiến Hôn Nhân Gia Đình – Giáo Phận San Diego</div>
+	</footer>
+	
+	</div>
+	</x-dc>
+	<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":2700}}'>
+	// Add new events here. `date` is the event's last day (YYYY-MM-DD); from the next
+	// day in San Diego it moves to "Sinh hoạt vừa qua" on its own. `contact` is optional
+	// and adds a phone row to the event's card. Once an event is past, `photo` (e.g.
+	// './assets/sinhhoat/picnic-2026.jpg') sets its cover picture and `link` (a Google
+	// Photos album, Drive folder or YouTube video) makes the card open it.
+	const EVENTS = [
+	{date:'2026-12-27',title:'Thánh Lễ Mừng Bổn Mạng Chương Trình',when:'Chúa Nhật, 2:30 – 9:00 PM',place:'Giáo xứ San Rafael (Rancho Bernardo)',address:'17252 Bernardo Center Drive, San Diego, CA 92128',contact:{name:'Bảo-Phước',phone:'619-337-4338',email:'baophuocsd@gmail.com'}},
+	{date:'2026-09-25',title:'Tất Cả Vì Yêu 10',photo:'./assets/sinhhoat/tat-ca-vi-yeu.jpg',link:'https://photos.google.com/share/AF1QipM5z7bOtNAGKjUTWh7aob2gQIPalsDOi9irBCEPqYgcFNlvQL9YIMIxVV7PZ4FEZA?key=b2dLeGdvc25VeWpOcjVESGl0S0hjUDU5c0VONTl3'},
+	{date:'2026-05-30',title:'Camp Oliver Clean-Up',photo:'./assets/sinhhoat/camp-oliver.jpg',link:'https://photos.google.com/share/AF1QipMV0fQNDwsFHO14Y6CDiEKWnZ27bKfYp2oymAmq7oGqNhGWSlB5a-JjKtjt3DIkhw?key=TnpWeDI0V2p3N2RHc2hhcVFBM3BFcDBlc2t0ak53'},
+	{date:'2025-12-28',title:'Thánh Lễ Bổn Mạng',photo:'./assets/sinhhoat/bon-mang-2025.jpg',link:'https://photos.google.com/share/AF1QipNNlO9xW1RvXysomCcMA-k6gXrpVSyQ3uKLii9vc2VRoUMtcf_yBbZ885McSfzm4g?key=WjBRSnN0cHdsbTRJU1hKUi1yUWx1a2dlZ1NCanpB'},
+	];
+	// The next Khóa Căn Bản. `date` is the first day, `end` the last; after `end` the
+	// section says the next date is coming soon until this is updated.
+	// The seven Liên Gia in the photo strip. `link` is the family's Google Photos album.
+	const LIEN_GIA = [
+	{name:'Thánh Giuse',photo:'assets/liengia/thanh-giuse.jpg',link:'https://photos.app.goo.gl/gJ67iJKoEyLvdUiU8'},
+	{name:'Đức Mẹ La Vang',photo:'assets/liengia/duc-me-la-vang.jpg',link:'https://photos.app.goo.gl/QEoz9844meetfo896'},
+	{name:'Thánh GH Gioan Phaolô II',photo:'assets/liengia/thanh-gh-gioan-phaolo.jpg',link:'https://photos.app.goo.gl/CMs5yneNQ9wQntN46'},
+	{name:'Thánh Têrêsa',photo:'assets/liengia/thanh-teresa.jpg',link:'https://photos.app.goo.gl/iaeKRgSQgkrQsRHx6'},
+	{name:'Thánh Tâm Giuse',photo:'assets/liengia/thanh-tam-giuse.jpg',link:'https://photos.app.goo.gl/V4zjV2Cy93pNqT1R7'},
+	{name:'Đức Mẹ Hằng Cứu Giúp',photo:'assets/liengia/duc-me-hang-cuu-giup.jpg',link:'https://photos.app.goo.gl/Z2zh9PKu4GkVgB7o8'},
+	{name:'Đức Mẹ Fatima',photo:'assets/liengia/duc-me-fatima.jpg',link:'https://photos.app.goo.gl/bbarMvqCnkgETSrr6'},
+	];
+	const NEXT_CLASS = {date:'2027-10-29',end:'2027-10-31',dates:'Thứ Sáu ngày 29 – Chúa Nhật ngày 31 tháng 10 năm 2027',when:'5:00 PM Thứ Sáu – 5:00 PM Chúa Nhật',place:'Mission San Luis Rey Retreat Center',address:'4050 Mission Ave., Oceanside, CA 92057',map:'https://www.google.com/maps/search/?api=1&query=4050+Mission+Ave+Oceanside+CA+92057'};
+	class Component extends DCLogic {
+	renderVals() {
+	const today=new Date().toLocaleDateString('en-CA',{timeZone:'America/Los_Angeles'});
+	const events=EVENTS.map(ev=>{
+	const [y,m,d]=ev.date.split('-');
+	return {...ev,month:'THG '+Number(m),day:Number(d),dateText:ev.dateText||'Ngày '+Number(d)+' tháng '+Number(m)+' năm '+y};
+	});
+	const upcoming=events.filter(ev=>ev.date>=today).sort((a,b)=>a.date.localeCompare(b.date));
+	const past=events.filter(ev=>ev.date<today).sort((a,b)=>b.date.localeCompare(a.date));
+	const [,cm,cd]=NEXT_CLASS.date.split('-');
+	const nextClass=NEXT_CLASS.end>=today?{...NEXT_CLASS,month:'THG '+Number(cm),day:Number(cd)}:null;
+	// The FAQ answers come from NEXT_CLASS too, so updating it updates them.
+	const [ey,em,ed]=NEXT_CLASS.end.split('-');
+	const faqDates=nextClass
+	? 'Khóa sẽ bắt đầu từ chiều thứ Sáu ngày '+Number(cd)+(cm===em?'':' tháng '+Number(cm))+' đến Chúa Nhật ngày '+Number(ed)+' tháng '+Number(em)+' năm '+ey+'.'
+	: 'Ngày khóa kế tiếp sẽ được cập nhật sớm.';
+	return {lienGia:LIEN_GIA.map(lg=>({...lg,alt:'Liên Gia '+lg.name})),upcoming,past,noUpcoming:upcoming.length===0,nextClass,noNextClass:!nextClass,faqDates,faqPlace:NEXT_CLASS};
+	}
+	}
+	</script>
+	<script>
+	addEventListener('load',function(){
+	var id=location.hash.slice(1),tries=0;
+	if(!id)return;
+	var t=setInterval(function(){
+	var el=document.getElementById(id);
+	if(el||++tries>40)clearInterval(t);
+	if(el)el.scrollIntoView();
+	},50);
+	});
+	</script>
 </body>
 </html>
