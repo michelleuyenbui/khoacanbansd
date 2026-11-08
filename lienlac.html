@@ -62,11 +62,17 @@ textarea.field-input{min-height:140px;resize:vertical}
 .submit:disabled{opacity:.6;cursor:default}
 .submit:focus-visible{outline:2px solid var(--blue-bright);outline-offset:2px}
 .notice{margin:0 0 20px;padding:12px 14px;border-radius:10px;font-size:16px}
-.notice-ok{background:var(--blue-tint);color:var(--navy);font-weight:500}
 .notice-err{background:#FDECEC;color:#8F1D1D}
 .notice a{text-decoration:underline}
+.contact-done{padding:56px 44px;text-align:center}
+.contact-done-icon{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;margin-bottom:20px;border-radius:50%;background:#E3F4E8;color:#1E7B3C}
+.contact-done h2{margin:0 0 12px;font-size:28px;color:var(--navy)}
+.contact-done h2:focus{outline:0}
+.contact-done p{margin:0 0 28px;font-size:18px;color:var(--text)}
+.contact-again{padding:0;border:0;background:none;color:var(--blue-bright);font:inherit;font-size:16px;font-weight:600;text-decoration:underline;cursor:pointer}
+.contact-again:focus-visible{outline:2px solid var(--blue-bright);outline-offset:2px}
 @media (max-width:1180px){.navbar{gap:0 8px !important}.brandnav{display:contents !important}.navactions{gap:4px !important}.navactions>.lang{display:none}.navactions .btn{padding:9px 14px !important;font-size:14px !important}.nav-toggle{display:inline-flex}.nav{display:none !important;order:3;width:100%;flex-direction:column;gap:0 !important;margin-top:10px;border-top:1px solid var(--line);padding-top:4px;font-size:17px !important}[data-nav="open"] .nav{display:flex !important}.nav a{padding:12px 0}.nav-lang{display:inline-flex;align-self:flex-start;padding:12px 0;font-size:17px}.nav-lang:hover{background:transparent}[data-nav="open"] .nav-toggle .bars,.nav-toggle .close{display:none}[data-nav="open"] .nav-toggle .close{display:block}}
-@media (max-width:640px){.hero h1{font-size:34px !important}.field-row{grid-template-columns:1fr}.contact-form{padding:32px 24px}}
+@media (max-width:640px){.hero h1{font-size:34px !important}.field-row{grid-template-columns:1fr}.contact-form,.contact-done{padding:32px 24px}}
 </style>
 </helmet>
 <div style="width:100%;font-family:var(--font-body);font-size:18px;color:var(--text);background:var(--page);line-height:1.6">
@@ -90,7 +96,13 @@ textarea.field-input{min-height:140px;resize:vertical}
 
 <section style="max-width:760px;margin:0 auto;padding:72px 6vw 24px">
 <div class="contact">
-<form class="contact-form" onsubmit="{{ onSubmit }}">
+<sc-if value="{{ sent }}"><div class="contact-done">
+<div class="contact-done-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+<h2 tabIndex="-1">Cảm ơn quý anh chị!</h2>
+<p>Lời nhắn đã được gửi. Ban Điều Hành sẽ phản hồi trong vòng 5–7 ngày.</p>
+<button class="contact-again" type="button" onclick="{{ sendAnother }}">Gửi lời nhắn khác</button>
+</div></sc-if>
+<sc-if value="{{ editing }}"><form class="contact-form" onsubmit="{{ onSubmit }}">
 <div class="field-row">
 <label class="field"><span class="field-label">Tên quý anh chị</span><input class="field-input" type="text" name="name" placeholder="Họ &amp; tên" autoComplete="name" required></label>
 <label class="field"><span class="field-label">Email</span><input class="field-input" type="email" name="email" placeholder="contact@email.com" autoComplete="email" required></label>
@@ -103,11 +115,10 @@ textarea.field-input{min-height:140px;resize:vertical}
 <label class="field"><span class="field-label">Lời nhắn <span class="field-optional">(nếu có)</span></span><textarea class="field-input" name="message" placeholder="Hãy nhập chi tiết lời nhắn hoặc thắc mắc."></textarea></label>
 <input class="honey" type="text" name="_honey" tabIndex="-1" autoComplete="off" aria-hidden="true">
 <div role="status">
-<sc-if value="{{ sent }}"><p class="notice notice-ok">Cảm ơn quý anh chị đã để lại lời nhắn. Ban Điều Hành sẽ phản hồi trong vòng 5–7 ngày.</p></sc-if>
 <sc-if value="{{ failed }}"><p class="notice notice-err">Chưa gửi được lời nhắn. Xin thử lại, hoặc liên lạc trực tiếp qua <a href="mailto:khoacanbansd@gmail.com">khoacanbansd@gmail.com</a> · <a href="tel:+18582325276">858-232-5276</a>.</p></sc-if>
 </div>
 <button class="submit" type="submit" disabled="{{ sending }}">{{ submitLabel }}</button>
-</form>
+</form></sc-if>
 </div>
 </section>
 
@@ -152,18 +163,23 @@ const data = await res.json();
 if(!res.ok || String(data.success)!=='true') throw new Error(data.message);
 form.reset();
 this.setState({status:'sent'});
+// The form is replaced, so move focus to the thank-you heading for screen readers and small screens.
+setTimeout(() => document.querySelector('.contact-done h2')?.focus());
 } catch(err) {
 console.error(err);
 this.setState({status:'failed'});
 }
 };
+sendAnother = () => this.setState({status:'idle'});
 renderVals() {
 const {status} = this.state;
 return {
 onSubmit:this.onSubmit,
 formatPhone:this.formatPhone,
+sendAnother:this.sendAnother,
 sending:status==='sending',
 sent:status==='sent',
+editing:status!=='sent',
 failed:status==='failed',
 submitLabel:status==='sending'?'Đang gửi…':'Gửi thông tin',
 };
