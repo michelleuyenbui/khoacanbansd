@@ -14,12 +14,13 @@
   --line:#E3E8F4;        /* borders and dividers */
   --line-strong:#7C86A8; /* form field borders */
   --text-placeholder:#6B7390; /* hint text inside form fields */
-  --font-display:'Lora',Georgia,serif;              /* headings, big numbers, scripture quote */
-  --font-body:'Source Sans 3',system-ui,sans-serif;  /* everything else */
+  --font-display:'Be Vietnam Pro',system-ui,sans-serif; /* headings and big numbers */
+  --font-body:'Be Vietnam Pro',system-ui,sans-serif;    /* everything else */
+  --font-quote:'Lora',Georgia,serif;                    /* scripture quote only, always italic */
 }
 h2,h3,h4{color:var(--navy)} /* h1 sits on dark heroes and stays white */
-h1,h2,h3,.stat-num,.stat-big,.quote{font-family:var(--font-display);font-weight:600}
-.quote{font-style:italic}
+h1,h2,h3,.stat-num,.stat-big{font-family:var(--font-display);font-weight:600}
+.quote{font-family:var(--font-quote);font-weight:500;font-style:italic}
 
 /* Footer, shared by every page */
 .footer{margin-top:96px;background:var(--blue);color:#fff;padding:56px 6vw 28px}
