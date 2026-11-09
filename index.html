@@ -88,8 +88,10 @@
 			.faq-a{padding:0 22px 22px;font-size:18px;line-height:1.65;color:var(--text-body)}
 			.faq-a p,.faq-a ol{margin:0}
 			.faq-a ol{margin-top:8px;padding-left:22px}
+			.ev-date-long,.br-sm{display:none}
+			@media (min-width:1280px){.ev-info{display:grid !important;grid-template-columns:repeat(3,auto)}} /* three columns only where they fit */
 			@media (max-width:1180px){.navbar{gap:0 8px !important}.brandnav{display:contents !important}.navactions{gap:4px !important}.navactions>.lang{display:none}.navactions .btn{padding:9px 14px !important;font-size:14px !important}.nav-toggle{display:inline-flex}.nav{display:none !important;order:3;width:100%;flex-direction:column;gap:0 !important;margin-top:10px;border-top:1px solid var(--line);padding-top:4px;font-size:17px !important}[data-nav="open"] .nav{display:flex !important}.nav a{padding:12px 0}.nav-lang{display:inline-flex;align-self:flex-start;padding:12px 0;font-size:17px}.nav-lang:hover{background:transparent}[data-nav="open"] .nav-toggle .bars,.nav-toggle .close{display:none}[data-nav="open"] .nav-toggle .close{display:block}}
-			@media (max-width:640px){.quote{font-size:23px !important}.stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:28px 16px !important}.stat-num{font-size:34px !important}}
+			@media (max-width:640px){.br-sm{display:inline}#home h1{font-size:min(36px,9.4vw) !important}.quote{font-size:23px !important}.stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:28px 16px !important}.stat-num{font-size:34px !important}.ev-row{flex:1 1 100%;flex-direction:column;gap:16px !important}.ev-date{flex-direction:row !important;justify-content:flex-start !important;align-self:stretch;width:auto !important;height:auto !important;margin:calc(-1 * var(--card-pad,28px)) calc(-1 * var(--card-pad,28px)) 0;padding:14px var(--card-pad,28px);border-radius:20px 20px 0 0 !important}.ev-date>span{display:none}.ev-date>.ev-date-long{display:block;font-size:17px;font-weight:700}.ev-info{flex-direction:column}.ev-row a{overflow-wrap:anywhere}}
 			/* Liên Gia photo strip */
 		  .lg-strip {
 		    --lg-speed: 45s;            /* bigger number = slower scroll */
@@ -161,8 +163,7 @@
 	</helmet>
 	<div style="width:100%;font-family:var(--font-body);font-size:18px;color:var(--text);background:var(--page);line-height:1.6">
 	
-	<header class="hero" style="background:#fff">
-	<div style="background:#fff;border-bottom:1px solid var(--line);padding:0 6vw">
+	<header class="site-header" style="background:#fff;border-bottom:1px solid var(--line);padding:0 6vw">
 	<div class="navbar" style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:10px 0">
 	<div class="brandnav" style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
 	<a href="#home"><img src="./assets/logo.png" alt="Logo CTTTHNGĐ" style="width:48px;height:48px;border-radius:50%;display:block"></a>
@@ -170,18 +171,19 @@
 	</div>
 	<div class="navactions" style="display:flex;align-items:center;gap:20px"><button class="lang" type="button" aria-label="Đổi ngôn ngữ / Change language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4 6.5 4 10s-1 7-4 10c-3-3-4-6.5-4-10s1-7 4-10z"/></svg><span class="lang-vi">EN</span><span class="lang-en">VI</span></button><a class="btn" href="files/don-ghi-danh-khoa-can-ban.pdf" target="_blank" rel="noopener" style="background:var(--blue-bright);color:#fff;padding:11px 20px;border-radius:999px;font-weight:600;font-size:15px">Đăng ký khóa căn bản</a><button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="close" d="M6 6l12 12M18 6L6 18"/></svg></button></div>
 	</div>
-	</div>
+	</header>
+	<div class="hero">
 	<div id="home" style="position:relative;overflow:hidden;background:linear-gradient(180deg,#2161C2 0%,#5499E6 55%,#BDDEF7 100%);color:#fff;padding:120px 6vw">
 	<canvas id="hero-sky" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
 	<div class="hero-shade" style="position:absolute;inset:0"></div>
 	<div class="hero-inner">
 	<div>
-	<h1 style="margin:0;font-size:min(52px,7.4vw);line-height:1.12;font-weight:600">Chương Trình Thăng Tiến<br>Hôn Nhân Gia Đình</h1>
+	<h1 style="margin:0;font-size:min(52px,7.4vw);line-height:1.12;font-weight:600">Chương Trình <br class="br-sm">Thăng Tiến<br>Hôn Nhân Gia Đình</h1>
 	<p class="hero-sub">Giáo Phận San Diego</p>
 	</div>
 	</div>
 	</div>
-	</header>
+	</div>
 	
 	<section class="section" id="gioithieu" style="max-width:1200px;margin:0 auto">
 	<p style="margin:0 0 8px;color:var(--blue-bright);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase">Giới Thiệu</p>
@@ -237,8 +239,8 @@
 	<h2 style="margin:0 0 32px;font-size:36px;line-height:1.2;color:#fff">Mời hai bạn tham dự khóa căn bản</h2>
 	<div style="display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#fff;border-radius:20px;padding:32px">
 	<sc-if value="{{ nextClass }}">
-	<div style="display:flex;gap:20px;min-width:0">
-	<div style="flex:none;width:76px;height:84px;border-radius:14px;background:var(--blue);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:14px;color:var(--blue-tint);font-weight:700">{{ nextClass.month }}</span><span style="font-size:32px;font-weight:800;line-height:1.1">{{ nextClass.day }}</span></div>
+	<div class="ev-row" style="--card-pad:32px;display:flex;gap:20px;min-width:0">
+	<div class="ev-date" style="flex:none;width:76px;height:84px;border-radius:14px;background:var(--blue);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:14px;color:var(--blue-tint);font-weight:700">{{ nextClass.month }}</span><span style="font-size:32px;font-weight:800;line-height:1.1">{{ nextClass.day }}</span><span class="ev-date-long">{{ nextClass.dateLong }}</span></div>
 	<div style="display:flex;flex-direction:column;gap:10px;font-size:18px;color:var(--text-body)">
 	<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">{{ nextClass.dates }}</span>{{ nextClass.when }}</span></div>
 	<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5a7 7 0 1 0-14 0C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">{{ nextClass.place }}</span><a href="{{ nextClass.map }}" target="_blank" rel="noopener" style="text-decoration:underline">{{ nextClass.address }}</a></span></div>
@@ -258,12 +260,12 @@
 		<h2 style="margin:0 0 32px;font-size:36px">Lịch trình sinh hoạt</h2>
 		<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))">
 		<sc-for list="{{ upcoming }}" as="ev">
-			<div style="display:flex;gap:20px;background:#fff;border-radius:20px;padding:28px">
-			<div style="flex:none;width:76px;height:84px;border-radius:14px;background:var(--blue);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:14px;color:var(--blue-tint);font-weight:700">{{ ev.month }}</span><span style="font-size:32px;font-weight:800;line-height:1.1">{{ ev.day }}</span></div>
+			<div class="ev-row" style="display:flex;gap:20px;background:#fff;border-radius:20px;padding:28px">
+			<div class="ev-date" style="flex:none;width:76px;height:84px;border-radius:14px;background:var(--blue);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:14px;color:var(--blue-tint);font-weight:700">{{ ev.month }}</span><span style="font-size:32px;font-weight:800;line-height:1.1">{{ ev.day }}</span><span class="ev-date-long">{{ ev.dateLong }}</span></div>
 			<div style="min-width:0"><h3 style="margin:0 0 12px;font-size:19px;line-height:1.3">{{ ev.title }}</h3>
-			<div style="display:flex;flex-wrap:wrap;gap:10px 40px;font-size:18px;color:var(--text-body)">
+			<div class="ev-info" style="display:flex;flex-wrap:wrap;gap:10px 40px;font-size:18px;color:var(--text-body)">
 			<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>{{ ev.when }}</span></div>
-			<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5a7 7 0 1 0-14 0C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">{{ ev.place }}</span>{{ ev.address }}</span></div>
+			<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5a7 7 0 1 0-14 0C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">{{ ev.place }}</span><span style="display:block">{{ ev.street }}</span>{{ ev.city }}</span></div>
 			<sc-if value="{{ ev.contact }}">
 				<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">Liên lạc {{ ev.contact.name }}</span><a href="sms:{{ ev.contact.phone }}" style="text-decoration:underline">{{ ev.contact.phone }}</a><br><a href="mailto:{{ ev.contact.email }}" style="text-decoration:underline">{{ ev.contact.email }}</a></span></div>
 			</sc-if>
@@ -355,12 +357,13 @@
 	const today=new Date().toLocaleDateString('en-CA',{timeZone:'America/Los_Angeles'});
 	const events=EVENTS.map(ev=>{
 	const [y,m,d]=ev.date.split('-');
-	return {...ev,month:'THG '+Number(m),day:Number(d),dateText:ev.dateText||'Ngày '+Number(d)+' tháng '+Number(m)+' năm '+y};
+	const addr=ev.address||'',cut=addr.indexOf(', ');
+	return {...ev,month:'THG '+Number(m),day:Number(d),dateLong:'Ngày '+Number(d)+' tháng '+Number(m),street:cut<0?addr:addr.slice(0,cut),city:cut<0?'':addr.slice(cut+2),dateText:ev.dateText||'Ngày '+Number(d)+' tháng '+Number(m)+' năm '+y};
 	});
 	const upcoming=events.filter(ev=>ev.date>=today).sort((a,b)=>a.date.localeCompare(b.date));
 	const past=events.filter(ev=>ev.date<today).sort((a,b)=>b.date.localeCompare(a.date));
 	const [,cm,cd]=NEXT_CLASS.date.split('-');
-	const nextClass=NEXT_CLASS.end>=today?{...NEXT_CLASS,month:'THG '+Number(cm),day:Number(cd)}:null;
+	const nextClass=NEXT_CLASS.end>=today?{...NEXT_CLASS,month:'THG '+Number(cm),day:Number(cd),dateLong:'Ngày '+Number(cd)+' tháng '+Number(cm)}:null;
 	// The FAQ answers come from NEXT_CLASS too, so updating it updates them.
 	const [ey,em,ed]=NEXT_CLASS.end.split('-');
 	const faqDates=nextClass
