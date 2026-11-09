@@ -63,3 +63,9 @@ a.doc-name:hover{color:var(--blue-bright);text-decoration:underline}
 .doc-dl svg{flex:none;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .doc-soon{font-size:14px;color:var(--text-muted)}
 @media (max-width:640px){.doc-card{padding:24px 16px}.doc-row{padding:12px 14px;gap:12px}.doc-dl{padding:8px 12px}.doc-dl-text{display:none}.doc-group-h{font-size:21px}}
+
+/* Header stays pinned while scrolling once the menu collapses to the hamburger */
+@media (max-width:1180px){
+  .site-header{position:sticky;top:0;z-index:40}
+  html{scroll-padding-top:72px} /* in-page links land below the pinned header */
+}
