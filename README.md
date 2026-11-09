@@ -16,6 +16,7 @@ that `support.js` (with the React copy in `vendor/`) renders in the browser.
 | `liengia.html` | Liên Gia: the seven Liên Gia and their Song Nguyền |
 | `tailieu.html` | Tài Liệu: documents, the founder's books and prayers |
 | `detaihopliengia.html` | Đề Tài Họp Liên Gia: meeting topics |
+| `lichsinhhoat.html` | Lịch Sinh Hoạt: next event's flyer, upcoming and past events, the year's PDF |
 | `lienlac.html` | Liên Lạc: contact form |
 
 Shared files:
@@ -25,11 +26,12 @@ Shared files:
 - `nav-toggle.js`: the menu button on phones.
 - `email-copy.js`: copies an email address when someone clicks it.
 - `hero-sky.js`: the moving clouds behind the home page title.
+- `lich-sinh-hoat.js`: the events listed on Lịch Sinh Hoạt.
 - `assets/`: images. `assets/og-image.jpg` is the picture shown when a link is shared.
 - `files/`: the PDFs and Word files people download. Each page links to its own copy here, not to Google Drive.
 
 The header and footer are copied into every page, so a change to a menu link
-has to be made in all seven files.
+has to be made in all eight files.
 
 ## Updating content
 
@@ -52,9 +54,16 @@ comment explaining how to edit it.
   each page sorts groups and documents A–Z. Keep file names lowercase
   without accents or spaces. Files over 50 MB are too big for GitHub; link to
   them instead.
-- **Lịch Sinh Hoạt and the registration form**: replace
+- **Lịch Sinh Hoạt events** (`lich-sinh-hoat.js`, `EVENTS`): add one line per
+  event, past or future, in any order. The day after an event ends it moves from
+  "Sắp tới" to "Đã qua" by itself. Use `date:'2027-03'` while only the month is
+  known. Add `flyer` (an image in `assets/sinhhoat/`) and the event gets the
+  banner at the top of the page while it's upcoming; after it, `photo` and
+  `album` give it a "Xem hình" link.
+- **Lịch Sinh Hoạt PDF and the registration form**: replace
   `files/lich-sinh-hoat.pdf` or `files/don-ghi-danh-khoa-can-ban.pdf` with the
-  new PDF under the same name. Every page's menu already links there.
+  new PDF under the same name. The Lịch Sinh Hoạt page's "Xem lịch (PDF)"
+  button and the registration links already point there.
 - **Ban Điều Hành photos**: `assets/bandieuhanh/<name>.jpg`.
 - **Liên Gia photos**: `assets/liengia/<liên-gia-id>.jpg`.
 
