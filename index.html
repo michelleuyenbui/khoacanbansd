@@ -93,73 +93,99 @@
 			@media (min-width:1280px){.ev-info{display:grid !important;grid-template-columns:repeat(3,auto)}} /* three columns only where they fit */
 			@media (max-width:1180px){.navbar{gap:0 8px !important}.brandnav{display:contents !important}.navactions{gap:4px !important}.navactions>.lang{display:none}.navactions .btn{padding:9px 14px !important;font-size:14px !important}.nav-toggle{display:inline-flex}.nav{display:none !important;order:3;width:100%;flex-direction:column;gap:0 !important;margin-top:10px;border-top:1px solid var(--line);padding-top:4px;font-size:17px !important}[data-nav="open"] .nav{display:flex !important}.nav a{padding:12px 0}.nav-lang{display:inline-flex;align-self:flex-start;padding:12px 0;font-size:17px}.nav-lang:hover{background:transparent}[data-nav="open"] .nav-toggle .bars,.nav-toggle .close{display:none}[data-nav="open"] .nav-toggle .close{display:block}}
 			@media (max-width:640px){.br-sm{display:inline}#home h1{font-size:min(36px,9.4vw) !important}.quote{font-size:23px !important}.stats{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:28px 16px !important}.stat-num{font-size:34px !important}.ev-row{flex:1 1 100%;flex-direction:column;gap:16px !important}.ev-date{flex-direction:row !important;justify-content:flex-start !important;align-self:stretch;width:auto !important;height:auto !important;margin:calc(-1 * var(--card-pad,28px)) calc(-1 * var(--card-pad,28px)) 0;padding:14px var(--card-pad,28px);border-radius:20px 20px 0 0 !important}.ev-date>span{display:none}.ev-date>.ev-date-long{display:block;font-size:17px;font-weight:700}.ev-info{flex-direction:column}.ev-row a{overflow-wrap:anywhere}}
+			/* Next class: the same navy band as the Khóa Căn Bản page, date tile on the left */
+			.next-band{background:var(--navy)}
+			.next{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;align-items:center;color:#fff}
+			.next-date{display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;border-radius:18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);text-align:center}
+			.next-date-m{font-size:18px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-tint)}
+			.next-date-d{font-family:var(--font-display);font-size:60px;font-weight:700;line-height:1.1}
+			.next-date-y{font-size:18px;font-weight:600;opacity:.85}
+			.next-meta-date{display:none !important}
+			.next-eyebrow{margin:0;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-tint)}
+			.next h2{margin:6px 0 18px;font-size:36px;line-height:1.2;color:#fff;text-wrap:balance}
+			.next-none{margin:0 0 4px;font-size:18px}
+			.next-meta{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none;font-size:18px;line-height:1.5}
+			.next-meta li{display:flex;gap:12px}
+			.next-meta .ev-ic{width:20px;height:20px;stroke:var(--blue-tint)}
+			.next-strong{display:block;font-weight:600}
+			.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+			.next-addr{display:block;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+			.next-addr:hover{color:var(--blue-tint)}
+			.next-addr:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:2px}
+			.next-city{white-space:nowrap}
+			.next-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+			.next-actions .btn{flex:none;display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:999px;font-weight:700;font-size:16px}
+			.next-actions .ev-ic{margin:0;stroke:currentColor}
+			.next-actions .btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+			@media (max-width:860px){.next{grid-template-columns:1fr;gap:24px}.next-date{display:none}.next-meta-date{display:flex !important}.next h2{font-size:28px}.next-meta{font-size:17px}}
 			/* Liên Gia photo strip */
-		  .lg-strip {
-		    --lg-speed: 45s;            /* bigger number = slower scroll */
-		    --lg-card-w: 300px;
-		    --lg-gap: 20px;
-		    position: relative;
-		    overflow: hidden;
-		    padding: 12px 0 24px; /* room for the hover lift and card shadow */
-		    /* soft fade on the left and right edges */
-		    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-		            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-		  }
-		  .lg-track {
-		    display: flex;
-		    gap: var(--lg-gap);
-		    width: max-content;
-		    align-items: flex-start;
-		    animation: lg-scroll var(--lg-speed) linear infinite;
-		  }
-		  .lg-strip:hover .lg-track,
-		  .lg-strip:focus-within .lg-track { animation-play-state: paused; }
-		  @keyframes lg-scroll {
-		    to { transform: translateX(calc(-50% - var(--lg-gap) / 2)); }
-		  }
-		
-		  .lg-card {
-		    position: relative;
-		    flex: none;
-		    width: var(--lg-card-w);
-		    aspect-ratio: 4 / 3;
-		    border-radius: 16px;
-		    overflow: hidden;
-		    background: var(--navy, #1b2a4e);
-		    color: #fff;
-		    text-decoration: none;
-		    box-shadow: 0 6px 16px rgba(27, 42, 78, .14);
-		    transition: transform .35s ease, box-shadow .35s ease;
-		  }
-		  .lg-card img {
-		    position: absolute; inset: 0;
-		    width: 100%; height: 100%;
-		    object-fit: cover;
-		    transition: transform .6s ease;
-		  }
-		  .lg-card::after {
-		    content: ""; position: absolute; inset: 0;
-		    background: linear-gradient(to top, rgba(10, 20, 45, .8) 0%, rgba(10, 20, 45, .2) 45%, transparent 70%);
-		  }
-		  .lg-card > span {
-		    position: absolute; left: 18px; right: 18px; bottom: 16px; z-index: 1;
-		    font-size: 18px; font-weight: 700; line-height: 1.3;
-		    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-		  }
-		  .lg-card:hover { transform: translateY(-6px); box-shadow: 0 12px 20px rgba(27, 42, 78, .2); }
-		  .lg-card:hover img { transform: scale(1.06); }
-		  .lg-card:focus-visible { outline: 3px solid var(--blue-bright, #2a63c4); outline-offset: 3px; }
-		
-		  @media (max-width: 640px) {
-		    .lg-strip { --lg-card-w: 220px; --lg-gap: 14px; --lg-speed: 35s; }
-		    .lg-card > span { font-size: 14px; left: 14px; right: 14px; bottom: 12px; }
-		  }
-		  /* visitors who turn off motion get a strip they can swipe instead */
-		  @media (prefers-reduced-motion: reduce) {
-		    .lg-strip { overflow-x: auto; -webkit-mask-image: none; mask-image: none; padding-inline: 6vw; }
-		    .lg-track { animation: none; }
-		    .lg-track [aria-hidden="true"] { display: none; }
-		  }
+			.lg-strip {
+				--lg-speed: 45s;            /* bigger number = slower scroll */
+				--lg-card-w: 300px;
+				--lg-gap: 20px;
+				position: relative;
+				margin: 0 -6vw; /* reach past the section's side padding to both screen edges */
+				overflow: hidden;
+				padding: 12px 0 24px; /* room for the hover lift and card shadow */
+				/* soft fade on the left and right edges */
+				-webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+				mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+			}
+			.lg-track {
+				display: flex;
+				gap: var(--lg-gap);
+				width: max-content;
+				align-items: flex-start;
+				animation: lg-scroll var(--lg-speed) linear infinite;
+			}
+			.lg-strip:hover .lg-track,
+			.lg-strip:focus-within .lg-track { animation-play-state: paused; }
+			@keyframes lg-scroll {
+				to { transform: translateX(calc(-50% - var(--lg-gap) / 2)); }
+			}
+
+			.lg-card {
+				position: relative;
+				flex: none;
+				width: var(--lg-card-w);
+				aspect-ratio: 4 / 3;
+				border-radius: 16px;
+				overflow: hidden;
+				background: var(--navy, #1b2a4e);
+				color: #fff;
+				text-decoration: none;
+				box-shadow: 0 6px 16px rgba(27, 42, 78, .14);
+				transition: transform .35s ease, box-shadow .35s ease;
+			}
+			.lg-card img {
+				position: absolute; inset: 0;
+				width: 100%; height: 100%;
+				object-fit: cover;
+				transition: transform .6s ease;
+			}
+			.lg-card::after {
+				content: ""; position: absolute; inset: 0;
+				background: linear-gradient(to top, rgba(10, 20, 45, .8) 0%, rgba(10, 20, 45, .2) 45%, transparent 70%);
+			}
+			.lg-card > span {
+				position: absolute; left: 18px; right: 18px; bottom: 16px; z-index: 1;
+				font-size: 18px; font-weight: 700; line-height: 1.3;
+				white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+			}
+			.lg-card:hover { transform: translateY(-6px); box-shadow: 0 12px 20px rgba(27, 42, 78, .2); }
+			.lg-card:hover img { transform: scale(1.06); }
+			.lg-card:focus-visible { outline: 3px solid var(--blue-bright, #2a63c4); outline-offset: 3px; }
+
+			@media (max-width: 640px) {
+				.lg-strip { --lg-card-w: 220px; --lg-gap: 14px; --lg-speed: 35s; }
+				.lg-card > span { font-size: 14px; left: 14px; right: 14px; bottom: 12px; }
+			}
+			/* visitors who turn off motion get a strip they can swipe instead */
+			@media (prefers-reduced-motion: reduce) {
+				.lg-strip { overflow-x: auto; -webkit-mask-image: none; mask-image: none; padding-inline: 6vw; }
+				.lg-track { animation: none; }
+				.lg-track [aria-hidden="true"] { display: none; }
+			}
 		</style>
 	</helmet>
 	<div style="width:100%;font-family:var(--font-body);font-size:18px;color:var(--text);background:var(--page);line-height:1.6">
@@ -231,24 +257,20 @@
 	</div>
 	</section>
 	
-	<section class="section" id="dangky" style="background:linear-gradient(90deg,var(--blue),var(--blue-light))">
-	<div style="max-width:1200px;margin:0 auto">
-	<p style="margin:0 0 8px;color:var(--blue-tint);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase">Khóa kế tiếp</p>
-	<h2 style="margin:0 0 32px;font-size:36px;line-height:1.2;color:#fff">Mời hai bạn tham dự khóa căn bản</h2>
-	<div style="display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:#fff;border-radius:20px;padding:32px">
-	<sc-if value="{{ nextClass }}">
-	<div class="ev-row" style="--card-pad:32px;display:flex;gap:20px;min-width:0">
-	<div class="ev-date" style="flex:none;width:76px;height:84px;border-radius:14px;background:var(--blue);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center"><span style="font-size:14px;color:var(--blue-tint);font-weight:700">{{ nextClass.month }}</span><span style="font-size:32px;font-weight:800;line-height:1.1">{{ nextClass.day }}</span><span class="ev-date-long">{{ nextClass.dateLong }}</span></div>
-	<div style="display:flex;flex-direction:column;gap:10px;font-size:18px;color:var(--text-body)">
-	<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">{{ nextClass.dates }}</span>{{ nextClass.when }}</span></div>
-	<div style="display:flex;gap:10px"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5a7 7 0 1 0-14 0C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><span style="display:block;font-weight:600;color:var(--text)">{{ nextClass.place }}</span><a href="{{ nextClass.map }}" target="_blank" rel="noopener" style="text-decoration:underline">{{ nextClass.address }}</a></span></div>
-	</div>
-	</div>
-	</sc-if>
-	<sc-if value="{{ noNextClass }}">
-	<p style="margin:0;color:var(--text-body)">Ngày khóa kế tiếp sẽ được cập nhật sớm.</p>
-	</sc-if>
-	<div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="khoacanban.html" style="flex:none;border:1.5px solid var(--blue-bright);color:var(--blue-bright);padding:10.5px 24.5px;border-radius:999px;font-weight:600"><span class="lang-vi">Xem chi tiết</span><span class="lang-en">Learn more</span></a><a class="btn" href="files/don-ghi-danh-khoa-can-ban.pdf" target="_blank" rel="noopener" style="flex:none;background:var(--blue-bright);color:#fff;padding:12px 26px;border-radius:999px;font-weight:600">Đăng ký khóa căn bản</a></div>
+	<section class="section next-band" id="dangky">
+	<div class="next">
+	<sc-if value="{{ nextClass }}"><div class="next-date" aria-hidden="true"><span class="next-date-m">{{ nextClass.monthFull }}</span><span class="next-date-d">{{ nextClass.days }}</span><span class="next-date-y">{{ nextClass.year }}</span></div></sc-if>
+	<sc-if value="{{ noNextClass }}"><div class="next-date" aria-hidden="true"><svg class="ev-ic" viewBox="0 0 24 24" style="width:56px;height:56px;margin:0;stroke:var(--blue-tint)"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg></div></sc-if>
+	<div>
+	<p class="next-eyebrow">Khóa kế tiếp</p>
+	<h2>Mời hai bạn tham dự khóa căn bản</h2>
+	<sc-if value="{{ nextClass }}"><ul class="next-meta">
+	<li class="next-meta-date" aria-hidden="true"><svg class="ev-ic" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg><span class="next-strong">{{ nextClass.rangeLong }}</span></li>
+	<li><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><span class="sr">{{ nextClass.dates }}, </span>{{ nextClass.when }}</span></li>
+	<li><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5a7 7 0 1 0-14 0C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><span class="next-strong">{{ nextClass.place }}</span><a class="next-addr" href="{{ nextClass.map }}" target="_blank" rel="noopener">{{ nextClass.street }}, <span class="next-city">{{ nextClass.city }}</span></a></span></li>
+	</ul></sc-if>
+	<sc-if value="{{ noNextClass }}"><p class="next-none">Ngày khóa kế tiếp sẽ được cập nhật sớm.</p></sc-if>
+	<div class="next-actions"><a class="btn" href="files/don-ghi-danh-khoa-can-ban.pdf" target="_blank" rel="noopener" style="background:#fff;color:var(--navy)"><svg class="ev-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Đăng ký khóa căn bản</a><a class="btn" href="khoacanban.html" style="border:1.5px solid rgba(255,255,255,.6);color:#fff;padding:9.5px 20.5px"><span class="lang-vi">Xem chi tiết</span><span class="lang-en">Learn more</span></a></div>
 	</div>
 	</div>
 	</section>
@@ -299,17 +321,17 @@
 	<h2 style="margin:0 0 20px;font-size:36px;line-height:1.2;color:var(--navy)">Bảy Liên Gia, một gia đình</h2>
 	</div>
 
-<div class="lg-strip" role="region" aria-label="Hình ảnh các Liên Gia">
-  <div class="lg-track">
-    <sc-for list="{{ lienGia }}" as="lg">
-      <a class="lg-card" href="{{ lg.link }}" target="_blank" rel="noopener"><img src="{{ lg.photo }}" alt="{{ lg.alt }}"><span>{{ lg.name }}</span></a>
-    </sc-for>
-    <!-- Second copy so the strip loops from the last card straight back to the first -->
-    <sc-for list="{{ lienGia }}" as="lg">
-      <a class="lg-card" href="{{ lg.link }}" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="{{ lg.photo }}" alt=""><span>{{ lg.name }}</span></a>
-    </sc-for>
-  </div>
-</div>
+	<div class="lg-strip" role="region" aria-label="Hình ảnh các Liên Gia">
+		<div class="lg-track">
+			<sc-for list="{{ lienGia }}" as="lg">
+				<a class="lg-card" href="{{ lg.link }}" target="_blank" rel="noopener"><img src="{{ lg.photo }}" alt="{{ lg.alt }}"><span>{{ lg.name }}</span></a>
+			</sc-for>
+			<!-- Second copy so the strip loops from the last card straight back to the first -->
+			<sc-for list="{{ lienGia }}" as="lg">
+				<a class="lg-card" href="{{ lg.link }}" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1"><img src="{{ lg.photo }}" alt=""><span>{{ lg.name }}</span></a>
+			</sc-for>
+		</div>
+	</div>
 	</section>
 
 	<footer id="lienlac" class="footer">
