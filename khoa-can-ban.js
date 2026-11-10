@@ -24,9 +24,9 @@ function next(today){
   const ed = Number(NEXT_CLASS.end.split('-')[2]);
   const cut = NEXT_CLASS.address.indexOf(', ');
   const days = d===ed ? String(d) : d+'–'+ed;
-  // `month` fits the home page's small badge; `monthFull` and `rangeLong` are the
-  // Khóa Căn Bản page's date tile, the second one on phones.
-  return {...NEXT_CLASS,month:'THG '+m,monthFull:'Tháng '+m,day:d,days,year:y,dateLong:'Ngày '+d+' tháng '+m,
+  // `monthFull`, `days` and `year` fill the date tile on both pages; `rangeLong`
+  // replaces it on phones.
+  return {...NEXT_CLASS,monthFull:'Tháng '+m,days,year:y,
     rangeLong:'Ngày '+days+' tháng '+m+' năm '+y,
     street:NEXT_CLASS.address.slice(0,cut),city:NEXT_CLASS.address.slice(cut+2)};
 }
