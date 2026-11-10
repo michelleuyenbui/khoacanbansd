@@ -11,7 +11,7 @@ that `support.js` (with the React copy in `vendor/`) renders in the browser.
 | File | Page |
 | --- | --- |
 | `index.html` | Home: introduction, next Khóa Căn Bản, FAQ, events |
-| `khoacanban.html` | Khóa Căn Bản: the next class, how to register (from the registration form) and the FAQ. Reached from the header button and the footer, not the menu. |
+| `khoacanban.html` | Khóa Căn Bản: the next class, how to register (from the registration form) and the FAQ. Reached from the header button and the footer, not the menu. Its own header has no register button, since that button leads here. |
 | `about.html` | Tổ Chức: mission, history, Ban Điều Hành |
 | `lichsu.html` | Lịch Sử: history and founder documents |
 | `liengia.html` | Liên Gia: the seven Liên Gia and their Song Nguyền |
