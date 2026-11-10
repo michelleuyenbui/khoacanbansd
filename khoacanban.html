@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Khóa Căn Bản · CTTTHNGĐ San Diego</title>
+<meta name="description" content="Khóa Căn Bản cuối tuần của Chương Trình Thăng Tiến Hôn Nhân Gia Đình, Giáo Phận San Diego: ngày giờ, địa điểm, cách ghi danh và những câu hỏi thường gặp.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CTTTHNGĐ San Diego">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:title" content="Khóa Căn Bản · CTTTHNGĐ San Diego">
+<meta property="og:description" content="Khóa Căn Bản cuối tuần của Chương Trình Thăng Tiến Hôn Nhân Gia Đình, Giáo Phận San Diego: ngày giờ, địa điểm, cách ghi danh và những câu hỏi thường gặp.">
+<meta property="og:url" content="https://khoacanbansd.org/khoacanban.html">
+<meta property="og:image" content="https://khoacanbansd.org/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Chương Trình Thăng Tiến Hôn Nhân Gia Đình – Giáo Phận San Diego">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="./tokens.css">
+<link rel="icon" type="image/png" href="./assets/logo.png">
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./khoa-can-ban.js"></script>
+<script src="./support.js"></script>
+<script src="./lang-toggle.js"></script>
+<script src="./nav-toggle.js"></script>
+<script src="./email-copy.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Lora:ital,wght@1,500&amp;display=swap">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}
+.nav a:hover{color:var(--blue-bright)}
+.btn:hover{filter:brightness(1.08)}
+.lang{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border:0;border-radius:999px;background:transparent;color:var(--text-nav);font:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:background .15s}
+.lang:hover{background:var(--line)}
+.lang:focus-visible{outline:2px solid var(--blue-bright);outline-offset:2px}
+.lang-en,[data-lang="en"] .lang-vi{display:none}
+[data-lang="en"] .lang-en{display:inline}
+.nav-lang{display:none}
+.nav-toggle{display:none;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:0;border-radius:10px;background:transparent;color:var(--text-nav);cursor:pointer}
+.nav-toggle:focus-visible{outline:2px solid var(--blue-bright);outline-offset:2px}
+@media (max-width:1180px){.navbar{gap:0 8px !important}.brandnav{display:contents !important}.navactions{gap:4px !important}.navactions>.lang{display:none}.navactions .btn{padding:9px 14px !important;font-size:14px !important}.nav-toggle{display:inline-flex}.nav{display:none !important;order:3;width:100%;flex-direction:column;gap:0 !important;margin-top:10px;border-top:1px solid var(--line);padding-top:4px;font-size:17px !important}[data-nav="open"] .nav{display:flex !important}.nav a{padding:12px 0}.nav-lang{display:inline-flex;align-self:flex-start;padding:12px 0;font-size:17px}.nav-lang:hover{background:transparent}[data-nav="open"] .nav-toggle .bars,.nav-toggle .close{display:none}[data-nav="open"] .nav-toggle .close{display:block}}
+.wrap{max-width:1200px;margin:0 auto}
+.ic{flex:none;width:18px;height:18px;margin-top:4px;fill:none;stroke:var(--blue-bright);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn-p{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:background .15s,color .15s,filter .15s}
+.btn-p{border:0;background:var(--blue-bright);color:#fff}
+.btn-p:hover{filter:brightness(1.08)}
+.btn-p svg{width:18px;height:18px;margin:0;stroke:currentColor}
+.btn-p:focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px}
+/* A class in front of Mission San Luis Rey; its bottom fades into the navy band below,
+   which carries the class details with no box around them */
+.photo-band{position:relative;height:clamp(240px,34vw,460px);background:var(--navy)}
+.photo-band img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 100%}
+.photo-band::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(15,42,92,0) 76%,rgba(15,42,92,.3) 86%,rgba(15,42,92,.75) 95%,var(--navy) 100%)}
+.next-band{background:var(--navy);padding:8px 6vw 56px}
+/* Photos from past classes: a slow loop like the home page's Liên Gia strip */
+.gal-h{margin:0 0 20px;font-size:28px;line-height:1.2}
+.ph-strip{--ph-speed:70s;--ph-w:320px;--ph-gap:16px;margin:0 -6vw;overflow:hidden;padding:4px 0 8px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.ph-track{display:flex;gap:var(--ph-gap);width:max-content;animation:ph-scroll var(--ph-speed) linear infinite}
+.ph-strip:hover .ph-track{animation-play-state:paused}
+@keyframes ph-scroll{to{transform:translateX(calc(-50% - var(--ph-gap) / 2))}}
+.ph-track img{flex:none;display:block;width:var(--ph-w);aspect-ratio:4/3;object-fit:cover;border-radius:14px;background:var(--page-deep)}
+@media (max-width:640px){.ph-strip{--ph-w:240px;--ph-gap:12px;--ph-speed:55s}}
+/* visitors who turn off motion get a row they can swipe instead */
+@media (prefers-reduced-motion:reduce){.ph-strip{overflow-x:auto;-webkit-mask-image:none;mask-image:none;padding-inline:6vw}.ph-track{animation:none}.ph-track [aria-hidden="true"]{display:none}}
+/* Next class: the date tile on the left, the details on the right, on the navy band */
+.next{display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;align-items:center;color:#fff}
+.next-date{display:flex;flex-direction:column;align-items:center;justify-content:center;aspect-ratio:1;border-radius:18px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);text-align:center}
+.next-date-m{font-size:18px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-tint)}
+.next-date-d{font-family:var(--font-display);font-size:60px;font-weight:700;line-height:1.1}
+.next-date-y{font-size:18px;font-weight:600;opacity:.85}
+.next-meta-date{display:none !important}
+.next-eyebrow{margin:0;font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-tint)}
+.next h1{margin:6px 0 18px;font-size:38px;line-height:1.15;font-weight:600;color:#fff;text-wrap:balance}
+.next-none{margin:0 0 4px;font-size:18px}
+.next-meta{display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none;font-size:18px;line-height:1.5;color:#fff}
+.next-meta li{display:flex;gap:12px}
+.next-meta .ic{width:20px;height:20px;margin-top:3px;stroke:var(--blue-tint)}
+.next-strong{display:block;font-weight:600}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.next-addr{display:block;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.next-addr:hover{color:var(--blue-tint)}
+.next-addr:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:2px}
+.next-city{white-space:nowrap}
+.next-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.next .btn-p{background:#fff;color:var(--navy)}
+.next .btn-p:focus-visible{outline-color:#fff}
+.eyebrow{margin:0 0 8px;color:var(--blue-bright);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase}
+.sec-h{margin:0 0 32px;font-size:36px;line-height:1.2}
+/* Cách ghi danh: three steps, each with an icon styled like Lịch Sử's card icons */
+.steps{display:grid;gap:20px;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;padding:0;list-style:none}
+.steps li{display:grid;grid-template-columns:var(--badge) minmax(0,1fr);align-items:center;align-content:start;gap:14px 14px;padding:24px;border-radius:18px;background:var(--page)}
+.step-ic{display:flex;align-items:center;justify-content:center;width:var(--badge);height:var(--badge);border-radius:50%;background:var(--blue-tint)}
+.step-ic svg{width:var(--badge-glyph);height:var(--badge-glyph);fill:var(--blue-bright)}
+.steps h3{margin:0;font-size:20px;line-height:1.3}
+.steps p{grid-column:1/-1;margin:0;font-size:17px;line-height:1.6;color:var(--text-body)}
+.steps a{text-decoration:underline;text-underline-offset:2px}
+.steps a:hover{color:var(--blue-bright)}
+/* Hỏi đáp, same as the home page */
+.faq{background:#fff;border-radius:18px;transition:background .2s}
+.faq[open]{background:var(--page-deep)}
+@media (hover:hover){.faq:hover{background:var(--page-deep)}}
+.faq summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px;font-size:18px;font-weight:700;color:var(--navy);cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:focus-visible{outline:2px solid var(--blue-bright);outline-offset:2px;border-radius:18px}
+.faq summary svg{flex:none;width:20px;height:20px;fill:none;stroke:var(--blue-bright);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.faq[open] summary svg{transform:rotate(180deg)}
+.faq-a{padding:0 22px 22px;font-size:18px;line-height:1.65;color:var(--text-body)}
+.faq-a p,.faq-a ol{margin:0}
+.faq-a ol{margin-top:8px;padding-left:22px}
+.faq-a a{text-decoration:underline}
+@media (max-width:860px){.next-band{padding-bottom:40px}.next{grid-template-columns:1fr;gap:24px}.next-date{display:none}.next-meta-date{display:flex !important}.next h1{font-size:28px}.next-meta{font-size:17px}.gal-h{font-size:24px}.steps{grid-template-columns:1fr;gap:12px}.steps li{padding:18px}}
+@media (max-width:640px){.sec-h{font-size:28px}}
+</style>
+</helmet>
+<div style="width:100%;font-family:var(--font-body);font-size:18px;color:var(--text);background:var(--page);line-height:1.6">
+
+<header class="site-header" style="background:#fff;border-bottom:1px solid var(--line);padding:0 6vw">
+<div class="navbar" style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:10px 0">
+<div class="brandnav" style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+<a href="index.html"><img src="./assets/logo.png" alt="Logo CTTTHNGĐ" style="width:48px;height:48px;border-radius:50%;display:block"></a>
+<nav class="nav" style="display:flex;gap:24px;font-size:15px;font-weight:500;color:var(--text-nav)"><a href="index.html">Trang Chủ</a><a href="about.html">Tổ Chức</a><a href="lichsu.html">Lịch Sử</a><a href="liengia.html">Liên Gia</a><a href="detaihopliengia.html">Họp Liên Gia</a><a href="tailieu.html">Tài Liệu</a><a href="lichsinhhoat.html">Lịch Sinh Hoạt</a><a href="lienlac.html">Liên Lạc</a><button class="lang nav-lang" type="button" aria-label="Đổi ngôn ngữ / Change language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4 6.5 4 10s-1 7-4 10c-3-3-4-6.5-4-10s1-7 4-10z"/></svg><span class="lang-vi">EN</span><span class="lang-en">VI</span></button></nav>
+</div>
+<!-- On this page the header button opens the form itself; every other page links here -->
+<div class="navactions" style="display:flex;align-items:center;gap:20px"><button class="lang" type="button" aria-label="Đổi ngôn ngữ / Change language"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4 6.5 4 10s-1 7-4 10c-3-3-4-6.5-4-10s1-7 4-10z"/></svg><span class="lang-vi">EN</span><span class="lang-en">VI</span></button><a class="btn" href="files/don-ghi-danh-khoa-can-ban.pdf" target="_blank" rel="noopener" style="background:var(--blue-bright);color:#fff;padding:11px 20px;border-radius:999px;font-weight:600;font-size:15px">Đăng ký khóa căn bản</a><button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="close" d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+</div>
+</header>
+<div class="photo-band"><img src="./assets/khoacanban/mission-san-luis-rey.jpg" alt="Một khóa căn bản chụp hình chung trước nhà thờ Mission San Luis Rey"></div>
+<section class="next-band" id="dangky">
+<div class="wrap">
+<div class="next">
+<sc-if value="{{ next }}"><div class="next-date" aria-hidden="true"><span class="next-date-m">{{ next.monthFull }}</span><span class="next-date-d">{{ next.days }}</span><span class="next-date-y">{{ next.year }}</span></div></sc-if>
+<sc-if value="{{ noNext }}"><div class="next-date" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" style="width:56px;height:56px;margin:0;stroke:var(--blue-tint)"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg></div></sc-if>
+<div>
+<p class="next-eyebrow">Khóa kế tiếp</p>
+<h1>Mời hai bạn tham dự khóa căn bản</h1>
+<sc-if value="{{ next }}"><ul class="next-meta">
+<li class="next-meta-date" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg><span class="next-strong">{{ next.rangeLong }}</span></li>
+<li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><span class="sr">{{ next.dates }}, </span>{{ next.when }}</span></li>
+<li><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5a7 7 0 1 0-14 0C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span><span class="next-strong">{{ next.place }}</span><a class="next-addr" href="{{ next.map }}" target="_blank" rel="noopener">{{ next.street }}, <span class="next-city">{{ next.city }}</span></a></span></li>
+</ul></sc-if>
+<sc-if value="{{ noNext }}"><p class="next-none">Ngày khóa kế tiếp sẽ được cập nhật sớm.</p></sc-if>
+<div class="next-actions">
+<a class="btn-p" href="{{ form }}" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Đăng ký khóa căn bản</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="hinhanh">
+<div class="wrap">
+<h2 class="gal-h">Hình ảnh các khóa trước</h2>
+</div>
+<div class="ph-strip" role="region" aria-label="Hình ảnh các khóa trước">
+<div class="ph-track">
+<sc-for list="{{ photos }}" as="ph"><img src="./assets/khoacanban/{{ ph.file }}" alt="{{ ph.alt }}"></sc-for>
+<!-- Second copy so the strip loops from the last photo straight back to the first -->
+<sc-for list="{{ photos }}" as="ph"><img src="./assets/khoacanban/{{ ph.file }}" alt="" aria-hidden="true"></sc-for>
+</div>
+</div>
+</section>
+
+<section class="section" id="cachghidanh" style="background:#fff">
+<div class="wrap">
+<p class="eyebrow">Ghi danh</p>
+<h2 class="sec-h">Cách ghi danh</h2>
+<ol class="steps">
+<li><span class="step-ic" aria-hidden="true"><svg viewBox="0 -960 960 960"><path d="M480-320 280-520l56-58 104 104v-326h80v326l104-104 56 58-200 200ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg></span><h3>Tải đơn ghi danh</h3><p><a href="{{ form }}" target="_blank" rel="noopener">Tải đơn (PDF)</a>, điền ngay trên máy rồi lưu thành PDF, hoặc in ra để điền. Nếu điền trên máy, xin đánh tên đầy đủ vào chỗ chữ ký.</p></li>
+<li><span class="step-ic" aria-hidden="true"><svg viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280 320-200v-80L480-520 160-720v80l320 200Z"/></svg></span><h3>Gửi đơn cho {{ contact.name }}</h3><p>Gửi đơn đã lưu qua email đến <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>, hoặc gửi bản in qua bưu điện theo địa chỉ ghi trong đơn.</p></li>
+<li><span class="step-ic" aria-hidden="true"><svg viewBox="0 -960 960 960"><path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80Z"/></svg></span><h3>Đóng lệ phí</h3><p>Bằng tiền mặt, chi phiếu đề tên {{ contact.name }}, hoặc Zelle đến số <span style="white-space:nowrap">{{ contact.phone }}</span>.</p></li>
+</ol>
+</div>
+</section>
+
+<section class="section" id="hoidap">
+<div class="wrap">
+<p class="eyebrow">Hỏi đáp</p>
+<h2 class="sec-h">Những câu hỏi thường gặp</h2>
+<div style="display:flex;flex-direction:column;gap:12px">
+<sc-for list="{{ faq }}" as="f">
+<details class="faq"><summary>{{ f.q }}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-a"><p>{{ f.a }}<sc-if value="{{ f.link }}"><a href="{{ f.link.href }}" target="_blank" rel="noopener">{{ f.link.text }}</a></sc-if></p><sc-if value="{{ f.list }}"><ol><sc-for list="{{ f.list }}" as="li"><li>{{ li }}</li></sc-for></ol></sc-if></div></details>
+</sc-for>
+</div>
+</div>
+</section>
+
+<footer id="lienlac" class="footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<a href="index.html"><img src="./assets/logo.png" alt="Logo CTTTHNGĐ"></a>
+<div><div class="footer-name">Chương Trình Thăng Tiến Hôn Nhân Gia Đình</div><div class="footer-sub">Giáo Phận San Diego</div></div>
+</div>
+<nav class="footer-col" aria-label="Liên kết cuối trang"><div class="footer-h">Khám Phá</div><a href="index.html">Trang Chủ</a><a href="about.html">Tổ Chức</a><a href="lichsu.html">Lịch Sử</a><a href="liengia.html">Liên Gia</a><a href="detaihopliengia.html">Họp Liên Gia</a><a href="tailieu.html">Tài Liệu</a><a href="lichsinhhoat.html">Lịch Sinh Hoạt</a><a href="lienlac.html">Liên Lạc</a><a href="khoacanban.html">Khóa Căn Bản</a></nav>
+<div class="footer-col"><div class="footer-h">Liên Lạc Ban Điều Hành</div><a class="footer-contact" href="mailto:cttthngdsd1@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>cttthngdsd1@gmail.com</a><a class="footer-contact" href="tel:+18582325276"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>858-232-5276</a></div>
+</div>
+<div class="footer-bottom">© 2026 Chương Trình Thăng Tiến Hôn Nhân Gia Đình – Giáo Phận San Diego</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":2900}}'>
+// The class, the contact and the questions live in khoa-can-ban.js (window.KHOA).
+// The card already shows the date and place, so those two questions are skipped here.
+const FAQ_ORDER = ['what','who','alone','language','help','fee','cancel'];
+// The photo strip, in this order. Each `file` is in assets/khoacanban/; delete a line to
+// drop a photo. Wide photos work best: the strip crops each one to 4:3 around its middle.
+const PHOTOS = [
+{file:'tiep-tan-717.jpg',alt:'Các chị ngồi bàn tiếp tân dưới bảng chào mừng Khóa 717'},
+{file:'den-khoa.jpg',alt:'Một cặp vợ chồng kéo hành lý đến khóa'},
+{file:'ghi-danh.jpg',alt:'Ban Tổ Chức trao túi quà cho khóa viên lúc ghi danh'},
+{file:'chao-mung-903.jpg',alt:'Một cặp vợ chồng chụp hình dưới bảng chào mừng Khóa 903'},
+{file:'nhom-chao-mung-903.jpg',alt:'Một nhóm chụp hình chung dưới bảng chào mừng Khóa 903'},
+{file:'vo-chong.jpg',alt:'Một cặp vợ chồng tươi cười trong khóa'},
+{file:'buoi-hoc.jpg',alt:'Các cặp vợ chồng ngồi nghe trong hội trường'},
+{file:'khoa-903-hoi-truong.jpg',alt:'Khóa 903 chụp hình chung với cha trong hội trường'},
+{file:'dang-minh-thanh.jpg',alt:'Cha dâng Mình Thánh trong Thánh Lễ'},
+{file:'ruoc-co.jpg',alt:'Khóa 903 rước cờ vào nhà thờ'},
+{file:'mang-khoa.jpg',alt:'Khóa 903 cầm bằng chụp hình chung với các cha trong nhà thờ'},
+{file:'khoa-717.jpg',alt:'Khóa 717 chụp hình chung dưới hàng chữ “Sự gì Thiên Chúa đã phối hợp”'},
+{file:'holy-spirit.jpg',alt:'Đông đủ anh chị em chụp hình chung trước giáo xứ Holy Spirit'},
+];
+class Component extends DCLogic {
+renderVals() {
+const today = KHOA.todayISO();
+const next = KHOA.next(today);
+const all = [...KHOA.faq(today),...KHOA.FORM_FAQ];
+return {next,noNext:!next,form:KHOA.FORM,contact:KHOA.CONTACT,photos:PHOTOS,
+faq:FAQ_ORDER.map(id => all.find(f => f.id === id))};
+}
+}
+</script>
+<script>
+addEventListener('load',function(){
+var id=location.hash.slice(1),tries=0;
+if(!id)return;
+var t=setInterval(function(){
+var el=document.getElementById(id);
+if(el||++tries>40)clearInterval(t);
+if(el)el.scrollIntoView();
+},50);
+});
+</script>
+</body>
+</html>

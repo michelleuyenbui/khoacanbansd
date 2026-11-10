@@ -18,6 +18,8 @@
   --font-body:'Be Vietnam Pro',system-ui,sans-serif;    /* everything else */
   --font-quote:'Lora',Georgia,serif;                    /* scripture quote only, always italic */
   --section-space:72px;  /* space above and below every section's content */
+  --badge:36px;          /* circle holding an icon or number beside a card heading */
+  --badge-glyph:20px;    /* the icon inside that circle */
 }
 h2,h3,h4{color:var(--navy)} /* h1 sits on dark heroes and stays white */
 h1,h2,h3,.stat-num,.stat-big{font-family:var(--font-display);font-weight:600}
