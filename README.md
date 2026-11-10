@@ -11,6 +11,7 @@ that `support.js` (with the React copy in `vendor/`) renders in the browser.
 | File | Page |
 | --- | --- |
 | `index.html` | Home: introduction, next Khóa Căn Bản, FAQ, events |
+| `khoacanban.html` | Khóa Căn Bản: the next class, how to register (from the registration form) and the FAQ. Reached from the header button and the footer, not the menu. |
 | `about.html` | Tổ Chức: mission, history, Ban Điều Hành |
 | `lichsu.html` | Lịch Sử: history and founder documents |
 | `liengia.html` | Liên Gia: the seven Liên Gia and their Song Nguyền |
@@ -27,11 +28,12 @@ Shared files:
 - `email-copy.js`: copies an email address when someone clicks it.
 - `hero-sky.js`: the moving clouds behind the home page title.
 - `lich-sinh-hoat.js`: the events listed on Lịch Sinh Hoạt.
+- `khoa-can-ban.js`: the next Khóa Căn Bản and the FAQ, shown on the home page and on Khóa Căn Bản.
 - `assets/`: images. `assets/og-image.jpg` is the picture shown when a link is shared.
 - `files/`: the PDFs and Word files people download. Each page links to its own copy here, not to Google Drive.
 
 The header and footer are copied into every page, so a change to a menu link
-has to be made in all eight files.
+has to be made in all nine files.
 
 ## Updating content
 
@@ -42,8 +44,9 @@ comment explaining how to edit it.
 - **Events** (`index.html`, `EVENTS`): add one line per event. When an event's
   date has passed, it moves to "Sinh hoạt vừa qua" by itself. Add `photo` and
   `link` to give it a cover picture and an album link.
-- **Next Khóa Căn Bản** (`index.html`, `NEXT_CLASS`): the registration box and
-  the FAQ answers both read from here. Write `dates` out in full, for example
+- **Next Khóa Căn Bản** (`khoa-can-ban.js`, `NEXT_CLASS`): the registration box,
+  the Khóa Căn Bản page and the FAQ answers all read from here. The FAQ
+  questions are in the same file. Write `dates` out in full, for example
   `Thứ Sáu ngày 29 – Chúa Nhật ngày 31 tháng 10 năm 2027`.
 - **Documents** (`lichsu.html`, `tailieu.html` and `detaihopliengia.html`,
   `DOCS`): put the file in `files/` (meeting topics go in `files/de-tai/`), then

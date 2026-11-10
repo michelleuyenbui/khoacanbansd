@@ -55,7 +55,7 @@ const EVENTS = [
 {date:'2027-07',title:'Buổi Tổng Dợt 1',when:'8:00 AM – 5:00 PM',who:'Ban Tổ Chức'},
 {date:'2027-08',title:'Buổi Hồi Tâm 3',when:'6:30 – 9:30 PM',who:'Ban Tổ Chức'},
 {date:'2027-09',title:'Buổi Tổng Dợt 2',when:'8:00 AM – 5:00 PM',who:'Ban Tổ Chức'},
-{date:'2027-10-29',end:'2027-10-31',title:'Khóa Căn Bản',when:'5:00 PM Thứ Sáu – 5:00 PM Chúa Nhật',place:'Mission San Luis Rey Retreat Center',address:'4050 Mission Ave., Oceanside, CA 92057',link:'index.html#dangky'},
+{date:'2027-10-29',end:'2027-10-31',title:'Khóa Căn Bản',when:'5:00 PM Thứ Sáu – 5:00 PM Chúa Nhật',place:'Mission San Luis Rey Retreat Center',address:'4050 Mission Ave., Oceanside, CA 92057',link:'khoacanban.html'},
 {date:'2027-11',title:'Chào Đón Song Nguyền Mới',when:'4:00 – 9:00 PM'},
 ];
 
