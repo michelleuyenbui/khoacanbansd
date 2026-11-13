@@ -8,7 +8,7 @@
  * To add a photo: upload it to assets/gioithieu/ and add a line to its list.
  * A list with only one photo simply doesn't rotate.
  */
-
+(function () {
   var SECONDS = 10;    // how long each photo stays on screen
   var FADE_MS = 1200;  // how long the new photo takes to fade in
   var ZOOM    = 1.12;  // how far it zooms: 1.12 = 12% closer. Try 1.05 for subtler.
