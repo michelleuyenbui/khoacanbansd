@@ -217,15 +217,15 @@
 	<h2 style="margin:0 0 32px;font-size:36px;line-height:1.2">Hôn nhân vững bền, gia đình hạnh phúc</h2>
 	<div class="grid" style="gap:32px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
 	<article class="intro-card">
-	<div class="intro-media"><img src="./assets/gioithieu/hon-nhan.jpg" alt="Các cặp vợ chồng khiêu vũ trong buổi tiệc mừng" loading="lazy"></div>
+	<div class="intro-media"><img src="./assets/gioithieu/hon-nhan.jpg" data-rotate="hon-nhan" alt="Hon Nhan Ben Vung" loading="lazy"></div>
 	<div class="intro-body"><h3>Hôn nhân bền vững</h3><p>Giúp các đôi vợ chồng hiểu nhau hơn, xây dựng mối liên hệ yêu thương và trưởng thành trong đời sống gia đình theo tinh thần Công Giáo.</p></div>
 	</article>
 	<article class="intro-card">
-	<div class="intro-media"><img src="./assets/gioithieu/gia-dinh.jpg" alt="Một gia đình nhiều thế hệ chụp hình bên bánh mừng Lễ Bổn Mạng" loading="lazy"></div>
+	<div class="intro-media"><img src="./assets/gioithieu/gia-dinh.jpg" data-rotate="gia-dinh" alt="Gia Dinh Hai Hoa" loading="lazy"></div>
 	<div class="intro-body"><h3>Gia đình hài hòa</h3><p>Hướng dẫn cách nuôi dạy và sự gắn kết giữa cha mẹ với con cái, đồng thời mở rộng mối quan hệ với gia đình, bạn hữu, và cộng đồng.</p></div>
 	</article>
 	<article class="intro-card">
-	<div class="intro-media"><img src="./assets/gioithieu/duc-tin.jpg" alt="Cha chủ tế trao khung bằng cho một đôi vợ chồng trong Thánh Lễ" loading="lazy"></div>
+	<div class="intro-media"><img src="./assets/gioithieu/duc-tin.jpg" data-rotate="duc-tin" alt="Song & Phuc vu Duc Tin" loading="lazy"></div>
 	<div class="intro-body"><h3>Sống và phục vụ Đức Tin</h3><p>Khơi dậy tinh thần “Hồn Tông Đồ Song Đôi”, giúp các gia đình sống đức tin và phục vụ trong Cộng Đồng Dân Chúa một cách tích cực.</p></div>
 	</article>
 	</div>
@@ -363,39 +363,40 @@
 	// The seven Liên Gia in the photo strip. `link` is the family's Google Photos album.
 	const LIEN_GIA = [
 	{name:'Thánh Giuse',photo:'assets/liengia/thanh-giuse.jpg',link:'https://photos.app.goo.gl/gJ67iJKoEyLvdUiU8'},
-	{name:'Đức Mẹ La Vang',photo:'assets/liengia/duc-me-la-vang.jpg',link:'https://photos.app.goo.gl/QEoz9844meetfo896'},
-	{name:'Thánh GH Gioan Phaolô II',photo:'assets/liengia/thanh-gh-gioan-phaolo.jpg',link:'https://photos.app.goo.gl/CMs5yneNQ9wQntN46'},
-	{name:'Thánh Têrêsa',photo:'assets/liengia/thanh-teresa.jpg',link:'https://photos.app.goo.gl/iaeKRgSQgkrQsRHx6'},
-	{name:'Thánh Tâm Giuse',photo:'assets/liengia/thanh-tam-giuse.jpg',link:'https://photos.app.goo.gl/V4zjV2Cy93pNqT1R7'},
-	{name:'Đức Mẹ Hằng Cứu Giúp',photo:'assets/liengia/duc-me-hang-cuu-giup.jpg',link:'https://photos.app.goo.gl/Z2zh9PKu4GkVgB7o8'},
-	{name:'Đức Mẹ Fatima',photo:'assets/liengia/duc-me-fatima.jpg',link:'https://photos.app.goo.gl/bbarMvqCnkgETSrr6'},
-	];
-	class Component extends DCLogic {
-	renderVals() {
-	const today=new Date().toLocaleDateString('en-CA',{timeZone:'America/Los_Angeles'});
-	const events=EVENTS.map(ev=>{
-	const [y,m,d]=ev.date.split('-');
-	const addr=ev.address||'',cut=addr.indexOf(', ');
-	return {...ev,month:'THG '+Number(m),day:Number(d),dateLong:'Ngày '+Number(d)+' tháng '+Number(m),street:cut<0?addr:addr.slice(0,cut),contactLead:ev.contact&&(ev.contact.lead||'Liên lạc'),city:cut<0?'':addr.slice(cut+2),dateText:ev.dateText||'Ngày '+Number(d)+' tháng '+Number(m)+' năm '+y};
-	});
-	const upcoming=events.filter(ev=>ev.date>=today).sort((a,b)=>a.date.localeCompare(b.date));
-	const past=events.filter(ev=>ev.date<today).sort((a,b)=>b.date.localeCompare(a.date));
-	// The next Khóa Căn Bản and the FAQ come from khoa-can-ban.js (window.KHOA).
-	const nextClass=KHOA.next(today);
-	return {lienGia:LIEN_GIA.map(lg=>({...lg,alt:'Liên Gia '+lg.name})),upcoming,past,noUpcoming:upcoming.length===0,nextClass,noNextClass:!nextClass,faq:KHOA.faq(today)};
-	}
-	}
+			{name:'Đức Mẹ La Vang',photo:'assets/liengia/duc-me-la-vang.jpg',link:'https://photos.app.goo.gl/QEoz9844meetfo896'},
+			{name:'Thánh GH Gioan Phaolô II',photo:'assets/liengia/thanh-gh-gioan-phaolo.jpg',link:'https://photos.app.goo.gl/CMs5yneNQ9wQntN46'},
+			{name:'Thánh Têrêsa',photo:'assets/liengia/thanh-teresa.jpg',link:'https://photos.app.goo.gl/iaeKRgSQgkrQsRHx6'},
+			{name:'Thánh Tâm Giuse',photo:'assets/liengia/thanh-tam-giuse.jpg',link:'https://photos.app.goo.gl/V4zjV2Cy93pNqT1R7'},
+			{name:'Đức Mẹ Hằng Cứu Giúp',photo:'assets/liengia/duc-me-hang-cuu-giup.jpg',link:'https://photos.app.goo.gl/Z2zh9PKu4GkVgB7o8'},
+			{name:'Đức Mẹ Fatima',photo:'assets/liengia/duc-me-fatima.jpg',link:'https://photos.app.goo.gl/bbarMvqCnkgETSrr6'},
+			];
+			class Component extends DCLogic {
+			renderVals() {
+			const today=new Date().toLocaleDateString('en-CA',{timeZone:'America/Los_Angeles'});
+			const events=EVENTS.map(ev=>{
+			const [y,m,d]=ev.date.split('-');
+			const addr=ev.address||'',cut=addr.indexOf(', ');
+			return {...ev,month:'THG '+Number(m),day:Number(d),dateLong:'Ngày '+Number(d)+' tháng '+Number(m),street:cut<0?addr:addr.slice(0,cut),contactLead:ev.contact&&(ev.contact.lead||'Liên lạc'),city:cut<0?'':addr.slice(cut+2),dateText:ev.dateText||'Ngày '+Number(d)+' tháng '+Number(m)+' năm '+y};
+			});
+			const upcoming=events.filter(ev=>ev.date>=today).sort((a,b)=>a.date.localeCompare(b.date));
+			const past=events.filter(ev=>ev.date<today).sort((a,b)=>b.date.localeCompare(a.date));
+			// The next Khóa Căn Bản and the FAQ come from khoa-can-ban.js (window.KHOA).
+			const nextClass=KHOA.next(today);
+			return {lienGia:LIEN_GIA.map(lg=>({...lg,alt:'Liên Gia '+lg.name})),upcoming,past,noUpcoming:upcoming.length===0,nextClass,noNextClass:!nextClass,faq:KHOA.faq(today)};
+			}
+			}
 	</script>
 	<script>
-	addEventListener('load',function(){
-	var id=location.hash.slice(1),tries=0;
-	if(!id)return;
-	var t=setInterval(function(){
-	var el=document.getElementById(id);
-	if(el||++tries>40)clearInterval(t);
-	if(el)el.scrollIntoView();
-	},50);
-	});
+		addEventListener('load',function(){
+		var id=location.hash.slice(1),tries=0;
+		if(!id)return;
+		var t=setInterval(function(){
+		var el=document.getElementById(id);
+		if(el||++tries>40)clearInterval(t);
+		if(el)el.scrollIntoView();
+		},50);
+		});
 	</script>
+	<script src="./rotate-photos.js"></script>
 </body>
 </html>
