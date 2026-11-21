@@ -4,155 +4,350 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Đơn Ghi Danh – Khóa Căn Bản Thăng Tiến Hôn Nhân Gia Đình</title>
+<link rel="stylesheet" href="./tokens.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <style>
-  :root { --navy:#1f3a7a; --gold:#c9962b; --red:#b3262d; --line:#d6dbe6; --bg:#f6f7fb; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); font-family: "Segoe UI", Arial, sans-serif; color:#222; line-height:1.5; }
-  .kcb { max-width: 820px; margin: 24px auto; background:#fff; border:1px solid var(--line); border-radius:12px; padding: 28px 32px; }
-  .kcb header { text-align:center; border-bottom: 3px solid var(--navy); padding-bottom:16px; margin-bottom:20px; }
-  .kcb h1 { margin:0; color:var(--navy); font-size:28px; letter-spacing:1px; }
-  .kcb h2 { margin:4px 0 8px; font-size:17px; color:var(--navy); }
-  .kcb header p { margin:2px 0; }
-  .kcb h3 { color:var(--navy); font-size:16px; margin:24px 0 8px; border-bottom:1px solid var(--line); padding-bottom:4px; }
-  .kcb .couple { display:grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
-  .kcb .col-title { text-align:center; font-weight:bold; color:var(--navy); letter-spacing:1px; }
-  .kcb label { display:block; font-weight:600; font-size:14px; margin-bottom:4px; }
-  .kcb label small { font-weight:400; color:#666; }
+  * { box-sizing:border-box; }
+  .material-icons { font-size:1em; vertical-align:middle; margin-right:4px; }
+  body { margin:0; background:linear-gradient(180deg,#2161C2 0%,#5499E6 55%,#BDDEF7 100%) fixed; font-family:var(--font-body); color:var(--text); font-size:16px; line-height:1.65; padding:48px 16px; min-height:100vh; }
+  .kcb { max-width:860px; margin:0 auto; padding:48px; background:#fff; border-radius:20px; box-shadow:0 16px 56px rgba(10,30,70,.22); }
+  .kcb-logo { display:block; height:44px; width:auto; margin:0 0 32px 0; }
+  .kcb header { padding-bottom:28px; margin-bottom:28px; border-bottom:1px solid var(--line); }
+  .kcb .form-label { margin:0 0 6px; color:var(--blue-bright); font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.08em; }
+  .kcb h1 { margin:0 0 16px; color:var(--navy); font-size:clamp(20px,3.5vw,26px); font-weight:600; line-height:1.3; }
+  .kcb header p { margin:4px 0; color:var(--text-body); }
+  .kcb h2 { margin:36px 0 20px; padding-top:28px; border-top:1px solid var(--line); font-size:17px; font-weight:600; line-height:1.4; color:var(--navy); }
+  .kcb .form-note { margin:0 0 24px; color:var(--text-muted); font-size:13px; }
+  .kcb .couple { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:32px; }
+  .kcb .col-title { margin:0 0 16px; color:var(--navy); font-size:15px; font-weight:600; text-transform:none; }
+  .kcb label { display:block; margin-bottom:6px; color:var(--text-muted); font-size:13px; font-weight:400; }
+  .kcb label small { display:block; margin-top:1px; color:var(--text-muted); font-size:12px; font-weight:400; }
   .kcb input[type=text], .kcb input[type=email], .kcb input[type=tel], .kcb input[type=number], .kcb input[type=date], .kcb textarea {
-    width:100%; padding:9px 10px; border:1px solid var(--line); border-radius:6px; background:#f3f5fa; font-size:15px; font-family:inherit; }
-  .kcb input:focus, .kcb textarea:focus { outline:2px solid var(--gold); background:#fff; }
-  .kcb .field { margin-bottom:14px; }
-  .kcb .row2 { display:grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
-  .kcb .choices { display:flex; flex-wrap:wrap; gap: 8px 24px; }
-  .kcb .choices label { font-weight:400; display:flex; align-items:center; gap:6px; }
-  .kcb .fee { background:#fdf8ec; border:1px solid #ecd9a8; border-radius:8px; padding:12px 16px; }
-  .kcb .terms { border:2px solid #222; padding:14px 18px; margin-top:20px; font-size:14px; text-align:center; }
-  .kcb .terms b.t { display:block; text-decoration:underline; font-size:16px; }
-  .kcb .refund { font-weight:bold; text-decoration:underline; }
-  .kcb .agree { margin:16px 0; font-weight:400; display:flex; gap:8px; align-items:flex-start; }
-  .kcb button { background:var(--navy); color:#fff; border:0; border-radius:8px; padding:12px 32px; font-size:17px; cursor:pointer; }
-  .kcb button:disabled { opacity:.6; cursor:wait; }
-  .kcb .msg { margin-top:14px; font-weight:600; }
-  .kcb .msg.ok { color:#1d7a46; } .kcb .msg.err { color:var(--red); }
+    width:100%; min-width:0; padding:10px 14px; border:1.5px solid var(--line); border-radius:10px; background:#fff; color:var(--text); font:inherit; transition:border-color .15s; }
+  .kcb input[type=text]:hover, .kcb input[type=email]:hover, .kcb input[type=tel]:hover,
+  .kcb input[type=number]:hover, .kcb input[type=date]:hover, .kcb textarea:hover { border-color:var(--line-strong); }
+  .kcb input::placeholder, .kcb textarea::placeholder { color:var(--text-placeholder); opacity:1; }
+  .kcb textarea { resize:vertical; }
+  .kcb input, .kcb textarea { accent-color:var(--blue-bright); }
+  .kcb input:focus-visible, .kcb textarea:focus-visible, .kcb button:focus-visible { outline:2px solid var(--blue-bright); outline-offset:2px; }
+  .kcb .field { margin-bottom:24px; }
+  .kcb .row2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 24px; }
+  .kcb .choices { display:flex; flex-wrap:wrap; gap:8px; }
+  .kcb .choices label { display:inline-flex; align-items:center; margin:0; padding:7px 18px; border:1.5px solid var(--line-strong); border-radius:999px; font-size:14px; font-weight:400; cursor:pointer; transition:background .15s, border-color .15s, color .15s; user-select:none; }
+  .kcb .choices label:hover { border-color:var(--navy); }
+  .kcb .choices label:has(input:checked) { background:var(--navy); border-color:var(--navy); color:#fff; }
+  .kcb .choices label:has(input[type=radio]) { padding:0; border:none; border-radius:0; background:none !important; color:inherit !important; gap:6px; }
+  .kcb .choices label:has(input[type=radio]):hover { border:none; }
+  .kcb .choices input[type=checkbox] { position:absolute; opacity:0; pointer-events:none; width:0; }
+  .kcb .choices input[type=radio] { position:static; opacity:1; pointer-events:auto; width:auto; flex:none; accent-color:var(--navy); }
+  .kcb .fee { padding:0; }
+  .kcb .fee-summary { margin:0 0 24px; color:var(--text-body); }
+  .kcb .fee-summary small { font-size:14px; }
+  .kcb .terms { color:var(--text-body); font-size:15px; }
+  .kcb .terms h2 { margin-top:0; padding-top:0; border:0; margin-bottom:8px; }
+  .kcb .terms > small { color:var(--text-muted); font-size:14px; }
+  .kcb .terms p { margin:12px 0; }
+  .kcb .refund { font-weight:400; }
+  .kcb .agree { display:flex; align-items:flex-start; gap:12px; margin:28px 0; font-size:15px; }
+  .kcb .agree input { flex:none; margin-top:4px; accent-color:var(--blue-bright); }
+  .kcb button { padding:13px 32px; border:0; border-radius:999px; background:var(--navy); color:#fff; font:inherit; font-weight:500; cursor:pointer; transition:background .15s; }
+  .kcb button:hover { background:var(--blue-bright); }
+  .kcb button:disabled { opacity:.4; cursor:not-allowed; }
+  .kcb .msg { margin-top:20px; font-weight:400; }
+  .kcb .msg.ok { color:var(--navy); }
+  .kcb .msg.err { color:#b3262d; }
+  .kcb .checkbox-item { display:flex; align-items:center; gap:10px; }
+  .kcb .checkbox-item input[type=checkbox] { width:18px; height:18px; flex:none; accent-color:var(--navy); cursor:pointer; }
+  .kcb .checkbox-item > label { margin:0; font-size:14px; color:var(--text); font-weight:400; cursor:pointer; }
   .kcb .hp { position:absolute; left:-5000px; }
-  .kcb .req { color:var(--red); }
-  @media (max-width: 640px) {
-    .kcb { padding:18px; margin:0; border-radius:0; }
-    .kcb .couple, .kcb .row2 { grid-template-columns: 1fr; }
-    .kcb .col-title.vo { margin-top:12px; }
+  .kcb .req { color:var(--text-muted); font-weight:400; }
+
+  /* Step indicator */
+  .step-indicator { display:flex; align-items:center; margin-bottom:36px; }
+  .step-indicator .step-item { display:flex; flex-direction:column; align-items:center; gap:6px; flex:1; position:relative; }
+  .step-indicator .step-item:not(:last-child)::after { content:""; position:absolute; top:16px; left:calc(50% + 16px); right:calc(-50% + 16px); height:1.5px; background:var(--line); }
+  .step-indicator .step-item.done:not(:last-child)::after { background:var(--navy); }
+  .step-indicator .step-num { width:32px; height:32px; border-radius:50%; border:2px solid var(--line); background:#fff; color:var(--text-muted); font-size:13px; font-weight:600; display:flex; align-items:center; justify-content:center; transition:all .2s; position:relative; z-index:1; }
+  .step-indicator .step-item.active .step-num { border-color:var(--navy); background:var(--navy); color:#fff; }
+  .step-indicator .step-item.done .step-num { border-color:var(--navy); background:var(--navy); color:#fff; }
+  .step-indicator .step-label { font-size:11px; font-weight:500; color:var(--text-muted); text-align:center; letter-spacing:.03em; white-space:nowrap; }
+  .step-indicator .step-item.active .step-label { color:var(--navy); font-weight:600; }
+
+  /* Steps */
+  .step { display:none; }
+  .step.active { display:block; }
+
+  /* Step nav */
+  .step-nav { display:flex; gap:12px; margin-top:32px; align-items:center; }
+  .step-nav .btn-back { background:transparent; color:var(--navy); border:1.5px solid var(--line-strong); padding:12px 28px; }
+  .step-nav .btn-back:hover { background:var(--line); }
+
+  /* Success screen */
+  .success-screen { display:none; text-align:center; padding:48px 24px; }
+  .success-screen.active { display:block; }
+  .success-screen .success-icon { font-size:72px; color:var(--navy); margin-bottom:20px; }
+  .success-screen h2 { color:var(--navy); font-size:22px; font-weight:600; margin:0 0 12px; }
+  .success-screen p { color:var(--text-body); font-size:15px; margin:0; line-height:1.7; }
+
+  @media (max-width:640px) {
+    body { padding:0; }
+    .kcb { padding:28px 20px; border-radius:0; box-shadow:none; }
+    .kcb .couple, .kcb .row2 { grid-template-columns:minmax(0,1fr); }
+    .kcb .couple { gap:12px; }
+    .kcb .col-title.vo { padding-top:20px; border-top:1px solid var(--line); }
+    .kcb button { width:100%; }
+    .step-nav { flex-direction:column-reverse; }
+    .step-indicator .step-label { display:none; }
   }
 </style>
 </head>
 <body>
 <div class="kcb">
+  <img class="kcb-logo" src="./assets/logo.png" alt="Khóa Căn Bản">
   <header>
-    <h1>ĐƠN GHI DANH</h1>
-    <h2>KHÓA CĂN BẢN THĂNG TIẾN HÔN NHÂN GIA ĐÌNH</h2>
-    <p><b>Cuối tuần ngày 29, 30, 31 tháng 10 năm 2027</b></p>
-    <p>Từ <b>5</b> giờ chiều thứ Sáu tới <b>5</b> giờ chiều Chúa Nhật</p>
-    <p><b>Mission San Luis Rey Retreat Center</b><br>4050 Mission Ave., Oceanside, CA 92057-6402</p>
+    <h1>Khóa Căn Bản Thăng Tiến Hôn Nhân Gia Đình</h1>
   </header>
 
+  <!-- Step indicator -->
+  <div class="step-indicator" aria-label="Các bước ghi danh">
+    <div class="step-item active" data-step="1">
+      <div class="step-num">1</div>
+      <div class="step-label">Thông tin</div>
+    </div>
+    <div class="step-item" data-step="2">
+      <div class="step-num">2</div>
+      <div class="step-label">Địa chỉ</div>
+    </div>
+    <div class="step-item" data-step="3">
+      <div class="step-num">3</div>
+      <div class="step-label">Ghi danh</div>
+    </div>
+    <div class="step-item" data-step="4">
+      <div class="step-num">4</div>
+      <div class="step-label">Xác nhận</div>
+    </div>
+  </div>
+
+  <div class="success-screen" id="success-screen">
+    <span class="material-icons success-icon">check_circle</span>
+    <h2>Cảm ơn quý anh chị!</h2>
+    <p>Đơn ghi danh Khóa Căn Bản Thăng Tiến Hôn Nhân Gia Đình đã được gửi thành công.<br>
+    Một bản xác nhận đã được gửi đến địa chỉ email của quý anh chị.<br><br>
+    <em>Thank you for signing up for Khóa Căn Bản! A copy has been sent to your email.</em></p>
+  </div>
+
   <form id="dangky" novalidate>
-    <!-- Spam trap: real people never see or fill this -->
+    <!-- Spam trap -->
     <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off">
 
-    <h3>Thông tin vợ chồng</h3>
-    <div class="couple">
-      <div>
-        <div class="col-title">CHỒNG</div>
-        <div class="field"><label>Tên <span class="req">*</span> <small>(Saint Name, Last Middle First)</small></label>
-          <input type="text" name="chong_ten" required></div>
-        <div class="field"><label>Năm Sinh <small>(Birth Year - YYYY)</small></label>
-          <input type="number" name="chong_namsinh" min="1920" max="2010" placeholder="YYYY"></div>
-        <div class="field"><label>Điện Thoại <span class="req">*</span> <small>(Phone No)</small></label>
-          <input type="tel" name="chong_dienthoai" required></div>
-        <div class="field"><label>Email <small>(E-mail liên lạc)</small></label>
-          <input type="email" name="chong_email"></div>
+    <!-- Step 1: Thông tin vợ chồng -->
+    <div class="step active" data-step="1">
+      <div class="couple">
+        <div>
+          <h3 class="col-title">Chồng</h3>
+          <div class="field"><label for="chong_tenthanh">Tên Thánh <span class="req">*</span></label>
+            <input type="text" id="chong_tenthanh" name="chong_tenthanh" required></div>
+          <div class="field"><label for="chong_ho">Họ <span class="req">*</span></label>
+            <input type="text" id="chong_ho" name="chong_ho" autocomplete="section-chong family-name" required></div>
+          <div class="field"><label for="chong_tendem">Tên đệm</label>
+            <input type="text" id="chong_tendem" name="chong_tendem" autocomplete="section-chong additional-name"></div>
+          <div class="field"><label for="chong_tenrieng">Tên <span class="req">*</span></label>
+            <input type="text" id="chong_tenrieng" name="chong_tenrieng" autocomplete="section-chong given-name" required></div>
+          <div class="field"><label for="chong_namsinh">Năm Sinh</label>
+            <input id="chong_namsinh" type="number" name="chong_namsinh" min="1920" max="2010" placeholder="YYYY"></div>
+          <div class="field"><label for="chong_dienthoai">Điện Thoại <span class="req">*</span></label>
+            <input id="chong_dienthoai" type="tel" name="chong_dienthoai" required></div>
+          <div class="field"><label for="chong_email">Email <span class="req">*</span></label>
+            <input id="chong_email" type="email" name="chong_email" required></div>
+        </div>
+        <div>
+          <h3 class="col-title vo">Vợ</h3>
+          <div class="field"><label for="vo_tenthanh">Tên Thánh <span class="req">*</span></label>
+            <input type="text" id="vo_tenthanh" name="vo_tenthanh" required></div>
+          <div class="field"><label for="vo_ho">Họ <span class="req">*</span></label>
+            <input type="text" id="vo_ho" name="vo_ho" autocomplete="section-vo family-name" required></div>
+          <div class="field"><label for="vo_tendem">Tên đệm</label>
+            <input type="text" id="vo_tendem" name="vo_tendem" autocomplete="section-vo additional-name"></div>
+          <div class="field"><label for="vo_tenrieng">Tên <span class="req">*</span></label>
+            <input type="text" id="vo_tenrieng" name="vo_tenrieng" autocomplete="section-vo given-name" required></div>
+          <div class="field"><label for="vo_namsinh">Năm Sinh</label>
+            <input id="vo_namsinh" type="number" name="vo_namsinh" min="1920" max="2010" placeholder="YYYY"></div>
+          <div class="field"><label for="vo_dienthoai">Điện Thoại <span class="req">*</span></label>
+            <input id="vo_dienthoai" type="tel" name="vo_dienthoai" required></div>
+          <div class="field"><label for="vo_email">Email <span class="req">*</span></label>
+            <input id="vo_email" type="email" name="vo_email" required></div>
+        </div>
       </div>
-      <div>
-        <div class="col-title vo">VỢ</div>
-        <div class="field"><label>Tên <span class="req">*</span> <small>(Saint Name, Last Middle First)</small></label>
-          <input type="text" name="vo_ten" required></div>
-        <div class="field"><label>Năm Sinh <small>(Birth Year - YYYY)</small></label>
-          <input type="number" name="vo_namsinh" min="1920" max="2010" placeholder="YYYY"></div>
-        <div class="field"><label>Điện Thoại <span class="req">*</span> <small>(Phone No)</small></label>
-          <input type="tel" name="vo_dienthoai" required></div>
-        <div class="field"><label>Email <small>(E-mail liên lạc)</small></label>
-          <input type="email" name="vo_email"></div>
+      <div class="step-nav">
+        <button type="button" class="btn-next" disabled>Tiếp Tục</button>
       </div>
     </div>
 
-    <div class="field"><label>Địa Chỉ Cư Ngụ <span class="req">*</span> <small>(Home Address)</small></label>
-      <input type="text" name="diachi" required></div>
-    <div class="row2">
-      <div class="field"><label>Ngày Thành Hôn <small>(Wedding Date)</small></label>
-        <input type="date" name="ngay_thanhhon"></div>
-      <div class="field"><label>Nơi Thành Hôn <small>(Giáo Phận / Diocese)</small></label>
-        <input type="text" name="noi_thanhhon"></div>
-    </div>
-
-    <h3>Ghi danh</h3>
-    <div class="field"><label>Chúng tôi ghi danh <small>(We are registering as)</small></label>
-      <div class="choices"><label><input type="checkbox" checked disabled> Khóa Viên của Khóa Căn Bản (Khóa số TBD)</label></div>
-      <input type="hidden" name="ghidanh" value="Khóa Viên Khóa Căn Bản"></div>
-
-    <div class="field"><label>Ngôn ngữ <span class="req">*</span> <small>(Understand/Speak)</small></label>
-      <div class="choices">
-        <label><input type="radio" name="ngonngu" value="Tiếng Việt" required> Tiếng Việt</label>
-        <label><input type="radio" name="ngonngu" value="English"> English</label>
-        <label><input type="radio" name="ngonngu" value="Cả hai"> Cả hai ngôn ngữ (Both)</label>
-      </div></div>
-
-    <div class="field"><label>Người giới thiệu khóa <small>(Who introduced you to KCB)</small></label>
-      <input type="text" name="nguoi_gioithieu"></div>
-    <div class="field"><label>Cần giúp đỡ / Khuyết tật <small>(Special Requirements / Disabilities)</small></label>
-      <textarea name="can_giupdo" rows="2"></textarea></div>
-
-    <h3>Lệ phí</h3>
-    <div class="fee">
-      <p style="margin:0 0 10px"><b>Lệ Phí Khóa Viên (1 cặp vợ chồng): $TBD</b><br>
-        <small>Đặt cọc $TBD khi ghi danh, trả hết trước ngày mở khóa.</small></p>
-      <div class="field"><label>Hình thức trả <span class="req">*</span> <small>(Payment method)</small></label>
-        <div class="choices">
-          <label><input type="radio" name="hinhthuc_tra" value="Cash" required> Cash (Tiền mặt)</label>
-          <label><input type="radio" name="hinhthuc_tra" value="Check"> Check</label>
-          <label><input type="radio" name="hinhthuc_tra" value="Zelle"> Zelle (858) 997-3780 – Thu Nguyen</label>
-        </div></div>
+    <!-- Step 2: Địa chỉ & hôn nhân -->
+    <div class="step" data-step="2">
+      <div class="field"><label for="diachi">Địa Chỉ Cư Ngụ <span class="req">*</span></label>
+        <input id="diachi" type="text" name="diachi" required></div>
       <div class="row2">
-        <div class="field" id="checkno-field" style="display:none"><label>Check No.</label>
-          <input type="text" name="check_so"></div>
-        <div class="field"><label>Số tiền đã trả <small>(PAID $)</small></label>
-          <input type="number" name="sotien_datra" min="0" step="0.01" placeholder="__.00 hoặc __.00"></div>
+        <div class="field"><label for="ngay_thanhhon">Ngày Thành Hôn</label>
+          <input id="ngay_thanhhon" type="date" name="ngay_thanhhon"></div>
+        <div class="field"><label for="noi_thanhhon">Nơi Thành Hôn</label>
+          <input id="noi_thanhhon" type="text" name="noi_thanhhon"></div>
+      </div>
+      <div class="step-nav">
+        <button type="button" class="btn-next" disabled>Tiếp Tục</button>
+        <button type="button" class="btn-back">Quay Lại</button>
       </div>
     </div>
 
-    <div class="terms">
-      <b class="t">Điều Khoản và Điều Kiện</b><small>(Terms and Conditions)</small>
-      <p>Lệ phí cho 1 cặp vợ chồng: $TBD.00, bao gồm tài liệu, các bữa ăn và phòng ngủ cho 3 ngày 2 đêm. Ghi danh xin đóng trước $TBD.00, trả tất cả lệ phí trước tháng xx năm TBD. Chi phiếu xin đề tên và gửi đến: <b>Thu Nguyễn</b><br>
-      <b>8006 Hollow Mesa Ct., San Diego, CA 92126</b><br>
-      Tel: <b>(858) 997-3780</b>. Điện thư liên lạc (Email): <b>thunguyensd@yahoo.com</b>.<br>
-      Vì lý do gì không thể tham dự khóa được, xin liên lạc với <b>Thu Nguyễn</b> hoặc Ban Tổ Chức.</p>
-      <p class="refund">Hoàn trả: * 100% nếu báo trước 1 tháng, * 50% nếu báo trước 2 tuần, tính tới ngày mở khóa.</p>
+    <!-- Step 3: Ghi danh & lệ phí -->
+    <div class="step" data-step="3">
+      <div class="field"><label>Chúng tôi ghi danh</label>
+        <div class="checkbox-item">
+          <input type="checkbox" id="ghidanh" name="ghidanh" value="Khóa Viên Khóa Căn Bản" checked>
+          <label for="ghidanh">Khóa Viên của Khóa Căn Bản (Khóa số TBD)</label>
+        </div></div>
+
+      <div class="field"><label>Ngôn ngữ <span class="req">*</span></label>
+        <div class="choices">
+          <label><input type="radio" name="ngonngu" value="Tiếng Việt" required> Tiếng Việt</label>
+          <label><input type="radio" name="ngonngu" value="Tiếng Anh"> Tiếng Anh</label>
+          <label><input type="radio" name="ngonngu" value="Cả hai"> Cả hai ngôn ngữ</label>
+        </div></div>
+
+      <div class="field"><label for="nguoi_gioithieu">Người giới thiệu khóa</label>
+        <input id="nguoi_gioithieu" type="text" name="nguoi_gioithieu"></div>
+      <div class="field"><label for="can_giupdo">Cần giúp đỡ / Khuyết tật</label>
+        <input id="can_giupdo" type="text" name="can_giupdo"></div>
+
+      <h2>Lệ phí</h2>
+      <div class="fee">
+        <p class="fee-summary">Lệ phí khóa viên (1 cặp vợ chồng): $TBD<br>
+          <small>Đặt cọc $TBD khi ghi danh, trả hết trước ngày mở khóa.</small></p>
+        <div class="field"><label>Hình thức trả <span class="req">*</span></label>
+          <div class="choices">
+            <label><input type="radio" name="hinhthuc_tra" value="Cash" required> Cash (Tiền mặt)</label>
+            <label><input type="radio" name="hinhthuc_tra" value="Check"> Check</label>
+            <label><input type="radio" name="hinhthuc_tra" value="Zelle"> Zelle (858) 997-3780 – Thu Nguyen</label>
+          </div></div>
+        <div class="row2">
+          <div class="field" id="checkno-field" style="display:none"><label for="check_so">Check No.</label>
+            <input id="check_so" type="text" name="check_so"></div>
+          <div class="field"><label for="sotien_datra">Số tiền đã trả</label>
+            <input id="sotien_datra" type="number" name="sotien_datra" min="0" step="0.01" placeholder="__.00 hoặc __.00"></div>
+        </div>
+      </div>
+      <div class="step-nav">
+        <button type="button" class="btn-next" disabled>Tiếp Tục</button>
+        <button type="button" class="btn-back">Quay Lại</button>
+      </div>
     </div>
 
-    <label class="agree"><input type="checkbox" name="dongy" value="Đồng ý" required>
-      <span>Chúng tôi đã đọc và đồng ý với các Điều Khoản và Điều Kiện. <small>(We agree to the Terms and Conditions.)</small> <span class="req">*</span></span></label>
+    <!-- Step 4: Điều khoản & xác nhận -->
+    <div class="step" data-step="4">
+      <div class="terms">
+        <h2>Điều khoản và điều kiện</h2>
+        <p>Lệ phí cho 1 cặp vợ chồng: $TBD.00, bao gồm tài liệu, các bữa ăn và phòng ngủ cho 3 ngày 2 đêm. Ghi danh xin đóng trước $TBD.00, trả tất cả lệ phí trước tháng xx năm TBD.</p>
+        <p>Chi phiếu xin đề tên và gửi đến: <strong>Thu Nguyễn</strong><br>
+        <span class="material-icons" aria-hidden="true">location_on</span> 8006 Hollow Mesa Ct., San Diego, CA 92126<br>
+        <span class="material-icons" aria-hidden="true">phone</span> (858) 997-3780<br>
+        <span class="material-icons" aria-hidden="true">email</span> thunguyensd@yahoo.com</p>
+        <p>Vì lý do gì không thể tham dự khóa được, xin liên lạc với Thu Nguyễn hoặc Ban Tổ Chức.</p>
+        <p class="refund">Hoàn trả: * 100% nếu báo trước 1 tháng, * 50% nếu báo trước 2 tuần, tính tới ngày mở khóa.</p>
+      </div>
 
-    <div class="field"><label>Chữ ký <span class="req">*</span> <small>(Signature – type full name)</small></label>
-      <input type="text" name="chuky" required></div>
+      <label class="agree"><input type="checkbox" name="dongy" value="Đồng ý" required>
+        <span>Chúng tôi đã đọc và đồng ý với các Điều Khoản và Điều Kiện. <span class="req">*</span></span></label>
 
-    <button type="submit">Gửi Đơn Ghi Danh</button>
-    <div class="msg" id="msg" role="status"></div>
+      <div class="field"><label for="chuky">Chữ ký <span class="req">*</span></label>
+        <input id="chuky" type="text" name="chuky" required></div>
+
+      <div class="step-nav">
+        <button type="submit">Gửi Đơn Ghi Danh</button>
+        <button type="button" class="btn-back">Quay Lại</button>
+      </div>
+      <div class="msg" id="msg" role="status"></div>
+    </div>
+
   </form>
 </div>
 
 <script>
-  // >>> Paste your Google Apps Script Web App URL here <<<
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyWY5Lm9fJ2fUORQ8W9_pZUlfqBYTuhIGJxitOyCsAruuC48E_jmfiwsHV9u_ndZYTc/exec";
 
   const form = document.getElementById("dangky");
   const msg = document.getElementById("msg");
+  let currentStep = 1;
+  const totalSteps = 4;
+
+  function checkStepValidity(n) {
+    const stepEl = form.querySelector(`.step[data-step="${n}"]`);
+    const btn = stepEl.querySelector(".btn-next");
+    if (!btn) return;
+    const inputs = stepEl.querySelectorAll("input[required], textarea[required]");
+    const valid = [...inputs].every(input => {
+      if (input.type === "radio") {
+        return [...stepEl.querySelectorAll(`input[name="${input.name}"]`)].some(r => r.checked);
+      }
+      return input.value.trim() !== "";
+    });
+    btn.disabled = !valid;
+  }
+
+  function showStep(n) {
+    form.querySelectorAll(".step").forEach(s => s.classList.remove("active"));
+    form.querySelector(`.step[data-step="${n}"]`).classList.add("active");
+    document.querySelectorAll(".step-indicator .step-item").forEach(item => {
+      const s = parseInt(item.dataset.step);
+      item.classList.toggle("active", s === n);
+      item.classList.toggle("done", s < n);
+    });
+    currentStep = n;
+    checkStepValidity(n);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function validateStep(n) {
+    const stepEl = form.querySelector(`.step[data-step="${n}"]`);
+    const inputs = stepEl.querySelectorAll("input[required], textarea[required]");
+    for (const input of inputs) {
+      if (input.type === "radio") {
+        const group = stepEl.querySelectorAll(`input[name="${input.name}"]`);
+        if (![...group].some(r => r.checked)) {
+          input.focus();
+          return false;
+        }
+      } else if (!input.value.trim()) {
+        input.focus();
+        return false;
+      }
+    }
+    return true;
+  }
+
+  form.addEventListener("click", e => {
+    if (e.target.classList.contains("btn-next")) {
+      if (!validateStep(currentStep)) {
+        msg.className = "msg err";
+        msg.textContent = "Xin điền đầy đủ các ô có dấu *.";
+        setTimeout(() => { msg.textContent = ""; msg.className = "msg"; }, 3000);
+        return;
+      }
+      msg.className = "msg"; msg.textContent = "";
+      showStep(currentStep + 1);
+    }
+    if (e.target.classList.contains("btn-back")) {
+      msg.className = "msg"; msg.textContent = "";
+      showStep(currentStep - 1);
+    }
+  });
+
+  // Re-check validity on any input/change within the form
+  form.addEventListener("input", () => checkStepValidity(currentStep));
+  form.addEventListener("change", () => checkStepValidity(currentStep));
+
+  // Initial check for step 1
+  checkStepValidity(1);
 
   // Show "Check No." only when Check is chosen
   form.querySelectorAll('input[name="hinhthuc_tra"]').forEach(r =>
@@ -164,26 +359,38 @@
   form.addEventListener("submit", async (ev) => {
     ev.preventDefault();
     msg.className = "msg"; msg.textContent = "";
+    for (const prefix of ["chong", "vo"]) {
+      for (const part of ["tenthanh", "ho", "tendem", "tenrieng"]) {
+        const input = form.elements.namedItem(`${prefix}_${part}`);
+        input.value = input.value.trim();
+      }
+    }
     if (!form.checkValidity()) {
-      const bad = form.querySelector(":invalid");
       msg.className = "msg err";
-      msg.textContent = "Xin điền đầy đủ các ô có dấu * (Please fill in all required fields).";
-      if (bad) bad.focus();
+      msg.textContent = "Xin điền đầy đủ các ô có dấu *.";
       return;
     }
-    const btn = form.querySelector("button");
+    const btn = form.querySelector('[type="submit"]');
     btn.disabled = true; btn.textContent = "Đang gửi…";
     try {
+      const data = new FormData(form);
+      for (const prefix of ["chong", "vo"]) {
+        data.set(`${prefix}_ten`, ["tenthanh", "ho", "tendem", "tenrieng"]
+          .map(part => data.get(`${prefix}_${part}`))
+          .filter(Boolean)
+          .join(" "));
+      }
       await fetch(SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
-        body: new URLSearchParams(new FormData(form))
+        body: new URLSearchParams(data)
       });
       form.reset();
       document.getElementById("checkno-field").style.display = "none";
-      msg.className = "msg ok";
-      msg.textContent = "Cảm ơn! Đơn ghi danh đã được gửi. Ban Tổ Chức sẽ liên lạc với quý anh chị. (Thank you! Your registration was received.)";
-      msg.scrollIntoView({ behavior: "smooth", block: "center" });
+      showStep(1);
+      form.style.display = "none";
+      document.querySelector(".step-indicator").style.display = "none";
+      document.getElementById("success-screen").classList.add("active");
     } catch (e) {
       msg.className = "msg err";
       msg.textContent = "Có lỗi khi gửi. Xin thử lại hoặc gọi (858) 997-3780. (Error – please try again.)";

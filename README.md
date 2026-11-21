@@ -84,3 +84,47 @@ activation link. Messages arrive only after someone clicks it.
 From this folder, run `python3 -m http.server` and open
 <http://localhost:8000>. Opening the files directly (file://) does not work in
 some browsers.
+
+## Online registration names (`dangky.html`)
+
+Each spouse has separate saint name, last name, middle name, and given name
+fields. Saint and middle names are optional; last and given names are required.
+Name parts can contain spaces and Vietnamese accents.
+
+The form POSTs these URL-encoded parameters to its Google Apps Script web app:
+
+| Name part | Husband | Wife |
+| --- | --- | --- |
+| Saint name | `chong_tenthanh` | `vo_tenthanh` |
+| Last name | `chong_ho` | `vo_ho` |
+| Middle name | `chong_tendem` | `vo_tendem` |
+| Given name | `chong_tenrieng` | `vo_tenrieng` |
+| Combined name (existing keys) | `chong_ten` | `vo_ten` |
+
+Combined names join nonempty parts in saint / last / middle / given order.
+The existing combined keys are preserved for compatibility. To store separate
+parts in spreadsheet columns, the deployed Apps Script must read the new keys
+from `e.parameter` and write them to the matching columns. Adding headers alone
+does not update a script with a fixed column mapping. The Apps Script source is
+not maintained in this repository.
+
+To test the deployed script:
+
+1. Open `/dangky.html` on the local server. Submit an empty form and confirm it
+   does not submit. Last name and given name are required for both spouses.
+2. Submit one clearly marked dummy registration (use `TEST ONLY` in the signature
+   and other free-text fields). Try `Giuse / Nguyễn / Văn / An` for the husband
+   and `Maria / Trần / Thị / Bình An` for the wife. Fill the other required fields.
+3. Check the spreadsheet directly: exactly one new row should contain the
+   combined names `Giuse Nguyễn Văn An` and `Maria Trần Thị Bình An`, and the
+   other registration data should still align with the correct columns. If the
+   script mapping has been updated, verify all eight separate name columns too.
+4. Repeat with saint and middle names blank. Confirm the row saves successfully,
+   optional columns stay blank, and combined names have no extra spaces.
+5. Check Apps Script's **Executions** view for errors if a row is missing or
+   incorrect. After editing the script, update its web app deployment to the
+   new version before retesting. Remove the dummy rows when finished.
+
+The request uses `mode: "no-cors"`, so the page cannot read the script's response.
+Its success message does not confirm that a spreadsheet row was saved; verify
+in the sheet and Apps Script executions.
